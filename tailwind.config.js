@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        heading: ['"Playfair Display"', "serif"],
+        anton: ["Anton", "sans-serif"],
       },
       fontSize: {
         h1: ["64px", { lineHeight: "1", letterSpacing: "-0.02em" }],

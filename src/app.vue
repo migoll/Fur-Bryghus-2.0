@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TheHeader.vue>
-      <NuxtPage />
-      <TheFooter.vue>
+    <TheHeader />
+    <NuxtPage />
+    <TheFooter />
   </div>
 </template>

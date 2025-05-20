@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+
 import { computed } from "vue";
 type EntryKey = "Vores-produkter" | "Bryggeprocessen" | "Vores historie";
 
@@ -51,7 +52,7 @@ const entryData: Record<
       "Oplev alle vores lækre produkter og køb dem hjem til dig selv. Her har du også mulighed for at lave gavekort",
     href: "/Webshop",
     buttonText: "Se vores produkter",
-    image: "/images/entry-point-menu.jpg",
+    image: "~/assets/images/entry-point-menu.jpg",
   },
   Bryggeprocessen: {
     title: "Bryggeprocessen",

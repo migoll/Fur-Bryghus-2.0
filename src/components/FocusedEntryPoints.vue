@@ -36,6 +36,11 @@ const props = defineProps<{
   entries: [EntryKey, EntryKey, EntryKey];
 }>();
 
+// Sikre at all entries er unikke
+if (new Set(props.entries).size !== props.entries.length) {
+  throw new Error("Each entry in 'entries' must be unique.");
+}
+
 const entryData: Record<
   EntryKey,
   {

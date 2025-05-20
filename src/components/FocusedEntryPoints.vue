@@ -3,7 +3,7 @@
     <div
       v-for="entry in resolvedEntries"
       :key="entry.title"
-      class="bg-white shadow-md rounded-sm relative flex flex-col h-full"
+      class="bg-white shadow-md relative flex flex-col h-full"
     >
       <img
         :src="entry.image"
@@ -28,8 +28,9 @@
 </template>
 
 <script setup lang="ts">
-
 import { computed } from "vue";
+import entryPointMenuImage from '~/assets/images/entry-point-menu.jpg';
+
 type EntryKey = "Vores-produkter" | "Bryggeprocessen" | "Vores historie";
 
 const props = defineProps<{
@@ -57,7 +58,7 @@ const entryData: Record<
       "Oplev alle vores lækre produkter og køb dem hjem til dig selv. Her har du også mulighed for at lave gavekort",
     href: "/Webshop",
     buttonText: "Se vores produkter",
-    image: "~/assets/images/entry-point-menu.jpg",
+    image: entryPointMenuImage,
   },
   Bryggeprocessen: {
     title: "Bryggeprocessen",
@@ -65,7 +66,7 @@ const entryData: Record<
       "Se hvordan vores øl bliver til, og lær mere om de teknikker og råvarer vi bruger.",
     href: "/bryggeriet/olprocessen",
     buttonText: "Læs om processen",
-    image: "/images/entry-point-menu.jpg",
+    image: entryPointMenuImage,
   },
   "Vores historie": {
     title: "Vores historie",
@@ -73,7 +74,7 @@ const entryData: Record<
       "Tag med på en tidsrejse og hør historien om Fur Bryghus og hvordan det hele startede.",
     href: "/bryggeriet/vores-historie",
     buttonText: "Læs historien",
-    image: "/images/entry-point-menu.jpg",
+    image: entryPointMenuImage,
   },
 };
 

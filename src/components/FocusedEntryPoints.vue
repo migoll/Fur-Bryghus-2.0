@@ -3,7 +3,7 @@
     <div
       v-for="entry in resolvedEntries"
       :key="entry.title"
-      class="bg-white shadow-md rounded-sm overflow-hidden flex flex-col h-full"
+      class="bg-white shadow-md rounded-sm relative flex flex-col h-full"
     >
       <img
         :src="entry.image"
@@ -20,12 +20,7 @@
           </p>
         </div>
         <div class="mt-6 text-center">
-          <NuxtLink
-            :to="entry.href"
-            class="inline-block bg-fur-blue text-white px-4 py-2 text-sm font-medium rounded hover:bg-fur-accent-blue transition"
-          >
-            {{ entry.buttonText }} →
-          </NuxtLink>
+          <Button :label="entry.buttonText" :to="entry.href" />
         </div>
       </div>
     </div>
@@ -34,7 +29,6 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-
 type EntryKey = "Vores-produkter" | "Bryggeprocessen" | "Vores historie";
 
 const props = defineProps<{
@@ -55,7 +49,7 @@ const entryData: Record<
     title: "Vores produkter",
     description:
       "Oplev alle vores lækre produkter og køb dem hjem til dig selv. Her har du også mulighed for at lave gavekort",
-    href: "/webshop",
+    href: "/Webshop",
     buttonText: "Se vores produkter",
     image: "/images/entry-point-menu.jpg",
   },
@@ -71,7 +65,7 @@ const entryData: Record<
     title: "Vores historie",
     description:
       "Tag med på en tidsrejse og hør historien om Fur Bryghus og hvordan det hele startede.",
-    href: "/bryggeriet/historie",
+    href: "/bryggeriet/vores-historie",
     buttonText: "Læs historien",
     image: "/images/entry-point-menu.jpg",
   },

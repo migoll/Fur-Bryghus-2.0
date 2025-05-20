@@ -10,11 +10,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "fur-blue": "#1c3d5a",
-        "fur-accent-blue": "#3b82f6",
-        "fur-brown": "#704214",
-        "fur-light": "#f2f2f2",
-        "fur-dark": "#121212",
+        fur: {
+          blue: "#132A3B",
+          brown: "#594435",
+        },
+        "fur-accent": {
+          blue: "#0F1931",
+          bone: "#FAF7F0",
+          beige: "#E2D4BB",
+          beer: "#C89768",
+        },
+        neutral: {
+          1: "#060606",
+          2: "#595959",
+          3: "#A6A6A6",
+          4: "#D4D4D4",
+          5: "#F2F2F2",
+          6: "#FFFFFF",
+        },
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

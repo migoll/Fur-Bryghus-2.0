@@ -5,7 +5,7 @@
     >
       <NuxtLink to="/" class="w-32">
         <img
-          src="/images/fur-logo.png"
+          src="@/assets/images/fur-logo.png"
           alt="Fur Bryghus"
           class="w-full h-auto"
         />
@@ -40,7 +40,7 @@
               v-for="(dropdownItem, dropIndex) in item.dropdownItems"
               :key="dropIndex"
               :to="dropdownItem.href"
-              class="block px-4 py-2 text-fur-blue hover:bg-fur-brown transition-colors duration-200"
+              class="block px-4 py-2 text-fur-blue hover:bg-neutral-3 transition-colors duration-200"
             >
               {{ dropdownItem.name }}
             </NuxtLink>
@@ -70,7 +70,7 @@
     <div class="lg:hidden flex justify-between items-center px-4 py-3">
       <NuxtLink to="/" class="w-24">
         <img
-          src="~/assets/images/fur-logo.png"
+          src="@/assets/images/fur-logo.png"
           alt="Fur Bryghus"
           class="w-full h-auto"
         />

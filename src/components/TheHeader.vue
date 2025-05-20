@@ -70,7 +70,7 @@
     <div class="lg:hidden flex justify-between items-center px-4 py-3">
       <NuxtLink to="/" class="w-24">
         <img
-          src="/images/fur-logo.png"
+          src="~/assets/images/fur-logo.png"
           alt="Fur Bryghus"
           class="w-full h-auto"
         />

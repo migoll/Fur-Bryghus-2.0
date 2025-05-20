@@ -79,9 +79,7 @@
 
       <div class="lg:hidden space-y-6">
         <div>
-          <div class="flex justify-center mb-6">
-            <img src="/images/fur-logo.png" alt="Fur Bryghus" class="h-12" />
-          </div>
+          <div class="flex justify-center mb-6"></div>
           <h3 class="font-medium mb-2">Tilmeld</h3>
           <p class="mb-4 text-sm">
             Bliv en del af vores nyhedsbrev for at holde dig opdateret

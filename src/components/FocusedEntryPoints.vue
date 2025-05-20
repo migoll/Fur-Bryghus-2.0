@@ -57,7 +57,7 @@ const entryData: Record<
       "Oplev alle vores lækre produkter og køb dem hjem til dig selv. Her har du også mulighed for at lave gavekort",
     href: "/webshop",
     buttonText: "Se vores produkter",
-    image: "images/entry-point-menu.jpg",
+    image: "/images/entry-point-menu.jpg",
   },
   Bryggeprocessen: {
     title: "Bryggeprocessen",
@@ -65,7 +65,7 @@ const entryData: Record<
       "Se hvordan vores øl bliver til, og lær mere om de teknikker og råvarer vi bruger.",
     href: "/bryggeriet/olprocessen",
     buttonText: "Læs om processen",
-    image: "images/entry-point-bryg.jpg",
+    image: "/images/entry-point-menu.jpg",
   },
   "Vores historie": {
     title: "Vores historie",
@@ -73,7 +73,7 @@ const entryData: Record<
       "Tag med på en tidsrejse og hør historien om Fur Bryghus og hvordan det hele startede.",
     href: "/bryggeriet/historie",
     buttonText: "Læs historien",
-    image: "images/entry-point-historie.jpg",
+    image: "/images/entry-point-menu.jpg",
   },
 };
 

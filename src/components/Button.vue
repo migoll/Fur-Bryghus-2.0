@@ -78,6 +78,7 @@
 </template>
 
 <script setup lang="ts">
+// Button skal have en label, og kan en to prop til at navigere til en anden side
 defineProps<{
   label: string;
   to?: string;

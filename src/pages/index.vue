@@ -16,13 +16,13 @@
 
   <div class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden">
   <router-link :to="`/posts/356`">
-    <img :src="billedeUrl1" :alt="alt1" class="h-[32rem] w-full object-cover" />
+    <img :src="billedeUrl1" :alt="alt1" class="h-[32rem] w-full object-cover scroll-fade" />
   </router-link>
   <router-link :to="`/posts/455`">
-    <img :src="billedeUrl2" :alt="alt2" class="h-[32rem] w-full object-cover" />
+    <img :src="billedeUrl2" :alt="alt2" class="h-[32rem] w-full object-cover scroll-fade" />
   </router-link>
   <router-link :to="`/posts/397`">
-    <img :src="billedeUrl3" :alt="alt3" class="h-[32rem] w-full object-cover" />
+    <img :src="billedeUrl3" :alt="alt3" class="h-[32rem] w-full object-cover scroll-fade" />
   </router-link>
 </div>
 
@@ -63,8 +63,8 @@
 <section class="intro">
   <div class=" md:flex md:justify-center md:items-center md:h-[500px] md:w-full">
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-      <h3 class="mb-[1rem]">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h3>
-      <p class="mb-[1rem]">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
+      <h3 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h3>
+      <p class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
       <Button label="Læs mere om vores historie" to="/bryggeriet/vores-historie" class="m-0" />
     </div>
     <div class="md:w-1/2 md:h-full">
@@ -107,6 +107,9 @@
     </div>
   </div>
 </section>
+
+<OlKarrusel/>
+
 <BasicSection
 heading="Restaurant Bryghuset"
     text="Restauranten er sæsonlukket i perioden november til og med februar 2025 – vi åbner dog for selskaber over 20 personer."
@@ -152,6 +155,23 @@ Promise.all([
 import mobileImg from '@/assets/images/mobile/Forside_Restaurant_Mobile.png'
 import desktopImg from '@/assets/images/desktop/Forside-restaurant-bryghuset.webp'
 import traeBackground from '@/assets/images/trae-baggrund.jpeg'
+
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active')
+        observer.unobserve(entry.target) // kun én gang
+      }
+    })
+  }, { threshold: 0.1 })
+
+  document.querySelectorAll('.scroll-fade').forEach((el) => {
+    observer.observe(el)
+  })
+})
 
 
 </script>

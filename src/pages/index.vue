@@ -1,12 +1,4 @@
 <template>
-  <!-- <div class="text-2xl p-4">
-    <h1 class="font-anton">Fur Bryghus – Nu kører det!</h1>
-  </div>
-  <Button label="Se menu" to="/restaurant/menukort" />
-  <Button label="Se menu" />
-  <FocusedEntryPoints
-    :entries="['Vores-produkter', 'Bryggeprocessen', 'Vores historie']"
-  /> -->
   <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[80vh] lg:h-[90vh">
   <img src="../assets/images/mobile/Forside_Hero_Mobile.png" 
   alt="Fur bryghus" 
@@ -50,13 +42,49 @@
 </section>
 
 <section class="intro">
-  <div class="md:flex max-w-screen md:align-middle md:justify-center md:items-center">
-    <div class="mx-[2rem] my-[1rem] p-[4rem]">
-      <h2 class="mb-[1rem]">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h2>
-      <p>Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
+  <div class=" md:flex md:justify-center md:items-center md:h-[500px] md:w-full">
+    <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
+      <h3 class="mb-[1rem]">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h3>
+      <p class="mb-[1rem]">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
+      <Button label="Læs mere om vores historie" to="/bryggeriet/vores-historie" class="m-0" />
     </div>
-    <div class="w-auto">
-      <img src="../assets/images/mobile/Forside_Intro_Mobile.png" alt="Billede af knudeklinten på Fur" class="w-screen max-h-[300px] object-cover md:max-h-[400px]">
+    <div class="md:w-1/2 md:h-full">
+      <img
+        src="../assets/images/mobile/Forside_Intro_Mobile.png"
+        alt="Billede af knudeklinten på Fur"
+        class="w-full md:h-full object-cover h-[300px]"
+      />
+    </div>
+  </div>
+</section>
+<section class="abningstider bg-fur-blue px-[4rem] py-[2rem] flex items-center justify-center">
+<div class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px]">
+  <div class=" md:w-1/2">
+    <h3 class="mb-[1rem]  text-neutral-6" >Restaurantens åbningstider</h3>
+    <p class="mb-[1rem]  text-neutral-6 p-medium">Bryghuset følger  ikke restaurantents åbningstider, og åbner kun op til arrangementer og smagninger</p>
+  </div>
+  <div class=" md:p-[4rem] md:w-1/2">
+<Abningstider
+    headingColor="text-white"
+  liColor="text-white"
+/>
+  </div>
+</div>
+</section>
+
+<section class="sommerKoncert ">
+  <div class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full">
+    <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
+      <h3 class="mb-[1rem] md:mb-[3rem]">Sommerkoncerten</h3>
+      <p class="mb-[1rem] md:mb-[3rem]">Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde øl i hyggelige, naturskønne rammer.</p>
+      <Button label="Læs mere om sommerkoncerten" to="#" class="m-0" />
+    </div>
+    <div class="md:w-1/2 md:h-full">
+      <img
+        src="../assets/images/mobile/Forside_Sommerkoncert_Mobile.png"
+        alt="Billede af knudeklinten på Fur"
+        class="w-full md:h-full object-cover h-[300px]"
+      />
     </div>
   </div>
 </section>

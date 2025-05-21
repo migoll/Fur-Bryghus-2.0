@@ -1,15 +1,35 @@
 <template>
-  <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[80vh] lg:h-[90vh">
-  <img src="../assets/images/mobile/Forside_Hero_Mobile.png" 
-  alt="Fur bryghus" 
-  class="object-cover w-full h-full"
-  srcset="../assets/images/desktop/forside-hero.webp 768w"
-  >
-  <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6">
+ <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[100vh] overflow-visible">
+
+  <img
+    src="../assets/images/mobile/Forside_Hero_Mobile.png"
+    alt="Fur bryghus"
+    class="object-cover w-full h-full"
+    srcset="../assets/images/desktop/forside-hero.webp 768w"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"></div>
+
+  <h1 class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40">
     Fur Bryghus
   </h1>
+
+  <div
+    class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 xs:hidden sm:hidden"
+  >
+    <div>
+      <img :src="billedeUrl1" alt="Produkt billede" class="h-[32rem] w-full object-cover" />
+    </div>
+    <div>
+      <img :src="billedeUrl2" alt="Produkt billede" class="h-[32rem] w-full object-cover" />
+    </div>
+    <div>
+      <img :src="billedeUrl3" alt="Produkt billede" class="h-[32rem] w-full object-cover" />
+    </div>
+  </div>
 </section>
-<section class="uspSection bg-fur-accent-beige">
+
+<section class="uspSection bg-fur-accent-beige -mt-16 z-40 relative">
   <div class="fypFlex flex flex-col justify-center items-center py-[1.5rem] md:flex-row">
   <div class="usp" >
     <p class="font-anton mb-[1rem]">
@@ -90,5 +110,28 @@
 </section>
 
 </template>
-<script setup></script>
+<script setup>
+const billedeUrl1 = ref(null)
+const billedeUrl2 = ref(null)
+const billedeUrl3 = ref(null)
+
+Promise.all([
+  fetch('https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts/356'),
+  fetch('https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts/455'),
+  fetch('https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts/397')
+])
+  .then(async ([res1, res2, res3]) => {
+    const data1 = await res1.json()
+    const data2 = await res2.json()
+    const data3 = await res3.json()
+    billedeUrl1.value = data1.acf.billede1.url
+    billedeUrl2.value = data2.acf.billede1.url
+    billedeUrl3.value = data3.acf.billede1.url
+  })
+  .catch(error => {
+    console.error('Fejl ved hentning:', error)
+  })
+
+</script>
+
 <style scoped></style>

@@ -14,19 +14,18 @@
     Fur Bryghus
   </h1>
 
-  <div
-    class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 xs:hidden sm:hidden"
-  >
-    <div>
-      <img :src="billedeUrl1" alt="Produkt billede" class="h-[32rem] w-full object-cover" />
-    </div>
-    <div>
-      <img :src="billedeUrl2" alt="Produkt billede" class="h-[32rem] w-full object-cover" />
-    </div>
-    <div>
-      <img :src="billedeUrl3" alt="Produkt billede" class="h-[32rem] w-full object-cover" />
-    </div>
-  </div>
+  <div class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden">
+  <router-link :to="`/posts/356`">
+    <img :src="billedeUrl1" :alt="alt1" class="h-[32rem] w-full object-cover" />
+  </router-link>
+  <router-link :to="`/posts/455`">
+    <img :src="billedeUrl2" :alt="alt2" class="h-[32rem] w-full object-cover" />
+  </router-link>
+  <router-link :to="`/posts/397`">
+    <img :src="billedeUrl3" :alt="alt3" class="h-[32rem] w-full object-cover" />
+  </router-link>
+</div>
+
 </section>
 
 <section class="uspSection bg-fur-accent-beige -mt-16 z-40 relative">
@@ -108,12 +107,27 @@
     </div>
   </div>
 </section>
+<BasicSection
+heading="Restaurant Bryghuset"
+    text="Restauranten er sæsonlukket i perioden november til og med februar 2025 – vi åbner dog for selskaber over 20 personer."
+    :imageMobile="mobileImg"
+    :imageDesktop="desktopImg"
+    imageAlt="Restaurant billede"
+      :bgImage="traeBackground"
+    headingColor="text-neutral-6"
+    textColor="text-neutral-6"
+    buttonLabel="Book bord"
+    buttonLink="https://book.dinnerbooking.com/dk/da-DK/book/index/2837/2"
+/>
 
 </template>
 <script setup>
 const billedeUrl1 = ref(null)
 const billedeUrl2 = ref(null)
 const billedeUrl3 = ref(null)
+const alt1 = ref(null)
+const alt2 = ref(null)
+const alt3 = ref(null)
 
 Promise.all([
   fetch('https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts/356'),
@@ -127,11 +141,17 @@ Promise.all([
     billedeUrl1.value = data1.acf.billede1.url
     billedeUrl2.value = data2.acf.billede1.url
     billedeUrl3.value = data3.acf.billede1.url
+    alt1.value = data1.acf.billede1.alt
+    alt2.value = data2.acf.billede1.alt
+    alt3.value = data3.acf.billede1.alt
   })
   .catch(error => {
     console.error('Fejl ved hentning:', error)
   })
 
-</script>
+import mobileImg from '@/assets/images/mobile/Forside_Restaurant_Mobile.png'
+import desktopImg from '@/assets/images/desktop/Forside-restaurant-bryghuset.webp'
+import traeBackground from '@/assets/images/trae-baggrund.jpeg'
 
-<style scoped></style>
+
+</script>

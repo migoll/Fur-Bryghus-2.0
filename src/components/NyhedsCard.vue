@@ -1,12 +1,12 @@
 <template>
   <NuxtLink :to="`/nyhed/${post.id}`">
     <div class="nyhedsCard p-[1rem]">
-      <div class="relative"> 
+      <div class="relative overflow-hidden"> 
         <img
           v-if="post.acf?.billede"
           :src="post.acf.billede.url"
           :alt="post.acf.billede.alt"
-          class="w-full h-[350px] object-cover"
+          class="w-full h-[350px] object-cover hover:scale-[110%] ease-in-out duration-500"
         />
         <p class="absolute bottom-0 left-0 text-neutral-6 font-anton text-[2.5rem] ml-[1rem]">
           {{ post.acf?.dato }}

@@ -1,5 +1,5 @@
 <template>
- <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[100vh] overflow-visible">
+ <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[60vh] lg:h-[100vh] overflow-visible">
 
   <img
     src="../assets/images/mobile/Forside_Hero_Mobile.png"
@@ -10,19 +10,19 @@
 
   <div class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"></div>
 
-  <h1 class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40">
+  <h1 class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center">
     Fur Bryghus
   </h1>
 
   <div class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden">
   <router-link :to="`/posts/356`">
-    <img :src="billedeUrl1" :alt="alt1" class="h-[32rem] w-full object-cover scroll-fade" />
+    <img :src="billedeUrl1" :alt="alt1" class="h-[20rem] lg:h-[32rem] w-full object-cover scroll-fade" />
   </router-link>
   <router-link :to="`/posts/455`">
-    <img :src="billedeUrl2" :alt="alt2" class="h-[32rem] w-full object-cover scroll-fade" />
+    <img :src="billedeUrl2" :alt="alt2" class="h-[20rem] lg:h-[32rem] w-full object-cover scroll-fade" />
   </router-link>
   <router-link :to="`/posts/397`">
-    <img :src="billedeUrl3" :alt="alt3" class="h-[32rem] w-full object-cover scroll-fade" />
+    <img :src="billedeUrl3" :alt="alt3" class="h-[20rem] lg:h-[32rem] w-full object-cover scroll-fade" />
   </router-link>
 </div>
 
@@ -61,7 +61,7 @@
 </section>
 
 <section class="intro">
-  <div class=" md:flex md:justify-center md:items-center md:h-[500px] md:w-full">
+  <div class=" md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[500px]">
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
       <h3 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h3>
       <p class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
@@ -91,12 +91,12 @@
 </div>
 </section>
 
-<section class="sommerKoncert ">
+<section class="sommerKoncert max-w-screen">
   <div class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full">
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-      <h3 class="mb-[1rem] md:mb-[3rem]">Sommerkoncerten</h3>
+      <h3 class="mb-[1rem] md:mb-[3rem] md:break-all">Sommerkoncerten</h3>
       <p class="mb-[1rem] md:mb-[3rem]">Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde øl i hyggelige, naturskønne rammer.</p>
-      <Button label="Læs mere om sommerkoncerten" to="#" class="m-0" />
+      <Button label="Læs mere om sommerkoncerten" to="#" />
     </div>
     <div class="md:w-1/2 md:h-full">
       <img
@@ -122,6 +122,8 @@ heading="Restaurant Bryghuset"
     buttonLabel="Book bord"
     buttonLink="https://book.dinnerbooking.com/dk/da-DK/book/index/2837/2"
 />
+
+<Reviews/>
 
 </template>
 <script setup>

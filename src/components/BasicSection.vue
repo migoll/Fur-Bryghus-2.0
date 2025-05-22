@@ -6,8 +6,8 @@
     ]"
       :style="bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ''"
   >
-    <div class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px]">
-      <div class="md:w-1/2">
+    <div class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px] md:gap-[5rem]">
+      <div class="lg:w-1/2">
         <h2 :class="['mb-[1rem]', headingColor]">{{ heading }}</h2>
         <p :class="['mb-[1rem]', textColor]">{{ text }}</p>
         <Button
@@ -16,12 +16,12 @@
           :to="buttonLink"
         />
       </div>
-      <div class="md:w-1/2 md:h-full">
+      <div class=" md:h-full lg:w-1/2">
         <img
           :src="imageMobile"
           :alt="imageAlt"
           :srcset="`${imageDesktop} 768w`"
-          class="w-full md:h-full object-cover h-[300px] mt-[1rem]"
+          class="w-full md:h-full object-cover mt-[1rem] md:m-0"
         />
       </div>
     </div>

@@ -1,4 +1,5 @@
 <template>
+    <!-- Anmeldelses sektion med 3 cards -->
     <section class="w-full overflow-hidden px-[4rem] py-[2rem] flex flex-col md:items-center">
     <h2>Hvad siger vores kunder om os</h2>
   <div class="md:py-[4rem] lg:py-[2rem] flex box-border max-w-[1240px] flex-col gap-[20px] lg:flex-row">

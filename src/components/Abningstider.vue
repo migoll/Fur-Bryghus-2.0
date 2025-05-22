@@ -1,4 +1,7 @@
 <template>
+  <!-- Her vælges den måned man gerne vil se åbningstider for. -->
+   <!-- v-model bruges til at binde værdien fra dropdownen til variablen selectedMonth  -->
+    <!-- v-for bruges til at loope igennem in liste og her er de måneder som er defineret i script  -->
     <div class="max-w-[500px]">
         <select id="month-select" v-model="selectedMonth">
             <option v-for="month in months" :key="month" :value="month" class="rounded-none">
@@ -6,12 +9,15 @@
             </option>
         </select>
    
-
+<!-- hvis en måned er valgt vises månedens åbninstider -->
     <div v-if="selectedMonth">
         <ul>
-            <template v-for="(group, groupIndex) in openingHours[selectedMonth]" :key="groupIndex">
+          <!-- Her hentes de arrays nede fra scriptet som passer til den valgte måned i openingshors  -->
+           <!-- Template bruges for ikke at lave en div for hver li, men blot outputte listen med åbningstider -->
+            <template v-for="(gruppe, gruppeIndex) in openingHours[selectedMonth]" :key="gruppeIndex">
+   <!-- Her vises hver linje fra arrayet i en li. første linje i gruppen får en anden font størrelse -->
        <li
-  v-for="(line, index) in group"
+  v-for="(linje, index) in gruppe"
   :key="index"
   :class="[
     'mb-1',
@@ -19,9 +25,11 @@
     index === 0 ? 'p-medium' : ''
   ]"
 >
-  {{ line }}
+  {{ linje }}
 </li>
-        <hr v-if="groupIndex !== openingHours[selectedMonth].length - 1" class="my-3 border-gray-300 opacity-40" />
+<!-- Her sættes der en streg ind efter hver åbningstid undtagen den sidste -->
+ <!-- !== betyder ikke lige med -->
+        <hr v-if="gruppeIndex !== openingHours[selectedMonth].length - 1" class="my-3 border-gray-300 opacity-40" />
       </template>
         </ul>
          </div>
@@ -30,8 +38,8 @@
 
 
 <script setup>
-import { ref } from "vue";
 
+// Her laves et objekt med alle måneder og dens værdier. Inden i er der et objekt med et objekt indeni for at holde på flere værdier
 const openingHours = {
   Januar: [
     [
@@ -91,7 +99,7 @@ const openingHours = {
     [
       "Tirsdag - Søndag",
       "Frokoståbent: 11.30 - 16.00"
-    ]
+    ],
     [
       "Mandag den 9. Juni (2. pinsedag)",
       "Frokoståbent: 11.30 - 16.00"
@@ -160,14 +168,22 @@ const openingHours = {
 }
 
 const months = Object.keys(openingHours);
+// her udtrækkes alle navnene fra objektet
+
+// her defineres alle månederne på et år som skal bruges efteer
 const monthNames = [
   "Januar", "Februar", "Marts", "April", "Maj", "Juni",
   "Juli", "August", "September", "Oktober", "November", "December"
 ];
 
+// Dette skal bruges til automatisk at vælge den måned som vi er i. Her kigges der efter den måned som brugerens åbner siden i.
+// Dette bliver lagt i variablen currentMonthName
 const currentMonthName = monthNames[new Date().getMonth()];
+
+// denne variabel holder styr på om den aktuelle måned findes i listen. hvis den findes bliver månedens åbningstider vist. Hvis ikke bliver er ikke valgt en måned
 const selectedMonth = ref(months.includes(currentMonthName) ? currentMonthName : "");
 
+// Her laves props som brugeren kan definere der hvor komponentet bruges. her er det farven på overskriften og farven på li elementerne
 const props = defineProps({
   headingColor: { type: String },
   liColor: { type: String}

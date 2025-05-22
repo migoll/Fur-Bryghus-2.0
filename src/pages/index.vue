@@ -65,7 +65,7 @@
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
       <h3 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h3>
       <p class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
-      <Button label="Læs mere om vores historie" to="/bryggeriet/vores-historie" class="m-0" />
+      <Button label="Læs mere om vores historie" to="/bryggeriet/vores-historie"/>
     </div>
     <div class="md:w-1/2 md:h-full">
       <img
@@ -109,6 +109,14 @@
 </section>
 
 <OlKarrusel/>
+
+<section class="flex items-center justify-center">
+  <div class="md:py-[4rem] py-[2rem] lg:py-[2rem] flex box-border max-w-[1240px] flex-col gap-[20px] items-center">
+<h2>Nyheder</h2>
+  <NyhedsGrid :limit="3" />
+  <Button label="Se alle nyheder" to="/nyheder" />
+</div>
+  </section>
 
 <BasicSection
 heading="Restaurant Bryghuset"

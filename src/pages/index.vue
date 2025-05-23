@@ -144,6 +144,20 @@ heading="Restaurant Bryghuset"
 
 </template>
 <script setup>
+
+// Sætter Title og Meta Description for forsiden
+const title = ref('Fur Bryghus')
+const description = ref('Velkommen til Fur Bryghus, placeret på Danmarks Skønneste ø Fur')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
+
+
 // Her oprettes variabler til at gemme det indhold som vi henter fra rest Api'et til herobilledet med de 3 øl.
 const billedeUrl1 = ref(null)
 const billedeUrl2 = ref(null)

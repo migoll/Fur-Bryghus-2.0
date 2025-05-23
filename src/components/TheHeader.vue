@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-white shadow-sm">
+  <header class="w-full bg-fur-accent-bone shadow-sm">
     <div
       class="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-4 py-4"
     >

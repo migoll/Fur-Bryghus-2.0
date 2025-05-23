@@ -1,5 +1,5 @@
 <template>
-  <div class="ml-6 inline-block">
+  <div class="inline-block">
     <NuxtLink
       v-if="to"
       :to="to"

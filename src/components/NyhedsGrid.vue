@@ -25,7 +25,7 @@ onMounted(async () => {
   const res = await fetch(`https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?categories=29,28,30&per_page=100&order=desc&orderby=date&_embed`)
   const data = await res.json()
 
-  // slice er en metode som returner en ny kopi af vores array med data. derfor hvis brugeren indtaster at de kun vil se 5 nyheder, kan det lade sig gøre
+  // slice er en metode som returner en ny kopi af vores array med data. derfor hvis vi indtaster at vi kun vil se 5 nyheder, kan det lade sig gøre
   nyheder.value = data.slice(0, props.limit)
 
 })

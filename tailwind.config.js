@@ -39,7 +39,10 @@ module.exports = {
         md: "768px",
         lg: "1024px",
         xl: "1280px",
-            },
+      },
+      backgroundImage: {
+        "wood-texture": "url('@/assets/images/desktop/wood_texture_bg.jpeg')",
+      },
     },
   },
   plugins: [],

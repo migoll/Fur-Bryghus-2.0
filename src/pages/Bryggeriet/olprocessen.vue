@@ -6,6 +6,21 @@
         God øl kræver gode råvarer. Et veludstyret bryggeri. Og ikke mindst en dygtig og passioneret brygmester. Det har vi på Fur Bryghus. Og mere til. Vi har en unik historie og beliggenhed. Dertil kommer det helt specielle Fur vand, fyldt med naturlige mineraler og salte, der optages gennem den lange rejse gennem øens lag af moler og vulkansk aske.
       </p>
     </div>
+    <div class="flex flex-col md:flex-row gap-8 mt-8">
+  <div class="w-full md:w-1/2">
+    <img src="~/assets/images/desktop/olprocessen-gaering.webp" alt="Ølprocessen - Gæring" class="w-full h-full object-cover" />
+  </div>
+  <div class="w-full md:w-1/2">
+    <h2 class="text-2xl font-bold mb-4">Bryggeriet og brygmesteren</h2>
+    <p class="mb-4">
+      Fur Bryghus har indrettet bryggeriet med udvalgt udstyr. Selve Brygværket samt gærkarret er fabrikeret i Tjekkiet. De første tanke kom fra Slovenien – og er siden suppleret med to danske tanke. Tappekolonnen er ligeledes dansk, og pasteuriserings-enheden er produceret i Tyskland. Resultatet er et stærkt og professionelt set-up.
+    </p>
+    <p>
+      Vores brygmester Flemming Asmussen er manden bag Fur øl. Flemming er uddannet brygmester fra den Skandinaviske Bryggerhøjskole i København og kom til Fur Bryghus den 1. januar 2005. Med familien – og 15 års erfaring fra Bryggeriet Fuglsang i Haderslev. Med sin store viden og erfaring har Flemming skabt stor respekt og anerkendelse omkring Fur øl fra forbrugere til bryggeri-verdenen. Og han deler gerne ud af sin viden til hobby-bryggere og andre øl-elskere – bare skriv til ham på flas@furbryghus.dk eller giv ham et kald på 9759 3060.
+    </p>
+  </div>
+</div>
+
   </div>
 
   <div>

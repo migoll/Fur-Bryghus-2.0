@@ -1,41 +1,64 @@
 <template>
-  <div ref="container" class="carousel-wrapper h-screen w-full overflow-hidden relative flex">
-    <!-- Left half: images + sideTitle -->
-    <div class="w-1/2 h-full overflow-hidden relative flex items-center justify-center bg-black">
-      <div ref="track" class="carousel-track flex h-full absolute top-0 left-0">
-        <div
-          v-for="(scene, i) in scenes"
-          :key="i"
-          class="carousel-slide w-full h-full flex-shrink-0"
-        >
-          <img :src="scene.image" class="w-full h-full object-cover" />
+  <div>
+    <!-- Desktop Carousel (hidden on small screens) -->
+    <div
+      ref="container"
+      class="carousel-wrapper hidden md:flex h-screen w-full overflow-hidden relative"
+    >
+      <!-- Left half: images + sideTitle -->
+      <div class="w-1/2 h-full overflow-hidden relative flex items-center justify-center bg-black">
+        <div ref="track" class="carousel-track flex h-full absolute top-0 left-0">
+          <div
+            v-for="(scene, i) in scenes"
+            :key="i"
+            class="carousel-slide w-full h-full flex-shrink-0"
+          >
+            <img :src="scene.image" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <!-- Side Titles -->
+        <div class="side-title-wrapper absolute right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div
+            v-for="(scene, i) in scenes"
+            :key="'side-title-' + i"
+            class="side-title text-white font-bold text-6xl tracking-widest whitespace-nowrap"
+            :ref="el => sideTitleRefs[i] = el"
+          >
+            {{ scene.sideTitle }}
+          </div>
         </div>
       </div>
-      <!-- Side Titles -->
-      <div class="side-title-wrapper absolute right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-       <div
-  v-for="(scene, i) in scenes"
-  :key="'side-title-' + i"
-  class="side-title text-white font-bold text-6xl tracking-widest whitespace-nowrap"
-  :ref="el => sideTitleRefs[i] = el"
->
-  {{ scene.sideTitle }}
-</div>
 
+      <!-- Right half: text -->
+      <div class="w-1/2 h-full flex flex-col justify-center px-16 relative">
+        <div
+          v-for="(scene, i) in scenes"
+          :key="'text-' + i"
+          class="absolute top-1/2 left-0 w-full text-content pl-4 pr-4 mb-2"
+          :ref="el => textRefs[i] = el"
+          style="transform: translateY(-50%); opacity: 0;"
+        >
+          <h2 class="text-4xl font-bold mb-4">{{ scene.title }}</h2>
+          <p v-for="(p, j) in scene.text" :key="j" class="mb-2">{{ p }}</p>
+        </div>
       </div>
     </div>
 
-    <!-- Right half: text -->
-    <div class="w-1/2 h-full flex flex-col justify-center px-16 relative">
+    <!-- Mobile Version (stacked layout, shown only on small screens) -->
+    <div class="md:hidden">
       <div
         v-for="(scene, i) in scenes"
-        :key="'text-' + i"
-        class="absolute top-1/2 left-0 w-full text-content pl-4 pr-4 mb-2"
-        :ref="el => textRefs[i] = el"
-        style="transform: translateY(-50%); opacity: 0;"
+        :key="'mobile-' + i"
+        class="mb-16 px-4"
       >
-        <h2 class="text-4xl font-bold mb-4">{{ scene.title }}</h2>
-        <p v-for="(p, j) in scene.text" :key="j" class="mb-2">{{ p }}</p>
+        <div class="relative">
+          <img :src="scene.image" class="w-full rounded-lg" />
+          <div class="absolute bottom-2 left-4 text-white font-bold text-xl bg-black bg-opacity-60 px-2 py-1 rounded">
+            {{ scene.sideTitle }}
+          </div>
+        </div>
+        <h2 class="text-2xl font-bold mt-4">{{ scene.title }}</h2>
+        <p v-for="(p, j) in scene.text" :key="'mobile-text-' + j" class="mt-2">{{ p }}</p>
       </div>
     </div>
   </div>
@@ -61,10 +84,12 @@ const textRefs = []
 const sideTitleRefs = []
 
 onMounted(() => {
+  // Only initialize GSAP ScrollTrigger on desktop
+  if (window.innerWidth < 768) return
+
   const totalSlides = props.scenes.length
   const scrollHeight = window.innerHeight * (totalSlides - 1)
 
-  // Pin container and setup ScrollTrigger timeline
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: container.value,
@@ -84,9 +109,7 @@ onMounted(() => {
     const startTime = i
     const textOutEnd = startTime + textOutDuration
     const imageSlideEnd = textOutEnd + imageSlideDuration
-    const textInEnd = imageSlideEnd + textInDuration
 
-    // Text fade out (current)
     tl.to(textRefs[i], {
       y: 50,
       opacity: 0,
@@ -94,7 +117,6 @@ onMounted(() => {
       ease: "power1.inOut"
     }, startTime)
 
-    // SideTitle fade out (opposite direction)
     tl.to(sideTitleRefs[i], {
       y: -50,
       opacity: 0,
@@ -102,35 +124,29 @@ onMounted(() => {
       ease: "power1.inOut"
     }, startTime)
 
-    // Image slide left (except last slide)
     if (i < totalSlides - 1) {
       tl.to(track.value, {
-        xPercent: `-=${100}`, // slide left 100%
+        xPercent: `-=${100}`,
         duration: imageSlideDuration,
         ease: "power1.inOut"
       }, textOutEnd)
-    }
 
-    // Text fade in (next)
-    if (i < totalSlides - 1) {
-      tl.fromTo(textRefs[i + 1], 
-        { y: -50, opacity: 0 }, 
+      tl.fromTo(textRefs[i + 1],
+        { y: -50, opacity: 0 },
         { y: 0, opacity: 1, duration: textInDuration, ease: "power1.inOut" },
         imageSlideEnd
       )
 
-      // SideTitle fade in (opposite direction)
-      tl.fromTo(sideTitleRefs[i + 1], 
-        { y: 50, opacity: 0 }, 
+      tl.fromTo(sideTitleRefs[i + 1],
+        { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: textInDuration, ease: "power1.inOut" },
         imageSlideEnd
       )
     }
   }
 
-  // Initially show first text and sideTitle
-  gsap.set(textRefs[0], {opacity: 1, y: 0})
-  gsap.set(sideTitleRefs[0], {opacity: 1, y: 0})
+  gsap.set(textRefs[0], { opacity: 1, y: 0 })
+  gsap.set(sideTitleRefs[0], { opacity: 1, y: 0 })
 })
 </script>
 
@@ -145,13 +161,14 @@ onMounted(() => {
   will-change: transform;
   height: 100%;
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
 .carousel-slide {
   flex-shrink: 0;
-  width: 50vw; 
+  width: 50vw;
   height: 100%;
 }
 
@@ -186,5 +203,4 @@ onMounted(() => {
   user-select: none;
   pointer-events: none;
 }
-
 </style>

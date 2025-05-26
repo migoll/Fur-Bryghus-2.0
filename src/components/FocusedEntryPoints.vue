@@ -3,12 +3,12 @@
     <div
       v-for="entry in resolvedEntries"
       :key="entry.title"
-      class="bg-white shadow-md relative flex flex-col h-full"
+      class=" group bg-white shadow-md relative flex flex-col h-full overflow-hidden"
     >
       <img
         :src="entry.image"
         :alt="entry.title"
-        class="w-full h-64 object-cover"
+        class=" w-full h-64 object-cover hover:scale-[110%] ease-in-out duration-500"
       />
       <div class="p-6 flex flex-col justify-between flex-grow">
         <div>

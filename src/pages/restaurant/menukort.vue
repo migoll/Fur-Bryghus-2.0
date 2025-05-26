@@ -20,6 +20,8 @@ heading="Unikke smagsoplevelser"
 />
 
 <MenuTabs />
+
+<FocusedEntryPoints :entries="['Vores-produkter', 'Bryggeprocessen', 'Vores historie']"  />
 </template>
 
 <script setup>

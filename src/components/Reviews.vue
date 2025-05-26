@@ -1,9 +1,9 @@
 <template>
     <!-- Anmeldelses sektion med 3 cards -->
-    <section class="w-full overflow-hidden px-[4rem] py-[2rem] flex flex-col md:items-center">
+    <section class="w-full overflow-hidden py-[2rem] px-[1rem] md:px-[4rem] md:py-[4rem] flex flex-col md:items-center">
     <h2>Hvad siger vores kunder om os</h2>
   <div class="md:py-[4rem] lg:py-[2rem] flex box-border max-w-[1240px] flex-col gap-[20px] lg:flex-row">
-   <div class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] ">
+   <div class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6 ">
 
         <div class="flex flex-row gap-20">
         <div class="w-[80%]">
@@ -28,7 +28,7 @@
      </div>
   </div>
 
-  <div class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] ">
+  <div class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%]  bg-neutral-6 ">
 
         <div class="flex flex-row gap-20">
         <div class="w-[80%]">
@@ -54,7 +54,7 @@
      </div>
   </div>
 
-  <div class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] ">
+  <div class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%]  bg-neutral-6 ">
 
         <div class="flex flex-row gap-20">
         <div class="w-[80%]">

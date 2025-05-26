@@ -1,9 +1,9 @@
 <template>
   <Hero  
-    heading="Nyheder"
-    :imageMobile="mobileImg"
-    :imageDesktop="desktopImg"
-    imageAlt="Bryggeriet"
+    heroHeading="Nyheder"
+    :heroImageMobile="heroImageMobile"
+    :heroImageDesktop="heroImageDesktop"
+    heroImageAlt="Bryggeriet"
   />
 
   <section class="flex flex-col items-center content-center">
@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-import mobileImg from '@/assets/images/mobile/Nyheder_Hero.jpg'
-import desktopImg from '@/assets/images/desktop/Nyheder_Hero.jpg'
+import heroImageMobile from '@/assets/images/mobile/Nyheder_Hero.jpg'
+import heroImageDesktop from '@/assets/images/desktop/Nyheder_Hero.jpg'
 
 const isLoading = ref(true)
 </script>

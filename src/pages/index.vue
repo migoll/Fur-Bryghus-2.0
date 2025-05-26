@@ -17,13 +17,13 @@
 
   <!-- 3 billeder af øl der hentes dynamisk fra WordPress Api'et -->
   <div class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden">
-  <router-link :to="`/posts/356`">
+  <router-link :to="`/webshop/fur-paskebryg`">
     <img :src="billedeUrl1" :alt="alt1" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
   </router-link>
-  <router-link :to="`/posts/455`">
+  <router-link :to="`webshop/fur-renaessance`">
     <img :src="billedeUrl2" :alt="alt2" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
   </router-link>
-  <router-link :to="`/posts/397`">
+  <router-link :to="`webshop/fur-frokost`">
     <img :src="billedeUrl3" :alt="alt3" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
   </router-link>
 </div>
@@ -66,7 +66,7 @@
 <section class="intro">
   <div class=" md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[500px]">
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-      <h3 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h3>
+      <h2 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h2>
       <p class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
       <Button label="Læs mere om vores historie" to="/bryggeriet/vores-historie" class="scroll-fade"/>
     </div>
@@ -84,7 +84,7 @@
 <section class="abningstider bg-fur-blue px-[4rem] py-[2rem] flex items-center justify-center">
 <div class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px]">
   <div class=" md:w-1/2">
-    <h3 class="mb-[1rem]  text-neutral-6 scroll-fade" >Restaurantens åbningstider</h3>
+    <h2 class="mb-[1rem]  text-neutral-6 scroll-fade" >Restaurantens åbningstider</h2>
     <p class="mb-[1rem]  text-neutral-6 p-medium scroll-fade">Bryghuset følger  ikke restaurantents åbningstider, og åbner kun op til arrangementer og smagninger</p>
   </div>
   <div class=" md:p-[4rem] md:w-1/2">
@@ -100,7 +100,7 @@
 <section class="sommerKoncert max-w-screen">
   <div class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full">
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-      <h3 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">Sommerkoncerten</h3>
+      <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">Sommerkoncerten</h2>
       <p class="mb-[1rem] md:mb-[3rem] scroll-fade">Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde øl i hyggelige, naturskønne rammer.</p>
       <Button label="Læs mere om sommerkoncerten" to="#" class="scroll-fade" />
     </div>
@@ -117,7 +117,7 @@
 <!-- Ølkarrusel komponent -->
 <OlKarrusel :produktSorteringId="45" />
 
-<section class="flex items-center justify-center">
+<section class="flex items-center justify-center py-[2rem] lg:py-[4rem]">
   <div class="md:py-[4rem] py-[2rem] lg:py-[2rem] flex box-border max-w-[1240px] flex-col gap-[20px] items-center">
 <h2 class="scroll-fade">Nyheder</h2>
   <NyhedsGrid :limit="3" />
@@ -244,7 +244,7 @@ const usps = document.querySelectorAll('.usp');
   }
 
   .beerImg img:hover{
-      transform: translateY(-20px);
+      transform: translateY(-18px) scale(1.05);
   }
 
   h1{

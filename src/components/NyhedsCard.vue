@@ -1,6 +1,6 @@
 <template>
   <!-- Her laves det nyhedscard som indsættes i nyhedsgrid. her bruges alt det data som blev hentet overfra wordpress api'et -->
-  <NuxtLink :to="`/nyhed/${post.id}`">
+  <NuxtLink :to="`/nyheder/${props.post.slug}`">
     <div class="nyhedsCard p-[1rem]">
      <div class="relative overflow-hidden">
   <img
@@ -18,7 +18,7 @@
 </div>
       <div class="flex mt-[1rem]">
       <div>  <h4 class="font-anton text-[2rem]">{{post.title.rendered  }}</h4> </div>
-        <div> <p class="border-solid border-2 p-2 border-neutral-1 rounded-full"> {{ post.acf.eventtype[0]?.name }}</p>
+        <div> <p class="border-solid border-2 p-2 border-neutral-1 rounded-full ml-[0.5rem]"> {{ post.acf.eventtype[0]?.name }}</p>
             </div>
       </div>
     </div>

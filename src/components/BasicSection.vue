@@ -9,7 +9,12 @@
     // her defineres hvordan baggrundsbilledet sættes hvis der findes det
     ":style="bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ''"
   >
-    <div class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px] md:gap-[5rem]">
+    <div
+  :class="[
+    'md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px] md:gap-[5rem]',
+    reverse ? 'md:flex-row-reverse' : ''
+  ]"
+>
       <div class="lg:w-1/2">
         <!-- Her sættes dynamiskefarver til h2 og p så brugeren selv kan vælge farven -->
         <h2 :class="['mb-[1rem] scroll-fade', headingColor]">{{ heading }}</h2>
@@ -50,6 +55,7 @@ defineProps<{
   textColor?: string
   buttonLabel?: string
   buttonLink?: string
+  reverse?: boolean
 }>()
 
 // denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade

@@ -1,7 +1,7 @@
 <template>
   <!-- Dette grid bruges til at vise NyhedsCard.vue. på den måde kan der sættes det antal posts ind vi gerne vil have -->
-  <section>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+  <section class="flex flex-col items-center content-center">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 max-w-[1240px]">
       <!-- her vises den enkelt nyhed hvor der loopes igennem hver enkelt og de indsættes -->
       <NyhedsCard v-for="nyhed in nyheder" :key="nyhed.id" :post="nyhed" />
     </div>

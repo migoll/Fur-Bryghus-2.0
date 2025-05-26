@@ -18,13 +18,13 @@
   <!-- 3 billeder af øl der hentes dynamisk fra WordPress Api'et -->
   <div class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden">
   <router-link :to="`/posts/356`">
-    <img :src="billedeUrl1" :alt="alt1" class="h-[20rem] lg:h-[32rem] w-full object-cover scroll-fade" />
+    <img :src="billedeUrl1" :alt="alt1" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
   </router-link>
   <router-link :to="`/posts/455`">
-    <img :src="billedeUrl2" :alt="alt2" class="h-[20rem] lg:h-[32rem] w-full object-cover scroll-fade" />
+    <img :src="billedeUrl2" :alt="alt2" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
   </router-link>
   <router-link :to="`/posts/397`">
-    <img :src="billedeUrl3" :alt="alt3" class="h-[20rem] lg:h-[32rem] w-full object-cover scroll-fade" />
+    <img :src="billedeUrl3" :alt="alt3" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
   </router-link>
 </div>
 </section>
@@ -32,28 +32,28 @@
 <!-- Sektion til de 4 unique selling points -->
 <section class="uspSection bg-fur-accent-beige -mt-16 z-40 relative">
   <div class="fypFlex flex flex-col justify-center items-center py-[1.5rem] md:flex-row">
-  <div class="usp" >
+  <div class="usp opacity-0" >
     <p class="font-anton mb-[1rem]">
       Lokale Råvarer
     </p>
     <img src="../assets/icons/korn.svg" alt="Ikon af korn">
   </div>
  <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
-  <div class="usp">
+  <div class="usp opacity-0 ">
      <p class="font-anton mb-[1rem]">
       Lokale Råvarer
     </p>
     <img src="../assets/icons/olTonde.svg" alt="Ikon af korn">
   </div>
    <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
-  <div class="usp">
+  <div class="usp opacity-0">
     <p class="font-anton mb-[1rem]">
       Lokale Råvarer
     </p>
     <img src="../assets/icons/ol.svg" alt="Ikon af korn">
   </div>
    <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
-  <div class="usp">
+  <div class="usp opacity-0">
      <p class="font-anton mb-[1rem]">
       Lokale Råvarer
     </p>
@@ -216,6 +216,24 @@ onMounted(() => {
   document.querySelectorAll('.scroll-fade').forEach((el) => {
     observer.observe(el)
   })
+
+const usps = document.querySelectorAll('.usp');
+  const uspobserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        usps.forEach((el, i) => {
+          setTimeout(() => {
+            el.classList.add('fade-up');
+          }, i * 300); 
+        });
+        uspobserver.disconnect(); 
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (usps.length) {
+    uspobserver.observe(usps[0]); 
+  }
 })
 
 </script>
@@ -230,10 +248,10 @@ onMounted(() => {
   }
 
   h1{
-    animation: slideUpRoll 2s ease-in-out;
+    animation: slideUp 2s ease-in-out;
   }
 
-  @keyframes slideUpRoll {
+  @keyframes slideUp {
   0% {
     opacity: 0;
   }
@@ -241,6 +259,22 @@ onMounted(() => {
 
     opacity: 1;
   }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
 }
 
 </style>

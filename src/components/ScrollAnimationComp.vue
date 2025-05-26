@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-screen overflow-hidden bg-black" ref="container">
+  <div class="relative w-full h-screen overflow-hidden" ref="container">
     <div class="w-full h-full flex items-stretch">
       <!-- Left: Stacked Images + Side Title -->
       <div class="w-1/2 h-full relative overflow-hidden">
@@ -22,18 +22,18 @@
         </div>
       </div>
       <!-- Right: Text (always black background, only current text visible) -->
-      <div class="w-1/2 h-full relative overflow-hidden flex flex-col justify-center bg-black">
+      <div class="w-1/2 h-full relative overflow-hidden flex flex-col justify-center ">
         <div class="absolute inset-0 flex flex-col justify-center items-center">
           <div
             v-for="(scene, idx) in scenes"
             :key="scene.title"
             :ref="el => textRefs[idx] = el"
             class="absolute inset-0 flex flex-col justify-center items-center"
-            v-show="currentIndex === idx || currentIndex + 1 === idx || (currentIndex === scenes.length - 1 && idx === scenes.length - 1)"
+            v-show="Math.abs(currentIndex - idx) <= 1 || (currentIndex === scenes.length - 1 && idx === scenes.length - 1)"
           >
-            <h3 class="text-3xl font-bold mb-4 text-white">{{ scene.title }}</h3>
+            <h3 class="text-3xl font-bold mb-4 text-black">{{ scene.title }}</h3>
             <div>
-              <p class="text-left text-white" v-for="(p, i) in scene.text" :key="i">{{ p }}</p>
+              <p class="text-left text-black" v-for="(p, i) in scene.text" :key="i">{{ p }}</p>
             </div>
           </div>
         </div>
@@ -70,48 +70,6 @@ const scenes = [
     image: lagring,
     text: ['Tekst for test'],
   },
-  {
-    title: 'Tørring og ristning',
-    sideTitle: 'Tørring og ristning',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
-  {
-    title: 'Mæskning',
-    sideTitle: 'MÆSKNING',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
-  {
-    title: 'Urtseparering',
-    sideTitle: 'URTSEPARERING',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
-  {
-    title: 'Urtkogning',
-    sideTitle: 'URTKOGNING',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
-  {
-    title: 'Gæring',
-    sideTitle: 'GÆRING',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
-   {
-    title: 'Lagring',
-    sideTitle: 'LAGRING',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
-   {
-    title: 'Tapning',
-    sideTitle: 'TAPNING',
-    image: imageGaering,
-    text: ['Tekst for test'],
-  },
 ]
 
 onMounted(() => {
@@ -134,13 +92,27 @@ onMounted(() => {
     end: () => `+=${window.innerHeight * (scenes.length - 1)}`,
     pin: true,
     scrub: true,
-    snap: 1 / (scenes.length - 1),
+    snap: {
+      snapTo: (value) => {
+        // Only snap if within 10% of a scene index, otherwise don't snap
+        const step = 1 / (scenes.length - 1)
+        const idx = Math.round(value / step)
+        const snapValue = idx * step
+        if (Math.abs(value - snapValue) < step * 0.2) { // Only snap if within 20% of a step
+          return snapValue
+        }
+        return value // Don't snap, stay in-between
+      },
+      duration: { min: 0.01, max: 0.15 },
+      inertia: false,
+      delay: 0,
+    },
     onUpdate: self => {
       const progress = self.progress * (scenes.length - 1)
       const idx = Math.floor(progress + 0.0001)
       currentIndex.value = idx
       const local = progress - idx
-      // Deadzone: lock animation for first 30% of each section
+      // Deadzone: lock animation for first 50% of each section
       const deadzone = 0.3
       let animLocal = (local - deadzone) / (1 - deadzone)
       animLocal = Math.max(0, Math.min(animLocal, 1))
@@ -176,5 +148,4 @@ onMounted(() => {
 <style scoped>
 /* All transitions are handled by GSAP */
 </style>
-
 

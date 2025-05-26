@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="@/assets/images/desktop/menukort-banner.webp" alt="restaurant" class="h-[15rem] w-full object-cover ">
+        <img src="@/assets/images/desktop/menu_lette.jpg" alt="restaurant" class="h-[15rem] w-full object-cover ">
     </div>
     <div class="flex flex-col items-center content-center gap-4 py-[2rem] ">
         <h2 class="text-center">Lette retter</h2>
@@ -49,9 +49,6 @@
                          <p class="font-anton text-[20px]">89,-</p>
                 </div>
                 <p>Bryghusets fortolkning af øllebrød - Karamel - coulis - vanilje creme - havrecrumble.</p>
-            </div>
-            <div>
-                <img src="@/assets/images/desktop/menu_tartar.jpg" alt="Tatar" class="h-[20rem] w-full object-cover px-[1rem] mb-[1rem]">
             </div>
         </div>
     </div>

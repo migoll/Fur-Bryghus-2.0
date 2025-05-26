@@ -71,9 +71,6 @@
                 </div>
                 <p>150 gram maltpaneret vesterhavsfisk - håndpillede rejer - pestomarineret muslinger - Hjemmerøget laks - Tomatiseret creme samt urtesalat og grillet citron.</p>
             </div>
-            <div>
-                <img src="@/assets/images/desktop/menu_tartar.jpg" alt="Tatar" class="h-[20rem] w-full object-cover px-[1rem] mb-[1rem]">
-            </div>
             <div class="p-[1rem] mb-[1rem]">
                 <div class="flex content-center items-center justify-between">
                      <p class="p-medium">Tartar rørt med cognac og trøffel</p>

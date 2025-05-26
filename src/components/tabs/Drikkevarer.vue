@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="@/assets/images/desktop/menukort-banner.webp" alt="restaurant" class="h-[15rem] w-full object-cover ">
+        <img src="@/assets/images/desktop/menu_drikkevarer.jpg" alt="restaurant" class="h-[15rem] w-full object-cover ">
     </div>
     <div class="flex flex-col items-center content-center gap-4 py-[2rem] ">
         <h2 class="text-center">Drikkevarer</h2>

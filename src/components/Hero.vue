@@ -1,4 +1,5 @@
 <template>
+  <!-- dette komponent bruges som hero sektion globalt på siderne.  -->
    <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[60vh] lg:h-[60vh] overflow-visible">
   <img
      :src="heroImageMobile"
@@ -19,6 +20,7 @@
 
 <script setup lang="ts">
 
+// Her kan defineres titel, billeder og alt tekst
 defineProps<{
   heroHeading: string
   heroImageMobile: string

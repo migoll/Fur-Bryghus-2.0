@@ -1,4 +1,5 @@
 <template>
+  <!-- Menukort siden hvor der bruges 3 komponenter til at vise indhold. en herosektion, en intro sektion og menutabs hvor man kan se menukortet i tabs -->
   <Hero  
     heroHeading="Menukort"
     :heroImageMobile="heroImageMobile"

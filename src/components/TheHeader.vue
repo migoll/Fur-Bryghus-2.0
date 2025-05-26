@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-white shadow-sm">
+  <header class="w-full bg-fur-accent-bone shadow-sm">
     <div
       class="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-4 py-4"
     >
@@ -40,7 +40,7 @@
               v-for="(dropdownItem, dropIndex) in item.dropdownItems"
               :key="dropIndex"
               :to="dropdownItem.href"
-              class="block px-4 py-2 text-fur-blue hover:bg-neutral-3 transition-colors duration-200"
+              class="block px-4 py-2 text-fur-blue hover:bg-neutral1 transition-colors duration-200"
             >
               {{ dropdownItem.name }}
             </NuxtLink>
@@ -179,7 +179,7 @@ const navigation: NavigationItem[] = [
     dropdownItems: [
       { name: "Vores historie", href: "/bryggeriet/vores-historie" },
       { name: "Ølprocessen", href: "/bryggeriet/olprocessen" },
-      { name: "Vores produkter", href: "/webshop/vores-produkter" },
+      { name: "Vores produkter", href: "/webshop" },
       {
         name: "Ølsmagninger og rundvisning",
         href: "/bryggeriet/olsmagninger-og-rundvisninger",
@@ -191,7 +191,7 @@ const navigation: NavigationItem[] = [
   },
   {
     name: "Webshop",
-    href: "/webshop/vores-produkter",
+    href: "/webshop",
     hasDropdown: false,
   },
   {

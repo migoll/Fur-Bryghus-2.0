@@ -1,5 +1,6 @@
 <template>
   <header class="w-full bg-fur-accent-bone shadow-sm">
+    <!-- Desktop Header -->
     <div
       class="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-4 py-4"
     >
@@ -22,7 +23,11 @@
             class="text-fur-blue hover:text-fur-accent-blue transition-colors duration-200 flex items-center cursor-pointer"
           >
             {{ item.name }}
-            <span class="ml-1">▼</span>
+            <img
+              src="../assets/images/header-arrow.svg"
+              class="mx-3"
+              alt="Ikon af korn"
+            />
           </div>
           <NuxtLink
             v-else
@@ -34,16 +39,43 @@
 
           <div
             v-if="item.hasDropdown"
-            class="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+            class="absolute top-full left-0 mt-2 bg-white shadow-lg p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
           >
-            <NuxtLink
-              v-for="(dropdownItem, dropIndex) in item.dropdownItems"
-              :key="dropIndex"
-              :to="dropdownItem.href"
-              class="block px-4 py-2 text-fur-blue hover:bg-neutral1 transition-colors duration-200"
-            >
-              {{ dropdownItem.name }}
-            </NuxtLink>
+            <div class="grid grid-cols-[auto_auto_auto] gap-12">
+              <div class="flex flex-col gap-4">
+                <NuxtLink
+                  v-for="(dropdownItem, dropIndex) in item.dropdownItems.slice(
+                    0,
+                    4
+                  )"
+                  :key="dropIndex"
+                  :to="dropdownItem.href"
+                  class="text-fur-blue hover:underline text-sm font-medium"
+                >
+                  {{ dropdownItem.name }}
+                </NuxtLink>
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <NuxtLink
+                  v-for="(dropdownItem, dropIndex) in item.dropdownItems.slice(
+                    4
+                  )"
+                  :key="dropIndex"
+                  :to="dropdownItem.href"
+                  class="text-fur-blue hover:underline text-sm font-medium"
+                >
+                  {{ dropdownItem.name }}
+                </NuxtLink>
+              </div>
+
+              <DropdownEntry
+                class="self-start"
+                title="Bestil vores øl her"
+                href="/webshop"
+                :image="entryPointMenuImage"
+              />
+            </div>
           </div>
         </div>
       </nav>
@@ -67,6 +99,7 @@
       </button>
     </div>
 
+    <!-- Mobile Header -->
     <div class="lg:hidden flex justify-between items-center px-4 py-3">
       <NuxtLink to="/" class="w-24">
         <img
@@ -95,30 +128,20 @@
           </svg>
         </button>
 
-        <button @click="isMenuOpen = !isMenuOpen" class="p-2">
-          <span class="sr-only">Open menu</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              v-if="!isMenuOpen"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-            <path
-              v-else
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+        <!-- https://jonsuh.com/hamburgers/ -->
+        <button
+          @click="isMenuOpen = !isMenuOpen"
+          :class="[
+            'hamburger',
+            'hamburger--collapse',
+            { 'is-active': isMenuOpen },
+          ]"
+          type="button"
+          class="scale-75"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
         </button>
       </div>
     </div>
@@ -128,11 +151,15 @@
         <template v-for="(item, index) in navigation" :key="index">
           <button
             v-if="item.hasDropdown"
-            class="block w-full text-left py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200"
+            class="flex w-full text-left py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200"
             @click="toggleMobileDropdown(index)"
           >
             {{ item.name }}
-            <span class="ml-1">▼</span>
+            <img
+              src="../assets/images/header-arrow.svg"
+              class="mx-3 rotate-180"
+              alt="Ikon af korn"
+            />
           </button>
           <div
             v-if="item.hasDropdown && openMobileDropdowns[index]"
@@ -163,7 +190,11 @@
 </template>
 
 <script setup lang="ts">
+import "hamburgers/dist/hamburgers.min.css";
+
 import type { NavigationItem } from "~/types/navigation";
+import DropdownEntry from "~/components/DropdownEntry.vue";
+import entryPointMenuImage from "@/assets/images/entry-point-menu.jpg";
 
 const isMenuOpen = ref(false);
 const openMobileDropdowns = ref<Record<number, boolean>>({});

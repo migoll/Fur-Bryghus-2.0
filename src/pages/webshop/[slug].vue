@@ -2,7 +2,10 @@
   <div v-if="produktData" class="w-full mx-auto">
     <div class="flex flex-col lg:flex-row gap-8 lg:h-[80vh]">
       <div
-        class="flex-1 bg-fur-blue flex flex-col justify-center items-center min-h-[300px] lg:min-h-[600px] p-4"
+        class="flex-1 flex flex-col justify-center items-center min-h-[300px] lg:min-h-[600px] p-4"
+        :style="{
+          backgroundColor: produktData.acf?.baggrundsfarve,
+        }"
       >
         <img
           v-if="imageUrl(produktData)"
@@ -11,7 +14,7 @@
           class="max-w-full max-h-[300px] lg:max-h-[600px] object-contain mb-4"
         />
         <div class="md:hidden text-fur-accent-bone">
-          <h1 class="text-2xl font-bold mb-2 text-center">
+          <h1 class="mb-2 text-center">
             {{ produktData.title.rendered }}
           </h1>
           <ProductTags

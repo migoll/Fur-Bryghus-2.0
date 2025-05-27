@@ -29,7 +29,7 @@
         <div class="flex flex-col md:flex-row lg:flex-col gap-8">
           <div class="flex-1 flex flex-col">
             <div class="hidden md:block">
-              <h1 class="text-2xl font-bold mb-2">
+              <h1 class="font-bold mb-2">
                 {{ produktData.title.rendered }}
               </h1>
               <ProductTags

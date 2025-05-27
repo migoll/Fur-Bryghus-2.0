@@ -1,8 +1,8 @@
 <template>
   <!-- Dette komponent indsættes på menusiden for at vise de forskellige tabs -->
-  <section class="flex flex-col md:flex-row">
+  <section class="flex flex-col lg:flex-row">
   <div
-  class="scrollbar-custom flex md:flex-col md:w-1/5 bg-fur-blue overflow-x-auto md:overflow-y-auto md:h-screen sticky top-0"
+  class="scrollbar-custom flex lg:flex-col lg:w-1/5 bg-fur-blue overflow-x-auto lg:overflow-y-auto lg:h-screen sticky top-0"
 >
 
 <!-- Hver tab er en knap hvor der loopes igennem de forskellige tabs sektioner der er defineres i script -->
@@ -21,7 +21,7 @@
       </button>
     </div>
 
-    <div class="w-full md:w-4/5">
+    <div class="w-full lg:w-4/5">
       <!-- Dette komponent viser indholdet fra de forskellige tabs der hører til den aktive tab -->
        <!-- is er et indbygget vue komponent hvor man kan styre hvilket komponent der skal vises -->
       <component :is="tabs[activeTab].component" />
@@ -33,17 +33,19 @@
 <script setup>
 // Her importeres hver tab og de bruges nede i variablen tabs
 import Buffet from './tabs/Buffet.vue';
-import Drikkevarer from './tabs/Drikkevarer.vue';
-import LetteRetter from './tabs/LetteRetter.vue';
+import DanskKokken from './tabs/DanskKokken.vue';
+import Fodselsdagspakker from './tabs/Fodselsdagspakker.vue';
+import Reception from './tabs/Reception.vue';
 import SelskabsMenu from './tabs/SelskabsMenu.vue';
-import VarmeDrikke from './tabs/VarmeDrikke.vue';
+import UdflugtsMenu from './tabs/UdflugtsMenu.vue';
 
 const tabs = [
   { label: 'Selskabmenu', component: SelskabsMenu },
   { label: 'Buffet', component: Buffet },
-  { label: 'Lette retter', component: LetteRetter },
-  { label: 'Drikkevarer', component: Drikkevarer },
-  { label: 'Varme drikke', component: VarmeDrikke },
+  { label: 'Reception', component: Reception },
+  { label: 'Fødselsdagspakker', component: Fodselsdagspakker },
+  { label: 'Dansk Køkken', component: DanskKokken },
+  { label: 'Udflugtsmenu', component: UdflugtsMenu },
 ]
 
 const activeTab = ref(0)

@@ -1,6 +1,6 @@
 <template>
   <!-- Her laves det nyhedscard som indsættes i nyhedsgrid. her bruges alt det data som blev hentet overfra wordpress api'et -->
-  <NuxtLink :to="`/nyheder/${props.post.slug}`">
+  <NuxtLink :to="getLink()">
     <div class="nyhedsCard p-[1rem]">
      <div class="relative overflow-hidden">
   <img
@@ -25,10 +25,6 @@
   </NuxtLink>
 </template>
 
-
-
-
-
 <script setup>
 // Her defineres proppen post, som får et objekt der hvor den indsættes
 const props = defineProps({
@@ -37,6 +33,20 @@ const props = defineProps({
 
 const dato = props.post?.acf?.dato ?? props.post?.acf?.Dato ?? 'Ingen dato'
 
+// Categories: 29 = nyheder, 28/30 = arrangementer
+const getLink = () => {
+  if (props.post.categories?.includes(29)) {
+    return `/nyheder/${props.post.slug}`
+  }
+  if (
+    props.post.categories?.includes(28) ||
+    props.post.categories?.includes(30)
+  ) {
+    return `/arrangementer/${props.post.slug}`
+  }
+  // fallback (optional)
+  return `/nyheder/${props.post.slug}`
+}
 </script>
 
 <style scoped></style>

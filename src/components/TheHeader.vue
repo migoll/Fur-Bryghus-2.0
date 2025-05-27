@@ -25,7 +25,7 @@
             {{ item.name }}
             <img
               src="../assets/images/header-arrow.svg"
-              class="mx-3"
+              class="mx-3 rotate-180"
               alt="Ikon af korn"
             />
           </div>

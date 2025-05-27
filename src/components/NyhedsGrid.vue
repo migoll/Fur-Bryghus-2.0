@@ -14,6 +14,10 @@ const props = defineProps({
   limit: {
     type: Number,
     default: 3 
+  },
+  categories: {
+    type: String,
+    default: '29,28,30'
   }
 })
 
@@ -22,7 +26,7 @@ const nyheder = ref([])
 
 // Her fetches alle data der bliver lavet om til json
 onMounted(async () => {
-  const res = await fetch(`https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?categories=29,28,30&per_page=100&order=desc&orderby=date&_embed`)
+  const res = await fetch(`https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?categories=${props.categories}&per_page=100&order=desc&orderby=date&_embed`)
   const data = await res.json()
 
   // slice er en metode som returner en ny kopi af vores array med data. derfor hvis vi indtaster at vi kun vil se 5 nyheder, kan det lade sig gøre

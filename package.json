@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "gsap": "^3.13.0",
+    "hamburgers": "^1.2.1",
     "nuxt": "^3.17.3",
+    "swiper": "^11.2.7",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"
   },

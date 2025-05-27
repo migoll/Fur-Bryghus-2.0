@@ -1,0 +1,82 @@
+<template>
+  <!-- Genanvenlig sektion med overskrift, tekst, valgfri knap, valgfri baggrund og billede, kan bruges mange steder til forskellig information -->
+  <section
+    :class="[
+      // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
+      'px-[4rem] py-[2rem] flex items-center justify-center',
+      bgImage ? '' : bgColor
+    ]
+    // her defineres hvordan baggrundsbilledet sættes hvis der findes det
+    ":style="bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ''"
+  >
+    <div
+  :class="[
+    'md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px] md:gap-[5rem]',
+    reverse ? 'md:flex-row-reverse' : ''
+  ]"
+>
+      <div class="lg:w-1/2">
+        <!-- Her sættes dynamiskefarver til h2 og p så brugeren selv kan vælge farven -->
+        <h2 :class="['mb-[1rem] scroll-fade', headingColor]">{{ heading }}</h2>
+        <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text }}</p>
+        <!-- Her indsættes det knap komponent som vi allerede har lavet -->
+        <Button
+          v-if="buttonLabel"
+          :label="buttonLabel"
+          :to="buttonLink"
+        />
+      </div>
+      <div class=" md:h-full lg:w-1/2">
+        <img
+          :src="imageMobile"
+          :alt="imageAlt"
+          :srcset="`${imageDesktop} 768w`"
+          class="w-full md:h-full object-cover mt-[1rem] md:m-0 scroll-fade"
+        />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+
+// Her bruge typescript til at definerer komponentets props
+// ? = valgfri prop
+// Typescript bruges her for at minimere fejl under udvikling og hvis der bliver sat noget forkert der hvor komponentet bruges
+defineProps<{
+  heading: string
+  text: string
+  imageMobile: string
+  imageDesktop: string
+  imageAlt?: string
+  bgColor?: string
+  bgImage?: string
+  headingColor?: string
+  textColor?: string
+  buttonLabel?: string
+  buttonLink?: string
+  reverse?: boolean
+}>()
+
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver((entries) => {
+    // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active')
+        // Her stoppes med at observere så fade animation kun køre en gang
+        observer.unobserve(entry.target)
+      }
+    })
+    // animationen køre først når mindst 10% af elementet er synligt
+  }, { threshold: 0.1 })
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll('.scroll-fade').forEach((el) => {
+    observer.observe(el)
+  })
+})
+</script>

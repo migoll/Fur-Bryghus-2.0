@@ -4,7 +4,7 @@
   v-if="to"
   :to="to"
   :target="openInNewTab ? '_blank' : '_self'"
-  class="inline-flex items-center justify-center gap-2 font-sans font-medium text-neutral-6 px-7 py-3 bg-fur-blue hover:bg-fur-accent-blue active:bg-[#1f3a52] focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]   active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] "
+  class="inline-flex items-center justify-center gap-2 font-sans font-medium text-neutral-6 px-7 py-3 bg-fur-blue hover:bg-fur-accent-blue active:bg-[#1f3a52] focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]   active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] scroll-fade"
 >
   <span class="text-lg">{{ label }}</span>
 
@@ -22,7 +22,7 @@
 
     <button
   v-else
-  class="inline-flex items-center justify-center gap-2 font-sans font-medium text-neutral-6 px-7 py-3 bg-fur-blue hover:bg-fur-accent-blue active:bg-[#1f3a52] focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]  active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]  "
+  class="inline-flex items-center justify-center gap-2 font-sans font-medium text-neutral-6 px-7 py-3 bg-fur-blue hover:bg-fur-accent-blue active:bg-[#1f3a52] focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]  active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] scroll-fade  "
 >
   <span class="text-lg">{{ label }}</span>
 

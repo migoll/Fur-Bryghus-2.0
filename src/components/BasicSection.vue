@@ -3,7 +3,7 @@
   <section
     :class="[
       // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
-      'px-[4rem] py-[2rem] flex items-center justify-center',
+      'px-[1rem] py-[2rem] flex items-center justify-center',
       bgImage ? '' : bgColor
     ]
     // her defineres hvordan baggrundsbilledet sættes hvis der findes det

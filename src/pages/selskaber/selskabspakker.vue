@@ -80,7 +80,7 @@ import mobileImg1 from '@/assets/images/mobile/Selskabspakker_konfi_Mobile.png'
 import desktopImg1 from '@/assets/images/desktop/selskabspakker-bryllupspakke.webp'
 import mobileImg2 from '@/assets/images/mobile/Selskabspakker_Fodselsdag_Mobile.png'
 import desktopImg2 from '@/assets/images/desktop/selskabspakker-fodselsdagspakke.webp'
-import traeBackground from '@/assets/images/trae-baggrund.jpeg'
+import traeBackground from '@/assets/images/morkTrae.png'
 </script>
 
 <style scoped></style>

@@ -39,7 +39,7 @@ import entryPointselskabspakkerImage from '~/assets/images/desktop/FEP-selskabsp
 import entryPoinAbningImage from '~/assets/images/desktop/FEP-abningstider.webp';
 import entryPointEnbidImage from '~/assets/images/desktop/FEP-en-bid-af-fur.webp';
 import entryPointForhandlerImage from '~/assets/images/desktop/FEP-forhandler.png';
-import entryPointArrangementerImage from '~/assets/images/desktop/FEP-arrangementer.webp';
+import entryPointArrangementerImage from '~/assets/images/desktop/FEP-arrangementer.png';
 import entryPointBookselskabImage from '~/assets/images/desktop/FEP-book-dit-selskab.webp';
 import entryPointSelskabmenuImage from '~/assets/images/desktop/FEP-selskabsmenuer.webp';
 import entryPointKontaktImage from '~/assets/images/desktop/FEP-kontakt-os.webp';

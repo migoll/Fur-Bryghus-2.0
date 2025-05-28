@@ -193,7 +193,7 @@ Promise.all([
 // Her importeres de billeder som bliver brugt i basicSection komponentet
 import mobileImg from '@/assets/images/mobile/Forside_Restaurant_Mobile.png'
 import desktopImg from '@/assets/images/desktop/Forside-restaurant-bryghuset.webp'
-import traeBackground from '@/assets/images/trae-baggrund.jpeg'
+import traeBackground from '@/assets/images/morkTrae.png'
 
 
 // denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade

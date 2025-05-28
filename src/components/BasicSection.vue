@@ -11,7 +11,7 @@
   >
     <div
   :class="[
-    'md:flex md:justify-center md:items-center md:h-[100%] md:w-full xl:max-w-[1280px] md:gap-[5rem]',
+    'md:flex md:justify-center md:items-center md:h-full md:w-full xl:max-w-[1280px] md:gap-[5rem]',
     reverse ? 'md:flex-row-reverse' : ''
   ]"
 >
@@ -42,7 +42,7 @@
           :src="imageMobile"
           :alt="imageAlt"
           :srcset="`${imageDesktop} 768w`"
-          class="w-full md:h-full object-cover mt-[1rem] md:m-0 scroll-fade"
+          class="w-full md:h-[400px] object-cover mt-[1rem] md:m-0 scroll-fade"
         />
       </div>
     </div>

@@ -74,7 +74,7 @@ import mobileImg1 from '@/assets/images/mobile/Enbidaffur_dyrevelfaer2_Mobile.pn
 import desktopImg1 from '@/assets/images/desktop/en-bid-af-fur-fokus.webp'
 import mobileImg2 from '@/assets/images/mobile/EnBidAfFur-prov.png'
 import desktopImg2 from '@/assets/images/desktop/en-bid-af-fur-prov.webp'
-import traeBackground from '@/assets/images/trae-baggrund.jpeg'
+import traeBackground from '@/assets/images/morkTrae.png'
 </script>
 
 <style scoped></style>

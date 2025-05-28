@@ -75,6 +75,18 @@ import desktopImg1 from '@/assets/images/desktop/en-bid-af-fur-fokus.webp'
 import mobileImg2 from '@/assets/images/mobile/EnBidAfFur-prov.png'
 import desktopImg2 from '@/assets/images/desktop/en-bid-af-fur-prov.webp'
 import traeBackground from '@/assets/images/morkTrae.png'
+
+// Sætter Title og Meta Description for forsiden
+const title = ref('En bid af Fur')
+const description = ref('Læs om hvordan vi udvælger vores ingredienser og arbejder med bæredygtighed.')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
 </script>
 
 <style scoped></style>

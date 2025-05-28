@@ -20,6 +20,7 @@
         <h2 :class="['mb-[1rem] scroll-fade', headingColor]">{{ heading }}</h2>
         <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text }}</p>
         <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text2 }}</p>
+        <!-- Her kan man vælge at indsætte en dynamisk liste -->
         <ul
         v-if="listItems && listItems.length"
         :class="['mb-[1rem] list-disc pl-5 scroll-fade', textColor]"

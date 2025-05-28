@@ -29,6 +29,18 @@ import heroImageMobile from '@/assets/images/desktop/menukort-hero.webp'
 import heroImageDesktop from '@/assets/images/desktop/menukort-hero.webp'
 import mobileImg from '@/assets/images/desktop/menukort-smagsoplevelser.webp'
 import desktopImg from '@/assets/images/desktop/menukort-smagsoplevelser.webp'
+
+// Sætter Title og Meta Description for forsiden
+const title = ref('Menukort')
+const description = ref('Se hvad vi tilbyder i Restauranten og vælg din ynglingsret inden næste besøg.')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
 </script>
 
 <style scoped></style>

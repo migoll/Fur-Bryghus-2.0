@@ -81,6 +81,18 @@ import desktopImg1 from '@/assets/images/desktop/selskabspakker-bryllupspakke.we
 import mobileImg2 from '@/assets/images/mobile/Selskabspakker_Fodselsdag_Mobile.png'
 import desktopImg2 from '@/assets/images/desktop/selskabspakker-fodselsdagspakke.webp'
 import traeBackground from '@/assets/images/morkTrae.png'
+
+// Sætter Title og Meta Description for forsiden
+const title = ref('Selskabspakker')
+const description = ref('Vi står klar til at holde dit næste selskab. Se hvad vi tilbyder og kontakt os her.')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
 </script>
 
 <style scoped></style>

@@ -22,6 +22,18 @@ import heroImageMobile from '@/assets/images/mobile/Nyheder_Hero.jpg'
 import heroImageDesktop from '@/assets/images/desktop/Nyheder_Hero.jpg'
 
 const isLoading = ref(true)
+
+// Sætter Title og Meta Description for forsiden
+const title = ref('Nyheder')
+const description = ref('Læs om hvad der sker og hvad du kan opleve på Fur Bryghus')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
 </script>
 
 <style scoped></style>

@@ -5,11 +5,13 @@
       :key="entry.title"
       class=" group bg-white shadow-md relative flex flex-col h-full overflow-hidden"
     >
+    <div class="overflow-hidden cursor-pointer">
       <img
         :src="entry.image"
         :alt="entry.title"
         class=" w-full h-64 object-cover hover:scale-[110%] ease-in-out duration-500"
       />
+    </div>
       <div class="p-6 flex flex-col justify-between flex-grow">
         <div>
           <h2 class="text-2xl font-bold text-center text-black mb-2">

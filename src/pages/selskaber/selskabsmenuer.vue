@@ -30,6 +30,18 @@ import heroImageMobile from '@/assets/images/desktop/selskabsmenuer-hero.webp'
 import heroImageDesktop from '@/assets/images/desktop/selskabsmenuer-hero.webp'
 import mobileImg from '@/assets/images/desktop/selskabsmenu-ret-eksempel.webp'
 import desktopImg from '@/assets/images/desktop/selskabsmenu-ret-eksempel.webp'
+
+// Sætter Title og Meta Description for forsiden
+const title = ref('Selskabsmenuer')
+const description = ref('Se vores selskabsmenuer, eller sammensæt din helt egen menu.')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
 </script>
 
 <style scoped></style>

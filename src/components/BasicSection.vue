@@ -3,7 +3,7 @@
   <section
     :class="[
       // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
-      'px-[1rem] py-[2rem] flex items-center justify-center',
+      'px-[1rem] py-[2rem] md:py-[4rem] md:px-[2rem] flex items-center justify-center',
       bgImage ? '' : bgColor
     ]
     // her defineres hvordan baggrundsbilledet sættes hvis der findes det
@@ -11,7 +11,7 @@
   >
     <div
   :class="[
-    'md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px] md:gap-[5rem]',
+    'md:flex md:justify-center md:items-center md:h-[100%] md:w-full xl:max-w-[1280px] md:gap-[5rem]',
     reverse ? 'md:flex-row-reverse' : ''
   ]"
 >
@@ -19,6 +19,15 @@
         <!-- Her sættes dynamiskefarver til h2 og p så brugeren selv kan vælge farven -->
         <h2 :class="['mb-[1rem] scroll-fade', headingColor]">{{ heading }}</h2>
         <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text }}</p>
+        <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text2 }}</p>
+        <ul
+        v-if="listItems && listItems.length"
+        :class="['mb-[1rem] list-disc pl-5 scroll-fade', textColor]"
+        >
+      <li
+      v-for="(item, index) in listItems" :key="index"
+      > {{ item }}</li>
+      </ul>
         <!-- Her indsættes det knap komponent som vi allerede har lavet -->
         <Button
           v-if="buttonLabel"
@@ -48,6 +57,8 @@
 defineProps<{
   heading: string
   text: string
+  text2?: string
+  listItems?: string[]
   imageMobile: string
   imageDesktop: string
   imageAlt?: string

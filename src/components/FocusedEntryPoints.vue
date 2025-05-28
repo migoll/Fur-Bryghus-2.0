@@ -98,7 +98,7 @@ const entryData: Record<
     image: entryPointMenuImage,
   },
   "Olsmagninger": {
-    title: "Ølsmagniger og rundvisninger",
+    title: "Ølsmagninger og rundvisninger",
     description:
       "Læs og book en af vores populære ølsmagninger",
     href: "/bryggeriet/olsmagninger-og-rundvisninger",

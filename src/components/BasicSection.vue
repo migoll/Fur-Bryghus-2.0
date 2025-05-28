@@ -24,6 +24,8 @@
           v-if="buttonLabel"
           :label="buttonLabel"
           :to="buttonLink"
+          :is-pdf="isPdf"
+          :open-in-new-tab="openInNewTab"
         />
       </div>
       <div class=" md:h-full lg:w-1/2">
@@ -56,6 +58,8 @@ defineProps<{
   buttonLabel?: string
   buttonLink?: string
   reverse?: boolean
+   isPdf?: boolean
+   openInNewTab?: boolean;
 }>()
 
 // denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade

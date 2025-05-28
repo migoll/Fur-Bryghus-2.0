@@ -21,6 +21,8 @@ heading="Sammen skaber vi en oplevelse"
 
 <SelskabsTabs />
 
+  <FocusedEntryPoints :entries="['Selskabspakker', 'Bookselskab', 'Olsmagninger']" />
+
 </template>
 
 <script setup>

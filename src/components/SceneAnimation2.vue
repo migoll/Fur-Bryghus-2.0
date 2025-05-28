@@ -1,11 +1,11 @@
 <template>
   <div>
-    <!-- Desktop Carousel (hidden on small screens) -->
+    <!--  Karousel som er skjult på små skærme -->
     <div
       ref="container"
       class="carousel-wrapper hidden md:flex h-screen w-full overflow-hidden relative"
     >
-      <!-- Left half: images + sideTitle -->
+      <!-- Venstre halvdel: billeder + sideTitel -->
       <div class="w-1/2 h-full overflow-hidden relative flex items-center justify-center bg-black">
         <div ref="track" class="carousel-track flex h-full absolute top-0 left-0">
           <div
@@ -13,10 +13,17 @@
             :key="i"
             class="carousel-slide w-full h-full flex-shrink-0"
           >
-            <img :src="scene.image" class="w-full h-full object-cover" />
+            <img
+  :src="scene.image"
+  :srcset="scene.srcSet"
+  sizes="(min-width: 768px) 50vw, 100vw"
+  :alt="scene.title"
+  class="w-full h-full object-cover"
+/>
+
           </div>
         </div>
-        <!-- Side Titles -->
+        <!-- SideTitler -->
         <div class="side-title-wrapper absolute right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
           <div
             v-for="(scene, i) in scenes"
@@ -29,7 +36,7 @@
         </div>
       </div>
 
-      <!-- Right half: text -->
+      <!-- Højre halvdel: tekst -->
       <div class="w-1/2 h-full flex flex-col justify-center px-16 relative">
         <div
           v-for="(scene, i) in scenes"
@@ -44,7 +51,7 @@
       </div>
     </div>
 
-    <!-- Mobile Version (stacked layout, shown only on small screens) -->
+    <!-- Mobilversion  -->
     <div class="md:hidden">
       <div
         v-for="(scene, i) in scenes"
@@ -52,7 +59,14 @@
         class="mb-16 px-4"
       >
         <div class="relative">
-          <img :src="scene.image" class="w-full rounded-lg" />
+          <img
+  :src="scene.image"
+  :srcset="scene.srcSet"
+  sizes="100vw"
+  :alt="scene.title"
+  class="w-full rounded-lg"
+/>
+
           <div class="absolute bottom-2 left-4 text-white font-bold text-xl bg-black bg-opacity-60 px-2 py-1 rounded">
             {{ scene.sideTitle }}
           </div>
@@ -84,12 +98,13 @@ const textRefs = []
 const sideTitleRefs = []
 
 onMounted(() => {
-  // Only initialize GSAP ScrollTrigger on desktop
+  // Kun initialiser ScrollTrigger hvis skærmbredde er desktop
   if (window.innerWidth < 768) return
 
   const totalSlides = props.scenes.length
   const scrollHeight = window.innerHeight * (totalSlides - 1)
 
+  // Opret ScrollTrigger-tidslinje og pin containeren
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: container.value,
@@ -110,6 +125,7 @@ onMounted(() => {
     const textOutEnd = startTime + textOutDuration
     const imageSlideEnd = textOutEnd + imageSlideDuration
 
+    // Animer udgang af tekst
     tl.to(textRefs[i], {
       y: 50,
       opacity: 0,
@@ -117,6 +133,7 @@ onMounted(() => {
       ease: "power1.inOut"
     }, startTime)
 
+    // Animer udgang af sideTitel
     tl.to(sideTitleRefs[i], {
       y: -50,
       opacity: 0,
@@ -124,6 +141,7 @@ onMounted(() => {
       ease: "power1.inOut"
     }, startTime)
 
+    // Billed-transition (undtagen sidste slide)
     if (i < totalSlides - 1) {
       tl.to(track.value, {
         xPercent: `-=${100}`,
@@ -131,12 +149,14 @@ onMounted(() => {
         ease: "power1.inOut"
       }, textOutEnd)
 
+      // Indgang af næste tekst
       tl.fromTo(textRefs[i + 1],
         { y: -50, opacity: 0 },
         { y: 0, opacity: 1, duration: textInDuration, ease: "power1.inOut" },
         imageSlideEnd
       )
 
+      // Indgang af næste sideTitel
       tl.fromTo(sideTitleRefs[i + 1],
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: textInDuration, ease: "power1.inOut" },
@@ -145,6 +165,7 @@ onMounted(() => {
     }
   }
 
+  // Vis første tekst og sideTitel ved start
   gsap.set(textRefs[0], { opacity: 1, y: 0 })
   gsap.set(sideTitleRefs[0], { opacity: 1, y: 0 })
 })

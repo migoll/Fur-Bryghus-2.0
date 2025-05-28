@@ -1,12 +1,19 @@
 <template>
+  <Hero  
+    heroHeading="Ølprocessen"
+    :heroImageMobile="heroMobile"
+    :heroImageDesktop="heroDesktop"
+    heroImageAlt="Billede af maden i restauranten"
+  />
   <div class="px-16 py-8">
-    <div class="max-w-[1224px] justify-center mx-auto">
-      <h2>Smagen af Fur og ren passion</h2>
-      <p>
+    <div class="max-w-[1024px] justify-center mx-auto pb-4">
+      <h2 class="text-center">Smagen af Fur og ren passion</h2>
+      <p class="mt-4">
         God øl kræver gode råvarer. Et veludstyret bryggeri. Og ikke mindst en dygtig og passioneret brygmester. Det har vi på Fur Bryghus. Og mere til. Vi har en unik historie og beliggenhed. Dertil kommer det helt specielle Fur vand, fyldt med naturlige mineraler og salte, der optages gennem den lange rejse gennem øens lag af moler og vulkansk aske.
       </p>
+      <img src="@/assets/icons/olTonde.svg" alt="Icon description" class="mt-4 w-32 h-32 mx-auto" />
     </div>
-    <div class="flex flex-col md:flex-row gap-8 mt-8">
+    <div class="flex flex-col md:flex-row gap-8 mt-8 max-w-[1400px]">
   <div class="w-full md:w-1/2">
     <img src="~/assets/images/desktop/olprocessen-gaering.webp" alt="Ølprocessen - Gæring" class="w-full h-full object-cover" />
   </div>
@@ -20,17 +27,19 @@
     </p>
   </div>
 </div>
-
   </div>
-
   <div>
      <SceneAnimation2 :scenes="myScenesArray" />
   </div>
+  <FocusedEntryPoints :entries="['Vores-produkter', 'Bryggeprocessen', 'Gardbutik']" />
 </template>
 
 <script setup>
 import SceneAnimation2 from '~/components/SceneAnimation2.vue';
-// Billeder til karousel
+import FocusedEntryPoints from '~/components/FocusedEntryPoints.vue'
+import Hero from '~/components/Hero.vue';
+
+// Billeder til karousel desktop
 import olprocessen from '@/assets/images/desktop/olprocessen-proces.webp'
 import imageGaering from '@/assets/images/desktop/olprocessen-gaering.webp'
 import imageMaltning from '@/assets/images/desktop/olprocessen-maltning.webp'
@@ -40,6 +49,20 @@ import imageSeparering from '@/assets/images/desktop/olprocessen-urteseparering.
 import imageKogning from '@/assets/images/desktop/olprocessen-urtkogning.webp'
 import imageLagring from '@/assets/images/desktop/olprocessen-lagring.webp'
 import imageTapning from '@/assets/images/desktop/olprocessen-tapning.webp'
+import heroDesktop from '@/assets/images/desktop/olprocessen-hero.webp'
+
+// Billeder til mobil
+import imageOlprocessenMobile from '@/assets/images/mobile/Olprocessen_NaturligProcess_mobile.png'
+import imageGaering_Mobile from '@/assets/images/mobile/Olprocessen_Gaering_mobile.png'
+import imageMaltningMobile from '@/assets/images/mobile/Olprocessen_Maltning_mobile.png'
+import imageTorringMobile from '@/assets/images/mobile/Olprocessen_Torring_mobile.png'
+import imageMaeskningMobile from '@/assets/images/mobile/Olprocessen_Maeskning_mobile.png'
+import imageSepareringMobile from '@/assets/images/mobile/Olprocessen_Urtseparering_mobile.png'
+import imageKogningMobile from '@/assets/images/mobile/Olprocessen_Urtkogning_mobile.png'
+import imageLagringMobile from '@/assets/images/mobile/Olprocessen_Lagring_mobile.png'
+import imageTapningMobile from '@/assets/images/mobile/Olprocessen_Tapning_mobile.png'
+import heroMobile from '@/assets/images/mobile/Olprocessen_Hero_mobile.png'
+
 
 // Array med scener
 const myScenesArray = [
@@ -47,6 +70,10 @@ const myScenesArray = [
     title: 'En naturlig proces',
     sideTitle: 'Øl-brygning',
     image: olprocessen,
+    srcSet: {
+      '320w': imageOlprocessenMobile,
+      '768w': olprocessen,
+    },
     text: [
       'Ølbrygning er en kunst. Og et håndværk. Det enkelte bryg tager flere uger, hvor brygmesteren nøje afstemmer råvarer, og derefter nøje overvåger mæskning, urtkogning og gæring, så de forskellige processer går op i en højere enhed.'
       ,
@@ -59,6 +86,10 @@ const myScenesArray = [
     title: '1. Maltning',
     sideTitle: 'Maltning',
     image: imageMaltning,
+    srcSet: {
+      '320w': imageMaltningMobile,
+      '768w': imageMaltning,
+    },
     text: [
       'Første trin i brygprocessen er maltningen, hvor den rensede og sorterede bygmalt (eller andre egnede kornsorter) bliver omdannet til malt. Maltningen starter med at få byggen til at spire. Det sker ved at lægge bygkernerne i blød, så de begynder at suge vand. Denne proces ”støbningen”, tager 1-3 døgn. Når kernerne optager vand, begynder de at spire. Nu kommer de i spirekasser, hvor de ligger i et metertykt lag på en perforeret bund, hvor der blæses luft op igennem. Kernerne vendes 2-3 gange i døgnet for ikke at filtre sammen og ligger til spiring i 4-7 døgn.'
       ,
@@ -69,6 +100,10 @@ const myScenesArray = [
     title: '2. Tørring og ristning',
     sideTitle: 'Tørring og ristning',
     image: imageTorring,
+    srcSet: {
+      '320w': imageTorringMobile,
+      '768w': imageTorring,
+    },  
     text: [
       'Spiringen stoppes ved at der blæses varm luft op imellem kernerne i spirekasserne. Den varme luft får vandet til at fordampe, så kernerne tørrer – de tørrede kornspirer kaldes malt.'
       ,
@@ -80,6 +115,10 @@ const myScenesArray = [
     title: '3. Mæskning',
     sideTitle: 'Mæskning',
     image: imageMaeskning,
+    srcSet: {
+      '320w': imageMaeskningMobile,
+      '768w': imageMaeskning,
+    },
     text: [
       'Mæskning er en proces, hvor enzymerne fra malten (som blev dannet, da bygkernerne spirede) omdanner maltens stivelse til maltsukker. Det er en vigtig proces, fordi maltsukkeret er nødvendigt for den senere gæring. Gæren, som tilsættes senere i processen, omdanner nemlig maltsukkeret til alkohol.'
       ,
@@ -91,6 +130,10 @@ const myScenesArray = [
     title: '4. Urteseparering',
     sideTitle: 'Urteseparering',
     image: imageSeparering,
+    srcSet: {
+      '320w': imageSepareringMobile,
+      '768w': imageSeparering,
+    },
     text: [
       'Når mæskningen er færdig, skal mæsken (malt- og vandmassen) sies i et si-kar eller et mæskfilter. Efter siningen står man tilbage med to dele. En fast del, der kaldes masken, som bl.a. består af skallerne fra malten, og en flydende del, der kaldes urten. Det er urten, der skal bruges i den videre brygproces. Urten har en markant aroma, der er sødlig og brødagtig. Hvis man smager på urten, kan man tydeligt smage resultatet af enzymernes arbejde med at omdanne stivelse til maltsukker – det smager nemlig sødt. Masken indeholder cellulose og protein og sælges til landbruget, der bruger det som foder til kvæg.'
     ]
@@ -99,6 +142,10 @@ const myScenesArray = [
     title: '5. Urtkogning',
     sideTitle: 'Urtkogning',
     image: imageKogning,
+    srcSet: {
+      '320w': imageKogningMobile,
+      '768w': imageKogning,
+    },
     text: [
       'Næste trin er kogningen af urten. Urten koges sammen med humle i en urtkedel i ca. 1 time. Under kogningen afgives humlebitterstoffer til urten. Samtidig vil en del af humleolierne, der giver aroma, imidlertid forsvinde. Hvis man vil give øllet ekstra aroma, kan man tilsætte aromahumle, når urten er næsten færdigkogt, eller man kan tilsætte humleolie senere i processen.'
       ,
@@ -109,6 +156,10 @@ const myScenesArray = [
     title: '6. Gæring',
     sideTitle: 'Gæring',
     image: imageGaering,
+    srcSet: {
+      '320w': imageGaering_Mobile,
+      '768w': imageGaering,
+    },
     text: [
       'Når urten er nedkølet tilsættes ølgæren, og urten overføres til ”gærkælderen”, som er det procesafsnit på bryggeriet, hvor gæringen foregår. Før i tiden foregik gæringen i dybe kældre for at holde en lav temperatur – i dag bruger man avancerede kølingselementer på gæringstankene, så man kan styre temperaturen.',
       'I gæringstankene går gærcellerne i ”krig” med maltsukkeret og omdanner det til alkohol og kulsyre. Gæringen varer normalt 5 – 8 dage og foregår ved forskellige temperaturer afhængig af gærtypen. Anvender man undergær, foregår gæringen typisk ved 10 – 16 °C. Anvender man overgær, er temperaturen lidt højere – typisk mellem 18 – 25 °C. I gæringsprocessen er det vigtigt at følge med i, hvor aktivt gæren arbejder. Man måler bl.a. dagligt, hvor meget maltsukker som endnu ikke er blevet omdannet til alkohol.',
@@ -119,6 +170,10 @@ const myScenesArray = [
     title: '7. Lagring',
     sideTitle: 'Lagring',
     image: imageLagring,
+    srcSet: {
+      '320w': imageLagringMobile,
+      '768w': imageLagring,
+    },
     text: [
       'Den færdiggærede øl skal nu lagre i kolde omgivelser (0-2 °C). Lagringstiden afhænger meget af gærtypen og øltypen. Fra et par dage til flere måneder. Når øllet køles tæt på frysepunktet, sker der en fældning af stoffer, som giver uklarheder i øllet. Derfor filtreres det meste øl efter lagringen, så de udfældede stoffer fjernes. Nogle øl filtreres dog ikke, f.eks. hvedeøl, som derfor fremstår uklare. Inden øllet tappes, skal kulsyreindholdet i øllet justeres. Ofte tilsætter man lidt ekstra kulsyre for at få det ønskede kulsyreindhold.'
     ]
@@ -127,6 +182,10 @@ const myScenesArray = [
     title: '8. Tapning',
     sideTitle: 'Tapning',
     image: imageTapning,
+    srcSet: {
+      '320w': imageTapningMobile,
+      '768w': imageTapning,
+    }, 
     text: [
       'I forbindelse med aftapningen på flaske, dåse eller fustage vil øllet normalt blive pasteuriseret enten før, i forbindelse med eller efter tapning. Pasteurisering er en kortvarig opvarmning af øllet til en temperatur over 60 °C, hvorved man uskadeliggør uønskede bakterier og forlænger holdbarheden.',
       'Øllet er nu klar til at blive nydt. Til maden eller til ren hygge. Skål.'

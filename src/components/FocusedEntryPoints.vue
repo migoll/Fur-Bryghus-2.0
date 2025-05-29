@@ -5,11 +5,13 @@
       :key="entry.title"
       class=" group bg-white shadow-md relative flex flex-col h-full overflow-hidden"
     >
+    <div class="overflow-hidden cursor-pointer">
       <img
         :src="entry.image"
         :alt="entry.title"
         class=" w-full h-64 object-cover hover:scale-[110%] ease-in-out duration-500"
       />
+    </div>
       <div class="p-6 flex flex-col justify-between flex-grow">
         <div>
           <h2 class="text-2xl font-bold text-center text-black mb-2">
@@ -39,7 +41,7 @@ import entryPointselskabspakkerImage from '~/assets/images/desktop/FEP-selskabsp
 import entryPoinAbningImage from '~/assets/images/desktop/FEP-abningstider.webp';
 import entryPointEnbidImage from '~/assets/images/desktop/FEP-en-bid-af-fur.webp';
 import entryPointForhandlerImage from '~/assets/images/desktop/FEP-forhandler.png';
-import entryPointArrangementerImage from '~/assets/images/desktop/FEP-arrangementer.webp';
+import entryPointArrangementerImage from '~/assets/images/desktop/FEP-arrangementer.png';
 import entryPointBookselskabImage from '~/assets/images/desktop/FEP-book-dit-selskab.webp';
 import entryPointSelskabmenuImage from '~/assets/images/desktop/FEP-selskabsmenuer.webp';
 import entryPointKontaktImage from '~/assets/images/desktop/FEP-kontakt-os.webp';
@@ -98,7 +100,7 @@ const entryData: Record<
     image: entryPointMenuImage,
   },
   "Olsmagninger": {
-    title: "Ølsmagniger og rundvisninger",
+    title: "Ølsmagninger og rundvisninger",
     description:
       "Læs og book en af vores populære ølsmagninger",
     href: "/bryggeriet/olsmagninger-og-rundvisninger",

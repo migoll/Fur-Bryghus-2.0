@@ -44,7 +44,7 @@
     </div>
   </div>
     <GoogleMap />
-  <FocusedEntryPoints :entries="['Vores-produkter', 'Bryggeprocessen', 'Gardbutik']" />
+  <FocusedEntryPoints :entries="['Abning', 'Arrangementer', 'Olsmagninger']" />
 </template>
 
 <script setup>

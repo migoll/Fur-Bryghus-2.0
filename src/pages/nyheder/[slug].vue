@@ -2,21 +2,27 @@
   <div>
     <div v-if="nyhed" class="flex flex-col items-center w-full">
       <!-- Hero Image -->
-      <div v-if="nyhed?.acf?.billede?.url" class="w-full bg-gray-100 flex justify-center">
+      <div v-if="nyhed?.acf?.billede?.url" class="w-full flex justify-center">
         <img
           :src="nyhed.acf.billede.url"
           :alt="nyhed.acf.billede.alt || nyhed.title.rendered"
           class="object-cover w-full max-h-[400px] md:max-h-[500px]"
-          style="max-width: 1240px;"
+          style="max-width: 1240px"
         />
       </div>
 
       <div class="w-full max-w-[700px] px-4 md:px-0 mt-8">
         <!-- Title -->
-        <h1 class="text-4xl font-bold mb-2 text-center" v-html="nyhed?.title?.rendered" />
+        <h1
+          class="text-4xl font-bold mb-2 text-center"
+          v-html="nyhed?.title?.rendered"
+        />
 
         <!-- Intro -->
-        <div v-if="nyhed?.acf?.intro_titel" class="text-lg font-semibold text-center mb-4">
+        <div
+          v-if="nyhed?.acf?.intro_titel"
+          class="text-lg font-semibold text-center mb-4"
+        >
           {{ nyhed.acf.intro_titel }}
         </div>
 
@@ -26,11 +32,17 @@
         </div>
 
         <!-- Content -->
-        <div class="prose max-w-none mx-auto mb-8" v-html="nyhed?.acf?.beskrivelse || nyhed?.content?.rendered" />
+        <div
+          class="prose max-w-none mx-auto mb-8"
+          v-html="nyhed?.acf?.beskrivelse || nyhed?.content?.rendered"
+        />
 
         <!-- Back link -->
         <div class="flex justify-center">
-          <NuxtLink to="/nyheder" class="text-primary underline hover:text-primary-dark transition">
+          <NuxtLink
+            to="/nyheder"
+            class="text-primary underline hover:text-primary-dark transition"
+          >
             ← Tilbage til nyheder
           </NuxtLink>
         </div>
@@ -42,37 +54,37 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
 
-const route = useRoute()
-const slug = route.params.slug
-const nyhed = ref(null)
-const pending = ref(true)
+const route = useRoute();
+const slug = route.params.slug;
+const nyhed = ref(null);
+const pending = ref(true);
 
 const fetchNyhed = async () => {
   try {
     const res = await fetch(
       `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?slug=${slug}&categories=29`
-    )
-    const data = await res.json()
-    nyhed.value = data[0] || null
+    );
+    const data = await res.json();
+    nyhed.value = data[0] || null;
   } catch (e) {
-    nyhed.value = null
+    nyhed.value = null;
   } finally {
-    pending.value = false
+    pending.value = false;
   }
-}
+};
 
-onMounted(fetchNyhed)
+onMounted(fetchNyhed);
 
 function formatDate(dateStr) {
-  if (!dateStr) return ''
-  return new Date(dateStr).toLocaleDateString('da-DK', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+  if (!dateStr) return "";
+  return new Date(dateStr).toLocaleDateString("da-DK", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 </script>
 

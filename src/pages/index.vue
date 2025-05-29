@@ -11,7 +11,7 @@
   <!-- gradient til herosektion -->
   <div class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"></div>
 
-  <h1 class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center">
+  <h1 ref="heroTitle" class=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible">
     Fur Bryghus
   </h1>
 
@@ -145,6 +145,29 @@ heading="Restaurant Bryghuset"
 
 </template>
 <script setup>
+// Her bruges gsap til at lave en tekst animation på h1
+import { gsap } from "gsap";
+import { SplitText } from "gsap/SplitText";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(SplitText, TextPlugin);
+const heroTitle = ref(null);
+ 
+
+onMounted(() => {
+  gsap.set(heroTitle.value, { visibility: 'visible' });
+
+  // Her vælges der at der skal animeres efter hvert ord og herefter vælges der spcifikationerne.
+  const split = new SplitText(heroTitle.value, { type: "words" });
+  gsap.from(split.words, {
+     y: 70,
+    opacity: 0,
+    rotation: "random(-20, -20)",
+    duration: 0.8, 
+    ease: "ease",
+    stagger: 0.7
+  });
+});
 
 // Sætter Title og Meta Description for forsiden
 const title = ref('Fur Bryghus')
@@ -193,7 +216,7 @@ Promise.all([
 // Her importeres de billeder som bliver brugt i basicSection komponentet
 import mobileImg from '@/assets/images/mobile/Forside_Restaurant_Mobile.png'
 import desktopImg from '@/assets/images/desktop/Forside-restaurant-bryghuset.webp'
-import traeBackground from '@/assets/images/trae-baggrund.jpeg'
+import traeBackground from '@/assets/images/morkTrae.png'
 
 
 // denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade

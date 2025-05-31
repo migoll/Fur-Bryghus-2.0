@@ -1,6 +1,6 @@
 <template>
   <!-- hero sektion -->
- <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[60vh] lg:h-[100vh] overflow-visible">
+ <section class="hero relative h-[50vh] max-w-screen xs:h-[70vh] md:h-[80vh] lg:h-[100vh] overflow-visible">
   <img
     src="../assets/images/mobile/Forside_Hero_Mobile.png"
     alt="Fur bryghus"

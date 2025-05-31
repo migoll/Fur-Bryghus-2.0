@@ -11,7 +11,7 @@
   <!-- gradient til herosektion -->
   <div class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"></div>
 
-  <h1 ref="heroTitle" class=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible">
+  <h1 ref="heroTitle" class=" absolute top-1/2 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible">
     Fur Bryghus
   </h1>
 

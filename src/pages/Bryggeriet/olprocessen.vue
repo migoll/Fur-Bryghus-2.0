@@ -3,7 +3,7 @@
     heroHeading="Ølprocessen"
     :heroImageMobile="heroMobile"
     :heroImageDesktop="heroDesktop"
-    heroImageAlt="Billede af maden i restauranten"
+    heroImageAlt="Billede af øl på samlebånd i bryggeriet"
   />
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">

@@ -68,11 +68,12 @@ const myScenesArray = [
       '768w': imageRundvisning,
     },
     text: [
-      'Bryggeriet og restauranten har til huse i en gammel molerfabrik, der er tegnet af en københavnsk arkitekt og bygget i 1926. En smuk, rød træbygning, placeret på et 128 Ha stort område på den nordvestlige spids af Fur.'
-      ,
-      'Her i området startede indvindingen af moler omkring år 1925. Moler-produktionen fortsatte i Vesterbakker indtil 1978, hvor den mistede sin lønsomhed og overgik til Damolins (nu Imerys) produktionsanlæg på Østfur (Østermoler).'
-      ,
-      'Moleret blev afskibet via egen bro, hvortil en stor del blev transporteret med små lokomotiver. Lokomotiverne er valgt som motiv på vores ravgyldne Steam Beer.'
+      '* Historien om Fur Bryghus og øllets verden',
+      '* Rundvisning i bryggeriet',
+      '* Smagning af 4 Fur-øl á 0,1 l. ',
+      '* Afslutning i Gårdbutikken ',
+      '* Kan bookes for grupper fra 20 til 60 personer Varighed: 1,25 timer Pris pr. person: 175,- ',
+      'Gårdbutikkens ølbar er åben og serverer frisktappet fadøl og kolde flaskeøl. Derudover er hele Fur Bryghus varesortiment tilgængeligt, så dagens favoritter kan komme med hjem. Mht. spisning er der er mulighed for tilkøb af sandwich efter smagningen eller spisning i restauranten.'
     ]
   },
   {
@@ -83,12 +84,16 @@ const myScenesArray = [
       '320w': imageLilleOlsmagningMobile,
       '768w': imageLilleOlsmagning,
     },
-    text: [
-      'Produktionen af moler på Østfur stoppede i 1982, og herefter stod fabriksbygningen tom indtil 1997. Tidens tand var hård ved bygningen, og satte sig tydelige spor.'
-      ,
-      'I 1997 blev området erhvervet af Mogens Fog, der påbegyndte en renovering. Fabrikken fik en ny ydre skal – 2,4 km brædder – og taget blev gjort tæt.'
-      ,
-      'Det var imidlertid vanskeligt at finde en anvendelse for fabrikken. Alle, der blev spurgt, kom med de samme idéer: Museum – Galleri – Udstillingsbygning – eller Showhall. Forslag om hotel var ikke muligt, da myndighederne ikke ønskede at ændre bygningens status til dette formål. Samtidig er området underlagt de restriktioner, som ligger i den 300 meter brede strandbeskyttelseslinje.'
+   text: [
+      '* Foregår i Gårdbutikken',
+      '* Historien om Fur Bryghus og øllets verden',
+      '* Smagning af 4 Fur-fadøl á 0,2 l. ',
+      '* Saltede snacks under smagningen ',
+      '* Varighed: 1,5 timer ',
+      '* Pris pr. person: 295,- ',
+      '* Kan bookes for grupper fra 15 til 25 personer*',
+      'Gårdbutikkens har hele Fur Bryghus varesortiment tilgængeligt, så dagens favoritter kan komme med hjem. Mht. spisning er der er mulighed for tilkøb af sandwich efter smagningen eller spisning i restauranten.',
+      'Ved flere end 25 personer flyttes smagningen til et større lokale, og der afsluttes i Gårdbutikken, så I ikke går glip af muligheden for at tage dagens favoritter med hjem.'
     ]
   },
  {
@@ -100,17 +105,19 @@ const myScenesArray = [
       '768w': imageStorOlsmagning,
     },
     text: [
-      'I januar/februar 2003 besluttede Mildred og Mogens Fog, at bygningen skulle indeholde et mikrobryggeri – et af Danmarks tidligste. Mogens Fog kendte kulturen fra sine rejser i udlandet, bl.a. Belgien og Tyskland, men han anede ikke, at mikrobryggerier var på vej til at blive en trend i Danmark.'
-      ,
-      'Parret gik i gang med at undersøge muligheden for at etablere et Bryghus i ”Den gamle røde Fabrik”, der fortsat indeholdt maskiner fra molerproduktionen. Det var vigtigt for dem at få sat nogle aktiviteter i gang i fabrikken. Og at skabe en aktivitet på Fur.'
-      ,
-      'Myndighederne var straks med på idéen og kunne se de muligheder, der lå i bryghus aktiviteten. For turisterne, for området og ikke mindst for hele øen Fur. Alle, der kunne have indflydelse på projektet var medvirkende og positive.'
-      ,
-      'Bryggeriet er stort set opført af lokale håndværkere. Og det er i sig selv flot, at en lille ø som Fur kan man mønstre lokal arbejdskraft til et sådant projekt.'
-      ,
-      'I dag er bryggeriet ejet af Mildred Fog, og en investorkreds bestående af Direktør Michael Ring, Stelton, Direktør Søren Holm, CoRo, Advokat Jacob Hjortshøj, Bech & Bruun, og Mads Hylletoft Bøttger direktør Dragsholm Slot.'
-      
+      '* Historien om Fur Bryghus og øllets verden',
+      '* Rundvisning i bryggeriet',
+      '* Smagning af 6 x 0,2 l. fadøl + 1 x 3 cl. Fur snaps',
+      '* Saltede snacks under smagningen ',
+      '* Afslutning i Gårdbutikken ',
+      '* Kan bookes for grupper fra 15 til 25 personer',
+      '* Varighed: 2,5 timer',
+      '* Pris pr. person: 450,',
+      'Gårdbutikkens har hele Fur Bryghus varesortiment tilgængeligt, så dagens favoritter kan komme med hjem. Mht. spisning er der er mulighed for tilkøb af sandwich efter smagningen eller spisning i restauranten.',
+      'Ved flere end 25 personer flyttes smagningen til et større lokale, og der afsluttes i Gårdbutikken, så I ikke går glip af muligheden for at tage dagens favoritter med hjem.'
     ]
   },
   ]
 </script>
+
+

@@ -1,5 +1,10 @@
 <template>
-  <header class="w-full bg-fur-accent-bone shadow-sm">
+  <header
+    :class="[
+      'w-full bg-fur-accent-bone shadow-sm fixed top-0 left-0 right-0 z-50 transition-transform duration-300',
+      isHeaderVisible ? 'translate-y-0' : '-translate-y-full',
+    ]"
+  >
     <!-- Desktop Header -->
     <div
       class="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-4 py-4"
@@ -189,17 +194,39 @@
       </nav>
     </div>
   </header>
+  <div class="h-[72px] lg:h-[88px]"></div>
 </template>
 
 <script setup lang="ts">
 import "hamburgers/dist/hamburgers.min.css";
-
 import type { NavigationItem } from "~/types/navigation";
 import DropdownEntry from "~/components/DropdownEntry.vue";
 import entryPointMenuImage from "@/assets/images/entry-point-menu.jpg";
 
 const isMenuOpen = ref(false);
 const openMobileDropdowns = ref<Record<number, boolean>>({});
+const isHeaderVisible = ref(true);
+const lastScrollY = ref(0);
+
+onMounted(() => {
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 0) {
+      isHeaderVisible.value = true;
+    } else if (currentScrollY < lastScrollY.value) {
+      isHeaderVisible.value = true;
+    } else {
+      isHeaderVisible.value = false;
+    }
+
+    lastScrollY.value = currentScrollY;
+  });
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", () => {});
+});
 
 const toggleMobileDropdown = (index: number) => {
   openMobileDropdowns.value[index] = !openMobileDropdowns.value[index];

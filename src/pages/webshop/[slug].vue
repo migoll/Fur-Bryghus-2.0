@@ -238,10 +238,6 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import { computed, ref } from "vue";
-import Button from "~/components/Button.vue";
-
 interface Term {
   term_id: number;
   name: string;

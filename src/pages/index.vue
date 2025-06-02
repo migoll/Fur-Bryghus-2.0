@@ -1,6 +1,6 @@
 <template>
   <!-- hero sektion -->
- <section class="hero relative h-[50vh] max-w-screen xs:h-[55vh] md:h-[60vh] lg:h-[100vh] overflow-visible">
+ <section class="hero relative h-[50vh] max-w-screen xs:h-[70vh] md:h-[80vh] lg:h-[100vh] overflow-visible">
   <img
     src="../assets/images/mobile/Forside_Hero_Mobile.png"
     alt="Fur bryghus"
@@ -11,7 +11,7 @@
   <!-- gradient til herosektion -->
   <div class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"></div>
 
-  <h1 ref="heroTitle" class=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible">
+  <h1 ref="heroTitle" class=" absolute top-1/2 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible">
     Fur Bryghus
   </h1>
 
@@ -41,21 +41,21 @@
  <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
   <div class="usp opacity-0 ">
      <p class="font-anton mb-[1rem]">
-      Lokale Råvarer
+      Naturlig proces
     </p>
     <img src="../assets/icons/olTonde.svg" alt="Ikon af korn">
   </div>
    <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
   <div class="usp opacity-0">
     <p class="font-anton mb-[1rem]">
-      Lokale Råvarer
+     Bredt udvalg
     </p>
     <img src="../assets/icons/ol.svg" alt="Ikon af korn">
   </div>
    <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
   <div class="usp opacity-0">
      <p class="font-anton mb-[1rem]">
-      Lokale Råvarer
+     Brygget på vand fra Fur
     </p>
     <img src="../assets/icons/olHus.svg" alt="Ikon af korn">
   </div>

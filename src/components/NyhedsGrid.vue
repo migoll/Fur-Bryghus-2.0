@@ -2,7 +2,10 @@
   <!-- Dette grid bruges til at vise NyhedsCard.vue. på den måde kan der sættes det antal posts ind vi gerne vil have -->
   <section class="flex flex-col items-center content-center">
     <!-- Loading animation vises kun mens isLoading er true -->
-     <div v-if="isLoading" class="flex justify-center items-center flex-col h-[40vh]">
+    <div
+      v-if="isLoading"
+      class="flex justify-center items-center flex-col h-[40vh]"
+    >
       <DotLottieVue
         style="height: 200px; width: 200px"
         autoplay
@@ -21,41 +24,43 @@
 </template>
 
 <script setup>
-import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
+import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 
-const emit = defineEmits(['update:isLoading'])
+const emit = defineEmits(["update:isLoading"]);
 
 // Her defineres der props så man selv kan vælge hvor mange nyheder der skal ses
 const props = defineProps({
   limit: {
     type: Number,
-    default: 3 
-  }
-})
+    default: 3,
+  },
+  categories: {
+    type: String,
+    default: "29,28,30",
+  },
+});
 
 // nyheder er et tomt array hvorefter der indsættes data der bruges oppe i html'en
-const nyheder = ref([])
-const isLoading = ref(true)
+const nyheder = ref([]);
+const isLoading = ref(true);
 
 watch(isLoading, (val) => {
-  emit('update:isLoading', val)
-})
+  emit("update:isLoading", val);
+});
 
 // Her fetches alle data der bliver lavet om til json
 onMounted(async () => {
   try {
     const res = await fetch(
-      `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?categories=29,28,30&per_page=100&order=desc&orderby=date&_embed`
-    )
-    const data = await res.json()
-      // slice er en metode som returner en ny kopi af vores array med data. derfor hvis vi indtaster at vi kun vil se 5 nyheder, kan det lade sig gøre
-    nyheder.value = data.slice(0, props.limit)
+      `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?categories=${props.categories}&per_page=100&order=desc&orderby=date&_embed`
+    );
+    const data = await res.json();
+    nyheder.value = data.slice(0, props.limit);
   } catch (error) {
-    console.error('Fejl ved hentning af nyheder:', error)
+    console.error("Fejl ved hentning af nyheder:", error);
   } finally {
     // Når vi er færdige med at hente, uanset om det lykkes eller fejler
-    isLoading.value = false
+    isLoading.value = false;
   }
-})
+});
 </script>
-

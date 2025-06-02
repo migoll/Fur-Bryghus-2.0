@@ -30,7 +30,7 @@
             {{ item.name }}
             <img
               src="../assets/images/header-arrow.svg"
-              class="mx-3 rotate-180"
+              class="mx-3 rotate-180 transition-transform duration-300 group-hover:rotate-0"
               alt="Ikon af korn"
             />
           </div>
@@ -44,9 +44,11 @@
 
           <div
             v-if="item.hasDropdown"
-            class="absolute top-full left-0 mt-2 bg-white shadow-lg p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+            class="absolute top-full left-0 mt-8 bg-fur-accent-bone shadow-lg p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 transform origin-top"
           >
-            <div class="grid grid-cols-[auto_auto_auto] gap-12">
+            <div
+              class="grid grid-cols-[auto_auto_auto] gap-12 transform transition-all duration-300 ease-in-out"
+            >
               <div class="flex flex-col gap-4">
                 <!--Kun vis 4 menu items ad gangen i hver kolonne-->
                 <NuxtLink
@@ -201,13 +203,14 @@
 import "hamburgers/dist/hamburgers.min.css";
 import type { NavigationItem } from "~/types/navigation";
 import DropdownEntry from "~/components/DropdownEntry.vue";
-import entryPointMenuImage from "@/assets/images/entry-point-menu.jpg";
+import entryPointMenuImage from "@/assets/images/mobile/Olsmagning_Hero_Mobile.png";
 
 const isMenuOpen = ref(false);
 const openMobileDropdowns = ref<Record<number, boolean>>({});
 const isHeaderVisible = ref(true);
 const lastScrollY = ref(0);
 
+// inspiration til header visible on scroll https://stackoverflow.com/questions/63902512/js-show-hide-header-on-scroll-effect-but-only-after-the-header-has-scrolled
 onMounted(() => {
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;

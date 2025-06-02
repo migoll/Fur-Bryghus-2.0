@@ -1,9 +1,9 @@
 <template>
   <Hero
-    heading="Arrangementer"
-    :imageMobile="mobileImg"
-    :imageDesktop="desktopImg"
-    imageAlt="Bryggeriet"
+    heroHeading="Arrangementer"
+    :heroImageMobile="heroImageMobile"
+    :heroImageDesktop="heroImageDesktop"
+    heroImageAlt="Bryggeriet"
   />
 
   <section class="flex flex-col items-center content-center">
@@ -17,6 +17,6 @@
 </template>
 
 <script setup>
-import mobileImg from "@/assets/images/mobile/Nyheder_Hero.jpg";
-import desktopImg from "@/assets/images/desktop/Nyheder_Hero.jpg";
+import mobileImg from "@/assets/images/desktop/Arrangementer-hero.webp";
+import heroImageDesktop from "@/assets/images/desktop/Arrangementer-hero.webp";
 </script>

@@ -19,8 +19,8 @@
 </template>
 
 <script setup>
-import heroImageMobile from "@/assets/images/mobile/Nyheder_Hero.jpg";
-import heroImageDesktop from "@/assets/images/desktop/Nyheder_Hero.jpg";
+import heroImageMobile from "@/assets/images/mobile/Nyheder_hero.jpg";
+import heroImageDesktop from "@/assets/images/desktop/nyheder-hero.webp";
 
 const isLoading = ref(true);
 

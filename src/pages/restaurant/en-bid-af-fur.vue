@@ -22,7 +22,7 @@
         kombineres, så smag og udseende tilfredsstiller alle sanser.
       </p>
       <div class="flex flex-col items-center w-full">
-        <img :src="enBidAfFur" alt="En bid af fur ikon" />
+        <img src="../assets/icons/olHus.svg" alt="Ikon af korn" />
       </div>
     </div>
   </section>
@@ -87,7 +87,6 @@ import desktopImg1 from "@/assets/images/desktop/en-bid-af-fur-fokus.webp";
 import mobileImg2 from "@/assets/images/mobile/EnBidAfFur-prov.png";
 import desktopImg2 from "@/assets/images/desktop/en-bid-af-fur-prov.webp";
 import traeBackground from "@/assets/images/morkTrae.png";
-import enBidAfFur from "@/assets/icons/enBidAFur-ikon.svg";
 
 // Sætter Title og Meta Description for forsiden
 const title = ref("En bid af Fur");

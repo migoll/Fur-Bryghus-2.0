@@ -22,7 +22,7 @@
         kombineres, så smag og udseende tilfredsstiller alle sanser.
       </p>
       <div class="flex flex-col items-center w-full">
-        <img src="/assets/icons/enBidAFur-ikon.svg" alt="Ikon af humle" />
+        <img src="@/assets/icons/enBidAFur-ikon.svg" alt="Ikon af humle" />
       </div>
     </div>
   </section>

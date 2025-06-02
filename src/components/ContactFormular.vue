@@ -1,6 +1,8 @@
 <template>
-  <div class="bg-[#0F2B39] text-white px-6 py-10 max-w-md mx-auto  shadow-lg">
-    <h2 class="text-3xl font-bold text-center mb-8">Kontakt os</h2>
+  <div class="bg-[#0F2B39] text-white px-6 py-10 max-w-md mx-auto shadow-lg">
+    <h2 class="text-center mb-8 text-h2 md:text-h2-md font-anton">
+      Kontakt os
+    </h2>
     <form class="space-y-6">
       <div>
         <label class="block mb-1" for="navn">Navn</label>
@@ -42,11 +44,11 @@
         ></textarea>
       </div>
       <!-- Hvordan skal den sættes op? -->
-      <Button/>
+      <Button />
     </form>
   </div>
 </template>
 
 <script setup>
-import Button from './Button.vue';
+import Button from "./Button.vue";
 </script>

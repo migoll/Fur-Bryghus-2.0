@@ -11,7 +11,9 @@
     <div
       class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]"
     >
-      <h2 class="text-center pb-4">Fokus på ingredienserne</h2>
+      <h2 class="text-center pb-4 text-h2 md:text-h2-md font-anton">
+        Fokus på ingredienserne
+      </h2>
       <p>
         I vores produktion af øl har vi stor fokus på brug af lokale
         ingredienser. Det samme gælder også i vores udsøgte frokostretter, som

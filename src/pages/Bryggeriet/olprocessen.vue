@@ -7,7 +7,9 @@
   />
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
-      <h2 class="text-center">Smagen af Fur og ren passion</h2>
+      <h2 class="text-center text-h2 md:text-h2-md font-anton">
+        Smagen af Fur og ren passion
+      </h2>
       <p class="mt-4">
         God øl kræver gode råvarer. Et veludstyret bryggeri. Og ikke mindst en
         dygtig og passioneret brygmester. Det har vi på Fur Bryghus. Og mere
@@ -30,7 +32,9 @@
         />
       </div>
       <div class="w-full md:w-1/2">
-        <h2 class="text-2xl font-bold mb-4">Bryggeriet og brygmesteren</h2>
+        <h2 class="text-h2 md:text-h2-md font-anton mb-4">
+          Bryggeriet og brygmesteren
+        </h2>
         <p class="mb-4">
           Fur Bryghus har indrettet bryggeriet med udvalgt udstyr. Selve
           Brygværket samt gærkarret er fabrikeret i Tjekkiet. De første tanke

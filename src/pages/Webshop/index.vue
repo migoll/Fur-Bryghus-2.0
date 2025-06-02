@@ -70,7 +70,9 @@
           </div>
 
           <div class="flex flex-col relative z-10">
-            <h2 class="text-lg font-semibold">{{ product.title.rendered }}</h2>
+            <h2 class="text-h2 md:text-h2-md font-anton font-semibold">
+              {{ product.title.rendered }}
+            </h2>
             <p class="p-small text-gray-700 mb-2">
               {{ product.acf?.intro_titel || "Ingen beskrivelse tilgængelig" }}
             </p>

@@ -8,7 +8,9 @@
 
   <section class="flex flex-col items-center mx-auto p-10 md:flex-row gap-6">
     <div class="flex-1 justify-center">
-      <h2>Restaurantens åbningstider</h2>
+      <h2 class="text-h2 md:text-h2-md font-anton">
+        Restaurantens åbningstider
+      </h2>
       <p>
         Restauranten er sæsonlukket i perioden november til og med februar 2025
         - bemærk at vi åbner for selskaber over 20 personer. Kontakt os på
@@ -22,7 +24,7 @@
     class="bg-fur-accent-beer flex flex-col items-center mx-auto p-10 md:flex-row"
   >
     <div class="flex-1 justify-center">
-      <h3>Prøv smagen af fur</h3>
+      <h3 class="text-h3 md:text-h3-md font-anton">Prøv smagen af fur</h3>
       <p>
         Besøg os og få en oplevelse og smagen af Fur. Vi glæder os til at byde
         dig velkommen. Husk at booke bord på restauranten for at sikre dig en

@@ -14,7 +14,7 @@
       <div class="w-full max-w-[700px] px-4 md:px-0 mt-8">
         <!-- Title -->
         <h1
-          class="text-4xl font-bold mb-2 text-center"
+          class="mb-2 text-center text-h1 md:text-h1-md font-anton"
           v-html="nyhed?.title?.rendered"
         />
 

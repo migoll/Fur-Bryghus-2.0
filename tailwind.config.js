@@ -34,6 +34,26 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
         anton: ["Anton", "sans-serif"],
       },
+      fontSize: {
+        h1: ["3rem", { lineHeight: "1" }],
+        "h1-md": ["9rem", { lineHeight: "1" }],
+
+        h2: ["2rem", { lineHeight: "1", letterSpacing: "0.07rem" }],
+        "h2-md": ["4rem", { lineHeight: "1", letterSpacing: "0.07rem" }],
+
+        h3: ["2rem", { lineHeight: "1", letterSpacing: "0.07rem" }],
+        "h3-md": ["2.5rem", { lineHeight: "1", letterSpacing: "0.07rem" }],
+
+        "p-small": ["1rem", { lineHeight: "1.5" }],
+
+        "p-medium": ["1.25rem", { lineHeight: "1.5" }],
+
+        "p-medium-md": ["1.875rem", { lineHeight: "1.5" }],
+
+        "p-big": ["1.875rem", { lineHeight: "1.5" }],
+
+        "p-big-md": ["6rem", { lineHeight: "1.5" }],
+      },
       screens: {
         xs: "480px",
         sm: "640px",

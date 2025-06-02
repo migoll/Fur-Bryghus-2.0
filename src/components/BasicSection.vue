@@ -3,7 +3,7 @@
   <section
     :class="[
       // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
-      'px-[4rem] py-[2rem] flex items-center justify-center',
+      'px-[1rem] py-[2rem] md:py-[4rem] md:px-[2rem] flex items-center justify-center',
       bgImage ? '' : bgColor
     ]
     // her defineres hvordan baggrundsbilledet sættes hvis der findes det
@@ -11,7 +11,7 @@
   >
     <div
   :class="[
-    'md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px] md:gap-[5rem]',
+    'md:flex md:justify-center md:items-center md:h-full md:w-full xl:max-w-[1280px] md:gap-[5rem]',
     reverse ? 'md:flex-row-reverse' : ''
   ]"
 >
@@ -19,11 +19,23 @@
         <!-- Her sættes dynamiskefarver til h2 og p så brugeren selv kan vælge farven -->
         <h2 :class="['mb-[1rem] scroll-fade', headingColor]">{{ heading }}</h2>
         <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text }}</p>
+        <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text2 }}</p>
+        <!-- Her kan man vælge at indsætte en dynamisk liste -->
+        <ul
+        v-if="listItems && listItems.length"
+        :class="['mb-[1rem] list-disc pl-5 scroll-fade', textColor]"
+        >
+      <li
+      v-for="(item, index) in listItems" :key="index"
+      > {{ item }}</li>
+      </ul>
         <!-- Her indsættes det knap komponent som vi allerede har lavet -->
         <Button
           v-if="buttonLabel"
           :label="buttonLabel"
           :to="buttonLink"
+          :is-pdf="isPdf"
+          :open-in-new-tab="openInNewTab"
         />
       </div>
       <div class=" md:h-full lg:w-1/2">
@@ -31,7 +43,7 @@
           :src="imageMobile"
           :alt="imageAlt"
           :srcset="`${imageDesktop} 768w`"
-          class="w-full md:h-full object-cover mt-[1rem] md:m-0 scroll-fade"
+          class="w-full md:h-[400px] object-cover mt-[1rem] md:m-0 scroll-fade"
         />
       </div>
     </div>
@@ -46,6 +58,8 @@
 defineProps<{
   heading: string
   text: string
+  text2?: string
+  listItems?: string[]
   imageMobile: string
   imageDesktop: string
   imageAlt?: string
@@ -56,6 +70,8 @@ defineProps<{
   buttonLabel?: string
   buttonLink?: string
   reverse?: boolean
+   isPdf?: boolean
+   openInNewTab?: boolean;
 }>()
 
 // denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade

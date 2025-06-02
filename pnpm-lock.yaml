@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@lottiefiles/dotlottie-vue':
+        specifier: ^0.6.3
+        version: 0.6.3(vue@3.5.14(typescript@5.8.3))
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       hamburgers:
         specifier: ^1.2.1
         version: 1.2.1
@@ -384,6 +390,14 @@ packages:
 
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+
+  '@lottiefiles/dotlottie-vue@0.6.3':
+    resolution: {integrity: sha512-t8uGmuue8Rv/xWOmbG2HkgYWt0KX6m34baOzlPit6cbfrHFXYJcr+BLp06y6tGMJtrtv/y3tK5nqwi4s9WHrkg==}
+    peerDependencies:
+      vue: ^3.3.4
+
+  '@lottiefiles/dotlottie-web@0.44.0':
+    resolution: {integrity: sha512-IUWKVciDJI/BMWDWnh7j0Ngd0N8q9ySRAwm84aDqIE07qpmdZ7x1rkIpBaU1yHSNqNYHeh1Rxsl+LC3CY4f0KA==}
 
   '@mapbox/node-pre-gyp@1.0.11':
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
@@ -2000,6 +2014,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  gsap@3.13.0:
+    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
 
   gzip-size@7.0.0:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
@@ -4352,6 +4369,13 @@ snapshots:
 
   '@kwsites/promise-deferred@1.1.1': {}
 
+  '@lottiefiles/dotlottie-vue@0.6.3(vue@3.5.14(typescript@5.8.3))':
+    dependencies:
+      '@lottiefiles/dotlottie-web': 0.44.0
+      vue: 3.5.14(typescript@5.8.3)
+
+  '@lottiefiles/dotlottie-web@0.44.0': {}
+
   '@mapbox/node-pre-gyp@1.0.11':
     dependencies:
       detect-libc: 2.0.4
@@ -6241,6 +6265,8 @@ snapshots:
   gopd@1.2.0: {}
 
   graceful-fs@4.2.11: {}
+
+  gsap@3.13.0: {}
 
   gzip-size@7.0.0:
     dependencies:

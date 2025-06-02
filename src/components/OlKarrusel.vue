@@ -3,7 +3,7 @@
    <!-- Her laves en ølkarrusel komponent der dynamisk henter indhold fra wordpress api'et -->
     <!-- Her bruges JavaScript librariet Swiper som er et populært framework til karuseller -->
 <div class="swiper bg-fur-blue">
-  <div class="swiper-wrapper md:w-full xl:max-w-[1280px] md:py-[4rem] lg:py-[2rem]">
+  <div class="swiper-wrapper md:w-full xl:max-w-[1280px] md:py-[4rem] lg:py-[6rem] py-[2rem]">
     <!-- med v-forloopes der over alle de øl der hentes -->
     <div class="swiper-slide !flex flex-col md:flex-row items-center justify-center lg:px-[4rem] max-w-screen" v-for="beer in beers" :key="beer.id">
         <div>
@@ -14,7 +14,7 @@
           <!-- her vises navn og introtitel der hentes for hver øl -->
             <h2 class="text-neutral-6 text-center md:text-left">{{ beer.acf.navn }}</h2>
             <p class="text-neutral-6 p-medium text-center md:text-left" >{{ beer.acf.intro_titel }}</p>
-            <div class="flex lg:gap-[3rem] items-center md:items-start justify-center flex-col text-center lg:flex-row md:text-left  md:mt-[10rem]">
+            <div class="flex items-center md:items-start justify-center flex-col text-center lg:flex-row md:text-left  md:mt-[10rem]">
               <!-- Her vises 3 stykker metadata for hver øl -->
                 <div class="text-neutral-6 md:w-auto ">
                     <p class="p-medium">Stilart</p>

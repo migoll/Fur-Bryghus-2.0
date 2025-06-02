@@ -91,7 +91,7 @@ const openingHours = {
       "Frokoståbent: 11.30 - 16.00"
     ]
   ],
-   juni: [
+   Juni: [
     [
       "Mandag",
       "Lukket"

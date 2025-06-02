@@ -7,6 +7,7 @@ module.exports = {
     "./src/plugins/**/*.{js,ts}",
     "./src/app.vue",
   ],
+  safelist: ["h1", "h2", "h3", "h4", "h5", "h6"],
   theme: {
     extend: {
       colors: {

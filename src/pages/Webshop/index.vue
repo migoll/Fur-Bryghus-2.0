@@ -1,7 +1,13 @@
 <template>
+  <Hero
+    heroHeading="Vores produkter"
+    :heroImageMobile="heroImageMobile"
+    :heroImageDesktop="heroImageDesktop"
+    heroImageAlt="Bryggeriet"
+  />
   <div class="lg:flex">
     <div
-      class="lg:w-56 lg:min-w-[16rem] bg-fur-blue text-fur-accent-bone px-4 py-2 sm:p-0"
+      class="lg:w-56 lg:min-w-[16rem] bg-fur-blue text-fur-accent-bone px-4 py-2 sm:p-0 lg:sticky lg:top-0 lg:h-screen"
     >
       <div
         class="flex lg:flex-col gap-6 overflow-x-auto p-0 lg:p-4 h-14 lg:h-auto whitespace-nowrap lg:whitespace-normal border-b lg:border-b-0"
@@ -88,6 +94,9 @@
 import { computed, ref, watch } from "vue";
 import ProduktPagination from "~/components/ProduktPagination.vue";
 
+import mobileImg from "@/assets/images/desktop/Arrangementer-hero.webp";
+import heroImageDesktop from "@/assets/images/desktop/Vores-produkter-hero.webp";
+
 interface Term {
   name: string;
 }
@@ -125,22 +134,25 @@ const { data } = await useFetch<Product[]>(
   "https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?per_page=100"
 );
 
+// Henter data til alle sorteringsrmuligheder (vores taksonomier) for produkterne
 const { data: sorteringer } = await useFetch<ProduktSortering[]>(
   "https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/produkt-sortering?per_page=100"
 );
 
 const valgtSortering = ref<number | null>(null);
+// Liste over kategorier der skal vises i webshoppen
 const tilladteKategoriIds = [3, 76, 75];
 
+//Filtrerede produkter baseret på tilladte kategorier
 const filtreredeProdukter = computed(() =>
   (data.value || []).filter((produkt) =>
     produkt.categories?.some((id) => tilladteKategoriIds.includes(id))
   )
 );
 
+// sorterer produkterne baseret på specifik valgt sortering
 const sorteredeProdukter = computed(() => {
   const produkter = filtreredeProdukter.value;
-
   const filtreret = valgtSortering.value
     ? produkter.filter((produkt) =>
         produkt.acf?.produkt_sortering?.some(
@@ -149,6 +161,7 @@ const sorteredeProdukter = computed(() => {
       )
     : produkter;
 
+  //sorter produkterne i samme rækkefølge som kategori ID, så vi får de vigtigste først
   return filtreret.sort((a, b) => {
     const aIndex = tilladteKategoriIds.findIndex((id) =>
       a.categories?.includes(id)

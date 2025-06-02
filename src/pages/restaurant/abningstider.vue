@@ -41,6 +41,6 @@
 </template>
 
 <script setup>
-import mobileImg from "@/assets/images/mobile/Aabningstider_Hero_mobile.png";
+import mobileImg from "@/assets/images/mobile/Aabningstider_Hero_Mobile.png";
 import desktopImg from "@/assets/images/desktop/abningstider-hero.webp";
 </script>

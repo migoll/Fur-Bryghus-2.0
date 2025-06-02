@@ -43,6 +43,7 @@
           >
             <div class="grid grid-cols-[auto_auto_auto] gap-12">
               <div class="flex flex-col gap-4">
+                <!--Kun vis 4 menu items ad gangen i hver kolonne-->
                 <NuxtLink
                   v-for="(dropdownItem, dropIndex) in item.dropdownItems.slice(
                     0,
@@ -57,6 +58,7 @@
               </div>
 
               <div class="flex flex-col gap-2">
+                <!--Kun vis 4 menu items ad gangen i hver kolonne-->
                 <NuxtLink
                   v-for="(dropdownItem, dropIndex) in item.dropdownItems.slice(
                     4
@@ -84,7 +86,7 @@
         <span class="sr-only">Cart</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-8 w-8"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -114,7 +116,7 @@
           <span class="sr-only">Cart</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            class="h-8 w-8"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

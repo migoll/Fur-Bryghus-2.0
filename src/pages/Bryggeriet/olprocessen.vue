@@ -8,7 +8,7 @@
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
       <h2 class="text-center">Smagen af Fur og ren passion</h2>
-      <p class="mt-4">
+      <p class="mt-4 mx-auto">
         God øl kræver gode råvarer. Et veludstyret bryggeri. Og ikke mindst en dygtig og passioneret brygmester. Det har vi på Fur Bryghus. Og mere til. Vi har en unik historie og beliggenhed. Dertil kommer det helt specielle Fur vand, fyldt med naturlige mineraler og salte, der optages gennem den lange rejse gennem øens lag af moler og vulkansk aske.
       </p>
       <img src="@/assets/icons/olTonde.svg" alt="Icon description" class="mt-4 w-32 h-32 mx-auto" />

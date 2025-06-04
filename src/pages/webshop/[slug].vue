@@ -41,10 +41,14 @@
 
             <div
               v-if="produktData.acf?.beskrivelse"
-              class="space-y-4 mb-8 md:mb-0 lg:mb-8"
+              class="space-y-4 mb-8 md:mb-0 lg:mb-4"
               v-html="produktData.acf.beskrivelse"
             />
+            <NuxtLink to="/bryggeriet/forhandlere">
+              <p class="underline">Se forhandlere</p></NuxtLink
+            >
           </div>
+
           <div class="flex flex-col md:w-72 lg:w-full">
             <div class="flex gap-4 mb-6">
               <div

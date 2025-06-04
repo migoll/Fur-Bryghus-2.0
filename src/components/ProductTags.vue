@@ -2,21 +2,21 @@
   <div class="flex flex-wrap gap-2">
     <span
       v-if="product.acf?.storrelse?.length"
-      class="border border-neutral-1 px-2 py-1 text-xs rounded-full font-medium"
+      class="border border-neutral-1 px-2 py-1 text-md rounded-full font-medium"
     >
       {{ product.acf.storrelse[0].name }}
     </span>
 
     <span
       v-if="product.acf?.stilart?.length"
-      class="border border-neutral-1 px-2 py-1 text-xs rounded-full font-medium"
+      class="border border-neutral-1 px-2 py-1 text-md rounded-full font-medium"
     >
       {{ product.acf.stilart[0].name }}
     </span>
 
     <span
       v-if="showAlcoholPercentage && product.acf?.alkoholprocent"
-      class="border border-neutral-1 px-2 py-1 text-xs rounded-full font-medium"
+      class="border border-neutral-1 px-2 py-1 text-md rounded-full font-medium"
     >
       {{ product.acf.alkoholprocent }}% vol.
     </span>
@@ -27,7 +27,7 @@
         !product.acf?.stilart?.length &&
         product.categories?.length
       "
-      class="border border-neutral-1 px-2 py-1 text-xs rounded-full font-medium"
+      class="border border-neutral-1 px-2 py-1 text-md rounded-full font-medium"
     >
       {{
         kategoriNavne[

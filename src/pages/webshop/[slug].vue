@@ -310,35 +310,14 @@ interface Produkt {
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: produkt, error } = await useFetch<Produkt[]>(
+const { data: produkt } = await useFetch<Produkt[]>(
   `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?slug=${slug}`,
-  {
-    onResponse({ response }) {
-      console.log("API Response:", response._data);
-    },
-    onResponseError({ response }) {
-      console.error("API Error:", response._data);
-    },
-  }
+  {}
 );
 
 const produktData = computed(() => {
   const data = produkt.value?.[0];
-  console.log("Current product data:", data);
-  if (!data) {
-    console.error("No product data found for slug:", slug);
-  } else {
-    console.log("Product specs:", {
-      stilart: data.acf?.stilart?.[0]?.name,
-      alkoholprocent: data.acf?.alkoholprocent,
-      ingredienser: data.acf?.ingredienser,
-      udseende: data.acf?.udseende,
-      smagsnoter: data.acf?.smagsnoter,
-      humle_type: data.acf?.humle_type,
-      gaer_type: data.acf?.gaer_type,
-      storrelse: data.acf?.storrelse?.[0]?.name,
-    });
-  }
+
   return data;
 });
 

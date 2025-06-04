@@ -107,39 +107,6 @@
     </div>
   </section>
 
-  <!-- Sektion til de 4 unique selling points -->
-  <section class="uspSection bg-fur-accent-beige -mt-16 z-40 relative">
-    <div
-      class="fypFlex flex flex-col justify-center items-center py-[1.5rem] md:flex-row"
-    >
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Lokale Råvarer</p>
-        <img src="../assets/icons/korn.svg" alt="Ikon af korn" />
-      </div>
-      <span
-        class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
-      ></span>
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Naturlig proces</p>
-        <img src="../assets/icons/olTonde.svg" alt="Ikon af korn" />
-      </div>
-      <span
-        class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
-      ></span>
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Bredt udvalg</p>
-        <img src="../assets/icons/ol.svg" alt="Ikon af korn" />
-      </div>
-      <span
-        class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
-      ></span>
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Brygget på vand fra Fur</p>
-        <img src="../assets/icons/olHus.svg" alt="Ikon af korn" />
-      </div>
-    </div>
-  </section>
-
   <!-- åbningstiderne sektion med tekst til venstre, hvor der bliver hentet et komponent fra Abningstider.vue -->
   <section
     class="abningstider bg-fur-blue px-[4rem] py-[2rem] flex items-center justify-center"
@@ -164,28 +131,6 @@
           src="../assets/images/mobile/Forside_Intro_Mobile.png"
           alt="Billede af knudeklinten på Fur"
           class="w-full md:h-full object-cover h-[300px]"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Sommmerkoncert sektion -->
-  <section class="sommerKoncert max-w-screen">
-    <div
-      class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full lg:h-[700px]"
-    >
-      <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-        <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">
-          Sommerkoncerten
-        </h2>
-        <p class="mb-[1rem] md:mb-[3rem] scroll-fade">
-          Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde
-          øl i hyggelige, naturskønne rammer.
-        </p>
-        <Button
-          label="Læs mere om sommerkoncerten"
-          to="#"
-          class="scroll-fade"
         />
       </div>
     </div>

@@ -88,21 +88,22 @@
   <section class="intro">
     <div
       class="md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[700px]"
-    />
-    <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-      <h2 class="mb-[1rem] scroll-fade">
-        Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.
-      </h2>
-      <p class="mb-[1rem] scroll-fade">
-        Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det
-        arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker
-        frokost i restauranten.
-      </p>
-      <Button
-        label="Læs mere om vores historie"
-        to="/bryggeriet/vores-historie"
-        class="scroll-fade"
-      />
+    >
+      <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
+        <h2 class="mb-[1rem] scroll-fade">
+          Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.
+        </h2>
+        <p class="mb-[1rem] scroll-fade">
+          Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det
+          arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en
+          lækker frokost i restauranten.
+        </p>
+        <Button
+          label="Læs mere om vores historie"
+          to="/bryggeriet/vores-historie"
+          class="scroll-fade"
+        />
+      </div>
     </div>
   </section>
 
@@ -172,16 +173,21 @@
   <section class="sommerKoncert max-w-screen">
     <div
       class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full lg:h-[700px]"
-    />
-    <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-      <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">
-        Sommerkoncerten
-      </h2>
-      <p class="mb-[1rem] md:mb-[3rem] scroll-fade">
-        Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde øl
-        i hyggelige, naturskønne rammer.
-      </p>
-      <Button label="Læs mere om sommerkoncerten" to="#" class="scroll-fade" />
+    >
+      <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
+        <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">
+          Sommerkoncerten
+        </h2>
+        <p class="mb-[1rem] md:mb-[3rem] scroll-fade">
+          Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde
+          øl i hyggelige, naturskønne rammer.
+        </p>
+        <Button
+          label="Læs mere om sommerkoncerten"
+          to="#"
+          class="scroll-fade"
+        />
+      </div>
     </div>
   </section>
 

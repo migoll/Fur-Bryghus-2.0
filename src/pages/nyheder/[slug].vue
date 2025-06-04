@@ -5,7 +5,9 @@
       <div v-if="nyhed?.acf?.billede?.url" class="w-full flex justify-center">
         <img
           :src="nyhed.acf.billede.url"
-          :alt="nyhed.acf.billede.alt || nyhed.title.rendered"
+          :alt="
+            nyhed.acf.billede.alt || `Nyhedsbillede: ${nyhed.title.rendered}`
+          "
           class="object-cover w-full max-h-[400px] md:max-h-[500px]"
           style="max-width: 1240px"
         />

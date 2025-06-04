@@ -68,7 +68,7 @@
             <img
               v-if="imageUrl(product)"
               :src="imageUrl(product)"
-              alt="Produktbillede"
+              :alt="`Billede af ${product.title.rendered} fra Fur Bryghus`"
               class="relative z-10 object-cover max-h-[260px] mb-2"
             />
           </div>

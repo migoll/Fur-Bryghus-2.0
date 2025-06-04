@@ -10,7 +10,7 @@
         <img
           v-if="imageUrl(produktData)"
           :src="imageUrl(produktData)"
-          alt="Produktbillede"
+          :alt="`Billede af ${produktData.title.rendered} fra Fur Bryghus`"
           class="max-w-full max-h-[300px] lg:max-h-[600px] object-contain mb-4"
         />
         <div class="md:hidden text-fur-accent-bone">

@@ -8,13 +8,19 @@
   />
 
   <section class="flex flex-col items-center">
-
-    <div class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]">
+    <div
+      class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]"
+    >
       <h2 class="text-center">Fokus på ingredienserne</h2>
-      <p class="mx-auto">I vores produktion af øl har vi stor fokus på brug af lokale ingredienser. Det samme gælder også i vores udsøgte frokostretter, som er fremstillet af lokale råverer.</p>
-      <p class="mx-auto">Sæsonens friske grøntsager høstes samme dag, som de tilberedes. Retterne kombineres, så smag og udseende tilfredsstiller alle sanser.</p>
-
-      -->
+      <p class="mx-auto">
+        I vores produktion af øl har vi stor fokus på brug af lokale
+        ingredienser. Det samme gælder også i vores udsøgte frokostretter, som
+        er fremstillet af lokale råverer.
+      </p>
+      <p class="mx-auto">
+        Sæsonens friske grøntsager høstes samme dag, som de tilberedes. Retterne
+        kombineres, så smag og udseende tilfredsstiller alle sanser.
+      </p>
     </div>
   </section>
 
@@ -24,7 +30,7 @@
     text2="Alt vores okse- og grisekød kommer fra Grambogård samt selvfølgelig vores egen produktion af frilandsgrise. Vi bruger kødet fra  Grambogård, da der er vores garanti for, at dyrene har haft en rolig og god opvækst, samt af dyreetiske grunde og respekt for det gode dyreliv. Det er god smag! "
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede af kvalitetskød fra Grambogård med fokus på dyrevelfærd"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     :bgImage="traeBackground"
@@ -33,8 +39,8 @@
 
   <BasicSection
     heading="Fokus på bæredygtighed"
-    text="På Fur Bryghus arbejder vi hele tiden med en så bæredygtig produktion som muligt. Det er ikke kun en reaktion på jordens knappe ressourcer og ”brug og smid væk” kulturen - bæredygtighed er økonomisk ansvarlighed, og det vil vi gerne være."
-    text2="På Fur Bryghus arbejder vi hele tiden med en så bæredygtig produktion som muligt. Det er ikke kun en reaktion på jordens knappe ressourcer og ”brug og smid væk” kulturen - bæredygtighed er økonomisk ansvarlighed, og det vil vi gerne være."
+    text="På Fur Bryghus arbejder vi hele tiden med en så bæredygtig produktion som muligt. Det er ikke kun en reaktion på jordens knappe ressourcer og 'brug og smid væk' kulturen - bæredygtighed er økonomisk ansvarlighed, og det vil vi gerne være."
+    text2="På Fur Bryghus arbejder vi hele tiden med en så bæredygtig produktion som muligt. Det er ikke kun en reaktion på jordens knappe ressourcer og 'brug og smid væk' kulturen - bæredygtighed er økonomisk ansvarlighed, og det vil vi gerne være."
     :listItems="[
       'Vi giver vores restprodukt fra bryggeriprocessen til en lokal landmand, der anvender det som et supplement til fodring af fedekvæg.',
       'En del af masken anvendes ligeledes  i vores hjemmebagte brød, der serveres i restauranten.',
@@ -44,7 +50,7 @@
     ]"
     :imageMobile="mobileImg1"
     :imageDesktop="desktopImg1"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede af Fur Bryghus' produktionsmetoder og frilandsgrise"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     reverse
@@ -55,7 +61,7 @@
     text="Besøg os og få en oplevelse og smagen af Fur. Vi glæder os til at byde dig velkommen. Husk at booke bord på restauranten for at sikre dig en plads. "
     :imageMobile="mobileImg2"
     :imageDesktop="desktopImg2"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede af Restaurant Bryghuset på Fur. Book bord her og oplev smagen af Fur"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     buttonLabel="Book bord"

@@ -46,7 +46,7 @@
           <!-- her indsættes det billede som hentes fra api'et -->
           <img
             :src="beer.acf.billede1?.url"
-            :alt="beer.acf.billede1?.alt"
+            :alt="`Billede af ${beer.acf.navn} øl fra Fur Bryghus`"
             class="h-[20rem] md:h-[30rem] object-cover transition-transform duration-300 transform"
           />
         </div>

@@ -4,87 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
-h1,
-h2,
-h3 {
-  font-family: "Anton", sans-serif;
-}
+@layer base {
+  html,
+  body {
+    @apply font-sans bg-fur-accent-bone;
+  }
 
-h1 {
-  font-size: 3rem;
-  line-height: 100%;
-}
 
-h2 {
-  font-size: 2rem;
-  line-height: 100%;
-  letter-spacing: 0.07rem;
-}
-h3 {
-  font-size: 2rem;
-  line-height: 100%;
-  letter-spacing: 0.07rem;
-}
-p {
-  max-width: 70ch;
-}
-
-.p-small {
-  font-size: 1rem;
-  line-height: 150%;
-}
-
-.p-medium {
-  font-size: 1.25rem;
-  line-height: 150%;
-}
-
-.p-big {
-  font-size: 1.875rem;
-  line-height: 150%;
-}
-
-@media screen and (min-width: 768px) {
   h1 {
-    font-size: 9rem;
-    line-height: 100%;
+    @apply text-h1 md:text-h1-md font-anton;
   }
 
   h2 {
-    font-size: 4rem;
-    line-height: 100%;
-    letter-spacing: 0.07rem;
+    @apply text-h2 md:text-h2-md font-anton;
   }
 
   h3 {
-    font-size: 2.5rem;
-    line-height: 100%;
-    letter-spacing: 0.07rem;
+    @apply text-h3 md:text-h3-md font-anton;
   }
 
   .p-small {
-    font-size: 1rem;
-    line-height: 150%;
+    @apply text-p-small;
   }
 
   .p-medium {
-    font-size: 1.875rem;
-    line-height: 150%;
+    @apply text-p-medium md:text-p-medium-md;
   }
 
   .p-big {
-    font-size: 6rem;
-    line-height: 150%;
+    @apply text-p-big md:text-p-big-md;
   }
-}
-
-body,
-html {
-  font-family: "Inter", sans-serif;
-}
-
-body {
-  @apply bg-fur-accent-bone;
 }
 
 /* Generel animation */

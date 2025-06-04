@@ -14,7 +14,7 @@
           class="max-w-full max-h-[300px] lg:max-h-[600px] object-contain mb-4"
         />
         <div class="md:hidden text-fur-accent-bone">
-          <h1 class="mb-2 text-center">
+          <h1 class="mb-2 text-center text-h1 md:text-h1-md font-anton">
             {{ produktData.title.rendered }}
           </h1>
           <ProductTags
@@ -29,7 +29,7 @@
         <div class="flex flex-col md:flex-row lg:flex-col gap-8">
           <div class="flex-1 flex flex-col">
             <div class="hidden md:block">
-              <h1 class="font-bold mb-2">
+              <h1 class="font-bold mb-2 text-h1 md:text-h1-md font-anton">
                 {{ produktData.title.rendered }}
               </h1>
               <ProductTags
@@ -88,7 +88,9 @@
   <section v-if="produktData" class="bg-wood-texture">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 py-12">
       <div>
-        <h2 class="font-anton text-3xl text-white mb-8">Specifikationer</h2>
+        <h2 class="text-h2 md:text-h2-md font-anton text-white mb-8">
+          Specifikationer
+        </h2>
         <div class="grid auto-rows-auto gap-y-6 text-fur-accent-bone">
           <div
             class="grid grid-cols-[120px,1fr] md:grid-cols-[160px,1fr] items-baseline"
@@ -179,7 +181,9 @@
         </a>
       </div>
       <div>
-        <h2 class="font-anton text-3xl text-white mb-6">Serveringsforslag</h2>
+        <h2 class="text-h2 md:text-h2-md font-anton text-white mb-6">
+          Serveringsforslag
+        </h2>
         <div class="space-y-8 text-fur-accent-bone">
           <div class="flex items-start gap-4">
             <img

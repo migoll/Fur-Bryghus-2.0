@@ -70,7 +70,9 @@
           </div>
 
           <div class="flex flex-col relative z-10">
-            <h2 class="text-lg font-semibold">{{ product.title.rendered }}</h2>
+            <h2 class="text-h2 md:text-h2-md font-anton font-semibold">
+              {{ product.title.rendered }}
+            </h2>
             <p class="p-small text-gray-700 mb-2">
               {{ product.acf?.intro_titel || "Ingen beskrivelse tilgængelig" }}
             </p>
@@ -94,8 +96,10 @@
 import { computed, ref, watch } from "vue";
 import ProduktPagination from "~/components/ProduktPagination.vue";
 
-import heroImageMobile from "@/assets/images/desktop/Arrangementer-hero.webp";
-import heroImageDesktop from "@/assets/images/desktop/Vores-produkter-hero.webp";
+
+import heroImageMobile from "@/assets/images/desktop/vores-produkter-hero.webp";
+import heroImageDesktop from "@/assets/images/desktop/vores-produkter-hero.webp";
+
 
 interface Term {
   name: string;

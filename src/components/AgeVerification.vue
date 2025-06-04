@@ -10,7 +10,10 @@
       <div
         class="flex flex-col items-center gap-[2rem] justify-center p-[2rem] pt-[10rem] md:pt-[18rem]"
       >
-        <h2 class="text-neutral-6 text-center pb-[1rem]">
+
+        <h2
+          class="text-neutral-6 text-center pb-[1rem] text-h2 md:text-h2-md font-anton"
+        >
           Velkommen til Fur Bryghus
         </h2>
         <!-- https://app.lottiefiles.com/animation/32744d94-5810-43cf-9738-ff235d2c8d1b -->
@@ -95,6 +98,9 @@
 </template>
 
 <script setup>
+
+import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
+
 const showPopup = ref(false);
 const showLoading = ref(true);
 

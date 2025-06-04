@@ -7,19 +7,7 @@ module.exports = {
     "./src/plugins/**/*.{js,ts}",
     "./src/app.vue",
   ],
-  safelist: [
-    "text-h1",
-    "text-h1-md",
-    "text-h2",
-    "text-h2-md",
-    "text-h3",
-    "text-h3-md",
-    "text-p-small",
-    "text-p-medium",
-    "text-p-medium-md",
-    "text-p-big",
-    "text-p-big-md",
-  ],
+  safelist: ["h1", "h2", "h3", "h4", "h5", "h6"],
   theme: {
     extend: {
       colors: {

@@ -3,7 +3,7 @@
     heroHeading="Vores Historie"
     :heroImageMobile="heroMobile"
     :heroImageDesktop="heroDesktop"
-    heroImageAlt="Billede af maden i restauranten"
+    heroImageAlt="Billede af bryghuset"
   />
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
@@ -18,7 +18,7 @@
       </p>
       <img
         src="@/assets/icons/Gardbutik-ikon.svg"
-        alt="Icon description"
+        alt="Øltønde ikon"
         class="mt-4 w-32 h-32 mx-auto scroll-fade"
       />
     </div>

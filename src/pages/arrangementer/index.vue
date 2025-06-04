@@ -3,7 +3,7 @@
     heroHeading="Arrangementer"
     :heroImageMobile="heroImageMobile"
     :heroImageDesktop="heroImageDesktop"
-    heroImageAlt="Bryggeriet"
+    heroImageAlt="Billede fra sommmerfesten"
   />
 
   <section class="flex flex-col items-center content-center">

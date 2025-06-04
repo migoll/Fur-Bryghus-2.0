@@ -3,7 +3,7 @@
     heroHeading="Ølsmagninger rundvisninger"
     :heroImageMobile="heroMobile"
     :heroImageDesktop="heroDesktop"
-    heroImageAlt="Billede af maden i restauranten"
+    heroImageAlt="Billede af 6 øl"
   />
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4 pt-8">
@@ -26,7 +26,7 @@
       </p>
       <img
         src="@/assets/icons/selskabspakker-ikon.svg"
-        alt="Icon description"
+        alt="Øl ikon"
         class="mt-4 w-32 h-32 mx-auto scroll-fade"
       />
     </div>

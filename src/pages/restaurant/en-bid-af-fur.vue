@@ -4,7 +4,7 @@
     heroHeading="En bid af Fur"
     :heroImageMobile="heroImageMobile"
     :heroImageDesktop="heroImageDesktop"
-    heroImageAlt="Billede restauranten"
+    heroImageAlt="Naturen på Fur"
   />
 
   <section class="flex flex-col items-center">
@@ -15,7 +15,7 @@
       <p class="mx-auto scroll-fade">Sæsonens friske grøntsager høstes samme dag, som de tilberedes. Retterne kombineres, så smag og udseende tilfredsstiller alle sanser.</p>
        <img
         src="@/assets/icons/enBidaFur-ikon.svg"
-        alt="Icon description"
+        alt="Humle ikon"
         class="mt-4 w-32 h-32 mx-auto scroll-fade"
       />
     </div>
@@ -27,7 +27,7 @@
     text2="Alt vores okse- og grisekød kommer fra Grambogård samt selvfølgelig vores egen produktion af frilandsgrise. Vi bruger kødet fra  Grambogård, da der er vores garanti for, at dyrene har haft en rolig og god opvækst, samt af dyreetiske grunde og respekt for det gode dyreliv. Det er god smag! "
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
-    imageAlt="Restaurant billede"
+    imageAlt="Kød ophængt i restauranten"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     :bgImage="traeBackground"
@@ -47,7 +47,7 @@
     ]"
     :imageMobile="mobileImg1"
     :imageDesktop="desktopImg1"
-    imageAlt="Restaurant billede"
+    imageAlt="Gris i naturen"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     reverse
@@ -58,7 +58,7 @@
     text="Besøg os og få en oplevelse og smagen af Fur. Vi glæder os til at byde dig velkommen. Husk at booke bord på restauranten for at sikre dig en plads. "
     :imageMobile="mobileImg2"
     :imageDesktop="desktopImg2"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede af tatar"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     buttonLabel="Book bord"

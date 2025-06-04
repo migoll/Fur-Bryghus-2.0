@@ -15,7 +15,7 @@
       <p class="mx-auto scroll-fade">Vi sætter personlig rådgivning i højsædet, og vi er først tilfredse, når I er tilfredse. Vi står til disposition igennem hele forløbet fra planlæg- ning til afholdelse af Jeres selskab. Alle forslagene er inkl. borddækning, dekorationer, moms samt venlig og smilende betjening.</p>
       <p class="mx-auto scroll-fade">Lad os holde et uforpligtende møde, så vi sammen kan skabe netop de rammer, som I ønsker til Jeres fest. Vi ser frem til at gøre jeres dag unik!</p>
       <div class="flex flex-col items-center w-full scroll-fade" >
-      <img src="@/assets/icons/selskabspakker-ikon.svg" alt=""/>
+      <img src="@/assets/icons/selskabspakker-ikon.svg" alt="Ikon af øl"/>
 
       </div>
     </div>
@@ -26,7 +26,7 @@
     text="Når I skal holde bryllup på Fur Bryghus, har vi lavet to forslag til, hvordan dagen kan se ud for Jer. På de efterfølgende sider kan I se mere om mulighederne. Alt afhængigt af Jeres ønsker kan vi tilbyde jer alt fra en lækker 3-retters bryllupsmenu med husets vine til vor luksus- pakke med bryllupskage, 4-retters menu samt udvalgte vine. Uanset hvilken pakke I vælger, vil vi råde og vejlede Jer hele vejen igennem."
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
-    imageAlt="Restaurant billede"
+    imageAlt="Selskabslokale"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     buttonLabel="Læs alt om bryllupspakken"
@@ -41,7 +41,7 @@
     text="Hvis i vælger at fejre konfirmation på Fur har vi samlet 2 menuer til jeres i vores selskabspdf. Her er der også mulighed for at tilkøbe natmad til hvis i vil have festen skal strække sig lidt længere. Vi har de perfekte omgivelser til en festilig konfirmation. Vores smukke natur og bygninger byder til flotte billeder af konfirmanden og plads til alle. "
     :imageMobile="mobileImg1"
     :imageDesktop="desktopImg1"
-    imageAlt="Restaurant billede"
+    imageAlt="Restauranten"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     buttonLabel="Læs alt om konfirmationspakken"
@@ -58,7 +58,7 @@ heading="Fødselsdagspakke"
 
     :imageMobile="mobileImg2"
     :imageDesktop="desktopImg2"
-    imageAlt="Restaurant billede"
+    imageAlt="Fur Bryghus"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     buttonLabel="Læs alt om fødselsdagspakken"

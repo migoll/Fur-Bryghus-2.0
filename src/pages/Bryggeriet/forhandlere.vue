@@ -3,7 +3,7 @@
     heroHeading="Forhandlere"
     :heroImageMobile="heroDesktop"
     :heroImageDesktop="heroDesktop"
-    heroImageAlt="Billede af Fur klinten ved Fur Bryghus"
+    heroImageAlt="Billede af øl i gårdbutikken"
   />
 
   <div class="px-6 py-8 lg:px-16 lg:py-16">

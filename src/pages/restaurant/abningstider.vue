@@ -29,7 +29,7 @@
         plads."
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede af tatar"
     bgColor="bg-fur-accent-beer"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"

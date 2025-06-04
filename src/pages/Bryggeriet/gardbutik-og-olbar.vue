@@ -4,7 +4,7 @@
     heroHeading="Gårdbutik og ølbar"
     :heroImageMobile="heroImageMobile"
     :heroImageDesktop="heroImageDesktop"
-    heroImageAlt="Billede restauranten"
+    heroImageAlt="Billede ude foran gårdbutikken"
   />
 
   <section class="flex flex-col items-center">
@@ -25,7 +25,7 @@
     text2="Sortimentet udmærker sig med vores alkohol-lette og alkoholfri øl, som er kendt for at levere en fyldig og autentisk ølsmag. Endelig finder du udvalget af smagfulde kryddersnaps, tilpasset forskellige lejligheder og årets sæsoner med tilhørende madtraditioner."
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede ude foran gårdbutikken"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     :bgImage="traeBackground"
@@ -37,7 +37,7 @@
     text="Hvorfor ikke gøre den hyggelige købmands-atmosfære komplet med en kold øl? Køleskabet er fyldt og du kan frit tage et glas og nyde en hyggestund. Betaling klarer du nemt på Mobilepay, uden at være afhængig af betjening. Tag på tur med venner og familie og lav jeres egen ølsmagning, så I kan tage de helt rigtige varianter med hjem."
     :imageMobile="mobileImg1"
     :imageDesktop="desktopImg1"
-    imageAlt="Restaurant billede"
+    imageAlt="Billede inde i gårdbutikken"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     reverse

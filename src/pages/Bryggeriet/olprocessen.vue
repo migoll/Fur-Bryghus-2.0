@@ -15,7 +15,7 @@
       </p>
       <img
         src="@/assets/icons/enBidaFur-ikon.svg"
-        alt="Icon description"
+        alt="Humle ikon"
         class="mt-4 w-32 h-32 mx-auto scroll-fade"
       />
     </div>

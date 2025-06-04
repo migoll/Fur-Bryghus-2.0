@@ -42,7 +42,7 @@ module.exports = {
         xxl: "1400px",
       },
       backgroundImage: {
-        "wood-texture": "url('@/assets/images/desktop/wood_texture_bg.jpeg')",
+        "wood-texture": "url('@/assets/images/morkTrae.png')",
       },
     },
   },

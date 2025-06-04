@@ -65,7 +65,7 @@
 
 <!-- sektion med en lille intro til bryghuset -->
 <section class="intro">
-  <div class=" md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[700px]">
+<div class="md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[700px]"/>
     <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
       <h2 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h2>
       <p class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>

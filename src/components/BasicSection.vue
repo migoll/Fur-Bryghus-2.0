@@ -3,7 +3,7 @@
   <section
     :class="[
       // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
-      'px-[1rem] py-[2rem] md:py-[4rem] md:px-[2rem] flex items-center justify-center',
+      'px-4 py-8 md:py-[4rem] md:px-16 flex items-center justify-center md:min-h-[700px]',
       bgImage ? '' : bgColor
     ]
     // her defineres hvordan baggrundsbilledet sættes hvis der findes det
@@ -17,13 +17,13 @@
 >
       <div class="lg:w-1/2">
         <!-- Her sættes dynamiskefarver til h2 og p så brugeren selv kan vælge farven -->
-        <h2 :class="['mb-[1rem] scroll-fade', headingColor]">{{ heading }}</h2>
-        <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text }}</p>
-        <p :class="['mb-[1rem] scroll-fade', textColor]">{{ text2 }}</p>
+        <h2 :class="['mb-4 scroll-fade', headingColor]">{{ heading }}</h2>
+        <p :class="['mb-4 scroll-fade', textColor]">{{ text }}</p>
+        <p :class="['mb-4 scroll-fade', textColor]">{{ text2 }}</p>
         <!-- Her kan man vælge at indsætte en dynamisk liste -->
         <ul
         v-if="listItems && listItems.length"
-        :class="['mb-[1rem] list-disc pl-5 scroll-fade', textColor]"
+        :class="['mb-4 list-disc pl-5 scroll-fade', textColor]"
         >
       <li
       v-for="(item, index) in listItems" :key="index"
@@ -43,7 +43,7 @@
           :src="imageMobile"
           :alt="imageAlt"
           :srcset="`${imageDesktop} 768w`"
-          class="w-full md:h-[400px] object-cover mt-[1rem] md:m-0 scroll-fade"
+          class="w-full md:h-[400px] object-cover mt-4 md:m-0 scroll-fade"
         />
       </div>
     </div>

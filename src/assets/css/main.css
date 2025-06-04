@@ -25,6 +25,9 @@ h3 {
   line-height: 100%;
   letter-spacing: 0.07rem;
 }
+p {
+  max-width: 70ch;
+}
 
 .p-small {
   font-size: 1rem;

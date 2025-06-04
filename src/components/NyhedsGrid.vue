@@ -56,8 +56,6 @@ onMounted(async () => {
     );
     const data = await res.json();
     nyheder.value = data.slice(0, props.limit);
-  } catch (error) {
-    console.error("Fejl ved hentning af nyheder:", error);
   } finally {
     // Når vi er færdige med at hente, uanset om det lykkes eller fejler
     isLoading.value = false;

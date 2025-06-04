@@ -260,10 +260,6 @@ Promise.all([
     alt1.value = data1.acf.billede1.alt;
     alt2.value = data2.acf.billede1.alt;
     alt3.value = data3.acf.billede1.alt;
-  })
-  // Hvis der sker en fejl i fetchet, bliver der vist en error i konsollen
-  .catch((error) => {
-    console.error("Der er sket en fejl", error);
   });
 
 // Her importeres de billeder som bliver brugt i basicSection komponentet

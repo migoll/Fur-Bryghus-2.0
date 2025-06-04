@@ -8,8 +8,8 @@
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
     <h2 class="text-center">Selskabsmenu</h2>
-    <p class="p-medium p-[1rem] font-bold text-center">Forretter</p>
   </div>
+   <p class="p-medium p-[1rem] font-bold text-center max-w-full">Forretter</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row w-[70%]">
       <div class="md:w-1/2">
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center py-[2rem]">Hovedretter</p>
+  <p class="p-medium p-[1rem] font-bold text-center py-[2rem] max-w-full">Hovedretter</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row w-[70%]">
       <div class="md:w-1/2">
@@ -146,7 +146,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center py-[2rem]">Desserter</p>
+  <p class="p-medium p-[1rem] font-bold text-center py-[2rem] max-w-full">Desserter</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row w-[70%]">
       <div class="md:w-1/2">

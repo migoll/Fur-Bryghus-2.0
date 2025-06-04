@@ -8,18 +8,18 @@
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
 
-      <h2 class="text-center pb-2">Bryggeriet i dag</h2>
-      <p class="mt-4 pb-4 mx-auto">
+      <h2 class="text-center pb-2 scroll-fade">Bryggeriet i dag</h2>
+      <p class="mt-4 pb-4 mx-auto scroll-fade">
        Fur Bryghus er en unik kombination af mikrobryggeri, restaurant, gårdbutik og event venue på øen Fur, midt i Limfjorden. Bryggeri og restaurant er indrettet i en gammel molerfabrik - en smuk træbygning, arkitekttegnet og bygget i 1926. Bryggeriet udmærker sig ved at fremstille et bredt udvalg af specialøl, brygget med erfaring og passion for den gode øloplevelse.
       </p>
-      <p class="mt-4 mx-auto">
+      <p class="mt-4 mx-auto scroll-fade">
         Restauranten er kendt for at sammensætte store smagsoplevelser, fortrinsvis af lokale råvarer og kød fra egne frilandsgrise - og maden nydes med udsigt til det arbejdende bryggeri gennem store panoramavinduer. Bryghuset tilbyder smukke selskabslokaler til din fest og gårdbutikken er fyldt med specialiteter, så dagens favoritter kan komme med hjem. Endelig er Fur Bryghus kendt for festlige live events, sammensat til at give gæsterne en uforglemmelig oplevelse, hver gang.
 
       </p>
       <img
-        src="@/assets/icons/olTonde.svg"
+        src="@/assets/icons/Gardbutik-ikon.svg"
         alt="Icon description"
-        class="mt-4 w-32 h-32 mx-auto"
+        class="mt-4 w-32 h-32 mx-auto scroll-fade"
       />
     </div>
   </div>
@@ -110,4 +110,29 @@ const myScenesArray = [
     ],
   },
 ];
+
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Her stoppes med at observere så fade animation kun køre en gang
+          observer.unobserve(entry.target);
+        }
+      });
+      // animationen køre først når mindst 10% af elementet er synligt
+    },
+    { threshold: 0.1 }
+  );
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll(".scroll-fade").forEach((el) => {
+    observer.observe(el);
+  });
+});
 </script>

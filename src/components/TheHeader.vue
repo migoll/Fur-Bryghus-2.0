@@ -268,7 +268,7 @@ const navigation: NavigationItem[] = [
       { name: "Menukort", href: "/restaurant/menukort" },
       { name: "Åbningstider", href: "/restaurant/abningstider" },
       { name: "En bid af Fur", href: "/restaurant/en-bid-af-fur" },
-      { name: "Bestil bord", href: "/restaurant/bestil-bord" },
+      { name: "Bestil bord", href: "https://book.dinnerbooking.com/dk/da-DK/book/table/pax/2837" },
     ],
   },
   {

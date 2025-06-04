@@ -11,7 +11,7 @@
     <p>Mandag til torsdag ved minimum 25 -300 personer.</p>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">
     Limfjordsinspireret Frokost tallerken
   </p>
   <div class="flex content-center align-center justify-center">
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">Gammeldags kylling</p>
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">Gammeldags kylling</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col w-[70%]">
       <div class="flex flex-col">
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">
     Wienerschnitzel af kalveinderlår
   </p>
   <div class="flex content-center align-center justify-center">
@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">Bryggerens Fiskeskud</p>
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">Bryggerens Fiskeskud</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col w-[70%]">
       <div class="flex flex-col">
@@ -114,7 +114,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">Stegt flæsk ad libitum</p>
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">Stegt flæsk ad libitum</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col w-[70%]">
       <div class="flex flex-col">

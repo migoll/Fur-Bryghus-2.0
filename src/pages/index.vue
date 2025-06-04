@@ -8,7 +8,7 @@
       src="../assets/images/mobile/Forside_Hero_Mobile.png"
       alt="Fur bryghus"
       class="object-cover w-full h-full"
-      srcset="../assets/images/desktop/forside-hero.webp 768w"
+      srcset="../assets/images/desktop/Forside-hero.webp 768w"
     />
 
     <!-- gradient til herosektion -->

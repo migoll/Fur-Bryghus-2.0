@@ -49,6 +49,21 @@
 </template>
 
 <script setup>
+const title = ref("Gårdbutik og ølbar");
+const description = ref(
+  "Vi tilbyder køb i vores gårdbutik, hvor der er fri selvbetjening"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import heroImageMobile from "@/assets/images/mobile/Gaardbutik_Hero_Mobile.png";
 import heroImageDesktop from "@/assets/images/desktop/gardbutik-og-olbar-hero.webp";
 

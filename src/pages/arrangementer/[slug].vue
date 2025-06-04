@@ -181,6 +181,21 @@ const fetchArrangement = async () => {
 
 onMounted(fetchArrangement);
 
+const metaDescription = "læs mere om det specifikke arrangement og køb billet"
+watchEffect(() => {
+  if (arrangement.value && arrangement.value.title?.rendered) {
+    useHead({
+      title: arrangement.value.title.rendered,
+      meta: [
+        {
+          name: "description",
+          content: metaDescription,
+        }
+      ],
+    });
+  }
+});
+
 function formatDate(dateStr) {
   if (!dateStr) return "";
   return new Date(dateStr).toLocaleDateString("da-DK", {

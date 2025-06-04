@@ -20,6 +20,21 @@
 </template>
 
 <script setup>
+const title = ref("Arrangementer");
+const description = ref(
+  "Se alle vores arrangementer her og find ud af hvornår du skal besøge os næste gang"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import heroImageMobile from "@/assets/images/desktop/Arrangementer-hero.webp";
 import heroImageDesktop from "@/assets/images/desktop/Arrangementer-hero.webp";
 </script>

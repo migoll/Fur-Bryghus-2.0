@@ -32,6 +32,21 @@
 </template>
 
 <script setup>
+const title = ref("Forhandlere");
+const description = ref(
+  "Find din nærmeste forhandler af Furs produkter lige her"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import Hero from "~/components/Hero.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";
 import GoogleMap from "~/components/GoogleMap.vue";

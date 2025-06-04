@@ -247,6 +247,7 @@
 </template>
 
 <script setup lang="ts">
+
 interface Term {
   term_id: number;
   name: string;
@@ -374,5 +375,21 @@ onMounted(() => {
   document.querySelectorAll(".scroll-fade").forEach((el) => {
     observer.observe(el);
   });
+});
+
+const metaDescription = "læs mere om den specifikke øl og køb med levering direkte til døren"
+
+watchEffect(() => {
+  if (produktData.value && produktData.value.title?.rendered) {
+    useHead({
+      title: produktData.value.title.rendered,
+      meta: [
+        {
+          name: "description",
+          content: metaDescription,
+        }
+      ],
+    });
+  }
 });
 </script>

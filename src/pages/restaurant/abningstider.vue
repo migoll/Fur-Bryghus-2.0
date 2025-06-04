@@ -39,6 +39,21 @@
 </template>
 
 <script setup>
+const title = ref("Åbningstider");
+const description = ref(
+  "Se restaurantens åbningstider inden dit næste besøg"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 
 import heroImageMobile from "@/assets/images/mobile/Aabningstider_Hero_Mobile.png";
 import heroImageDesktop from "@/assets/images/desktop/abningstider-hero.webp";

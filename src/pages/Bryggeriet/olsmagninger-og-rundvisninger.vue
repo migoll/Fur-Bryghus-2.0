@@ -49,6 +49,21 @@
 </template>
 
 <script setup>
+const title = ref("Ølsmagninger og rundvisninger");
+const description = ref(
+  "Vi tilbyder ølsmagninger og rundvisninger efter dine behov"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import SceneAnimation2 from "~/components/SceneAnimation2.vue";
 import Hero from "~/components/Hero.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";

@@ -52,6 +52,21 @@
 </template>
 
 <script setup>
+const title = ref("Ølprocessen");
+const description = ref(
+  "Læs her om vores process i skabningen af specialøllene"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import SceneAnimation2 from "~/components/SceneAnimation2.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";
 import Hero from "~/components/Hero.vue";

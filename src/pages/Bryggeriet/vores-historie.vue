@@ -32,6 +32,21 @@
 </template>
 
 <script setup>
+const title = ref("Vores historie");
+const description = ref(
+  "Læs om Fur bryghus spændende historie"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import SceneAnimation2 from "~/components/SceneAnimation2.vue";
 import Hero from "~/components/Hero.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";

@@ -67,6 +67,21 @@
 </template>
 
 <script setup>
+const title = ref("Book dit selskab");
+const description = ref(
+  "Kontakt os her omkring dit næste selskab. Vi hjælper dig med glæde."
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import Hero from "~/components/Hero.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";
 import ContactFormular from "~/components/ContactFormular.vue";

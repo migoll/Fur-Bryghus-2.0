@@ -68,6 +68,21 @@
 </template>
 
 <script setup>
+const title = ref("Kontakt os");
+const description = ref(
+  "Hvis du har spørgsmål kan du kontakte os her, vi svarer hurtigst muligt"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import Hero from "~/components/Hero.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";
 import ContactFormular from "~/components/ContactFormular.vue";

@@ -201,7 +201,6 @@
 
 <script setup lang="ts">
 import "hamburgers/dist/hamburgers.min.css";
-import type { NavigationItem } from "~/types/navigation";
 import DropdownEntry from "~/components/DropdownEntry.vue";
 import entryPointMenuImage from "@/assets/images/mobile/Olsmagning_Hero_Mobile.png";
 

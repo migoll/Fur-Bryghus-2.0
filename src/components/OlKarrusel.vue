@@ -2,6 +2,36 @@
   <!-- https://swiperjs.com/ -->
   <!-- Her laves en ølkarrusel komponent der dynamisk henter indhold fra wordpress api'et -->
   <!-- Her bruges JavaScript librariet Swiper som er et populært framework til karuseller -->
+  <div class="bg-fur-blue">
+    <!-- TOP BAR -->
+    <div
+      class="flex items-center justify-between border-b border-white/30 px-6 py-6"
+    >
+      <h2 class="text-white text-xl font-bold">Øl varianter</h2>
+      <NuxtLink
+        to="/webshop"
+        class="border border-white text-white px-4 py-1 rounded hover:bg-white hover:text-fur-blue transition"
+      >
+        Se alle øl
+      </NuxtLink>
+    </div>
+    <div class="flex gap-6 overflow-x-auto text-xl lg:p-sm px-6 py-4">
+      <button
+        v-for="(beer, idx) in beers"
+        :key="beer.id"
+        @click="goToBeer(idx)"
+        :class="[
+          'whitespace-nowrap font-medium transition',
+          idx === currentIndex
+            ? 'underline text-white'
+            : 'text-white/70 hover:text-white',
+        ]"
+      >
+        {{ beer.acf.navn }}
+      </button>
+    </div>
+  </div>
+
   <div class="swiper bg-fur-blue">
     <div
       class="swiper-wrapper md:w-full xl:max-w-[1280px] md:py-[4rem] lg:py-[6rem] py-[2rem]"
@@ -72,7 +102,7 @@
       </div>
     </div>
 
-    <!-- Swipers egne definerede klasser til navigationspilede -->
+    <!-- skifter over til næste eller forrige øl -->
     <div class="swiper-button-prev mx-4"></div>
     <div class="swiper-button-next mx-4"></div>
   </div>
@@ -80,6 +110,7 @@
 
 <script setup>
 import { ref, onMounted, nextTick } from "vue";
+import { useRouter } from "vue-router";
 
 // Her defineres en prop hvor man selv skal vælge id'et som man gerne vil sortere på oppe i url'et
 const props = defineProps({
@@ -99,6 +130,15 @@ import "swiper/css/navigation";
 // Her laves en variabel med et tomt array til øllene som hentes
 const beers = ref([]);
 let swiperInstance = null;
+const currentIndex = ref(0);
+
+// Funktion til at slide til specifik øl
+function goToBeer(idx) {
+  currentIndex.value = idx;
+  if (swiperInstance) {
+    swiperInstance.slideToLoop(idx);
+  }
+}
 
 // Funktion der skalerer billedet op når der hoveres over knappen
 const growImage = (e) => {
@@ -126,6 +166,13 @@ const initSwiper = () => {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    on: {
+      slideChange: () => {
+        if (swiperInstance) {
+          currentIndex.value = swiperInstance.realIndex;
+        }
+      },
     },
   });
 };

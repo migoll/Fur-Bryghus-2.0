@@ -1,8 +1,8 @@
 <template>
   <div v-if="produktData" class="w-full mx-auto">
-    <div class="flex flex-col lg:flex-row gap-8 lg:h-[80vh]">
+    <div class="flex flex-col lg:flex-row gap-8 lg:min-h-[80vh]">
       <div
-        class="flex-1 flex flex-col justify-center items-center min-h-[300px] lg:min-h-[600px] p-4"
+        class="flex-1 flex flex-col justify-center items-center min-h-[300px] lg:min-h-[600px] p-4 py-16 lg:py-0"
         :style="{
           backgroundColor: produktData.acf?.baggrundsfarve,
         }"
@@ -25,8 +25,8 @@
         </div>
       </div>
 
-      <div class="flex-1 flex flex-col p-4">
-        <div class="flex flex-col md:flex-row lg:flex-col gap-8">
+      <div class="flex-1 flex flex-col p-4 my-auto">
+        <div class="flex flex-col lg:flex-col gap-8">
           <div class="flex-1 flex flex-col">
             <div class="hidden md:block">
               <h1 class="font-bold mb-2">
@@ -88,7 +88,7 @@
     </div>
   </div>
   <section v-if="produktData" class="bg-wood-texture">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 py-12">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 py-12">
       <div>
         <h2 class="text-h2 md:text-h2-md font-anton text-white mb-8">
           Specifikationer

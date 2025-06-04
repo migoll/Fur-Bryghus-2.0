@@ -17,7 +17,7 @@
           <img
             :src="beer.acf.billede1?.url"
             :alt="beer.acf.billede1?.alt"
-            class="h-[20rem] md:h-[30rem] object-cover transition-transform duration-300"
+            class="h-[20rem] md:h-[30rem] object-cover transition-transform duration-300 transform"
           />
         </div>
 
@@ -27,7 +27,9 @@
           <h2 class="text-neutral-6 text-center md:text-left">
             {{ beer.acf.navn }}
           </h2>
-          <p class="text-neutral-6 p-medium text-center md:text-left">
+          <p
+            class="text-neutral-6 text-2xl text-center md:text-left text-opacity-50 pt-4"
+          >
             {{ beer.acf.intro_titel }}
           </p>
 
@@ -37,46 +39,40 @@
             <!-- Her vises 3 stykker metadata for hver øl -->
             <div class="text-neutral-6 md:w-auto">
               <p class="opacity-50 text-xl">Stilart</p>
-              <p class="p-medium">{{ beer.acf.stilart[0]?.name }}</p>
+              <p class="text-3xl max-w-96">{{ beer.acf.stilart[0]?.name }}</p>
             </div>
             <span
               class="w-1/2 h-px bg-fur-accent-beer my-4 lg:rotate-90 md:w-[8rem] block"
             ></span>
             <div class="text-neutral-6 md:w-auto">
               <p class="opacity-50 text-xl">Alkoholprocent</p>
-              <p class="p-medium">{{ beer.acf.alkoholprocent }}%</p>
+              <p class="text-3xl max-w-96">{{ beer.acf.alkoholprocent }}%</p>
             </div>
             <span
               class="w-1/2 h-px bg-fur-accent-beer my-4 lg:rotate-90 md:w-[8rem] block"
             ></span>
             <div class="text-neutral-6 md:w-auto">
               <p class="opacity-50 text-xl">Smagsnoter</p>
-              <p class="p-big max-w-96">{{ beer.acf.smagsnoter }}</p>
+              <p class="text-3xl max-w-96">{{ beer.acf.smagsnoter }}</p>
             </div>
           </div>
 
           <div class="inline-block">
             <!-- knap - når knappen bliver hovedered sker growImage, og modsat shrinkImage, som hover effekt-->
-            <NuxtLink
+            <Button
+              isNeutral
+              :label="`Smag på ${beer.acf.navn}`"
               :to="`/webshop/${beer.slug}`"
-              class="relative flex items-center justify-center gap-2 font-sans font-medium text-neutral-1 px-7 py-3 bg-fur-accent-beige hover:bg-fur-accent-beer active:bg-[#C89768] focus-visible:outline outline-1 outline-black outline-offset-2 mt-[2rem] md:mt-[6rem]"
+              class="!opacity-100 mt-4"
               @mouseenter="growImage"
               @mouseleave="shrinkImage"
-            >
-              <span class="text-lg whitespace-nowrap"
-                >Smag på {{ beer.acf.navn }}</span
-              >
-              <span
-                class="absolute -z-10 left-0 top-0 w-full h-full bg-fur-accent-blue opacity-0 group-hover:opacity-100 group-hover:-left-[6px] group-hover:top-[6px] group-active:-left-[8px] group-active:top-[8px] transition-all duration-200"
-              ></span>
-            </NuxtLink>
+            />
           </div>
         </div>
       </div>
     </div>
 
     <!-- Swipers egne definerede klasser til navigationspilede -->
-
     <div class="swiper-button-prev mx-4"></div>
     <div class="swiper-button-next mx-4"></div>
   </div>
@@ -86,7 +82,6 @@
 import { ref, onMounted, nextTick } from "vue";
 
 // Her defineres en prop hvor man selv skal vælge id'et som man gerne vil sortere på oppe i url'et
-
 const props = defineProps({
   produktSorteringId: {
     type: Number,
@@ -105,6 +100,24 @@ import "swiper/css/navigation";
 const beers = ref([]);
 let swiperInstance = null;
 
+// Funktion der skalerer billedet op når der hoveres over knappen
+const growImage = (e) => {
+  const slide = e.target.closest(".swiper-slide");
+  if (!slide) return;
+  const img = slide.querySelector("img");
+  if (!img) return;
+  img.classList.add("scale-105");
+};
+
+// Funktion der fjerner skalering når man ikke længere hover
+const shrinkImage = (e) => {
+  const slide = e.target.closest(".swiper-slide");
+  if (!slide) return;
+  const img = slide.querySelector("img");
+  if (!img) return;
+  img.classList.remove("scale-105");
+};
+
 // Hent data og initialiser Swiper
 const initSwiper = () => {
   swiperInstance = new Swiper(".swiper", {
@@ -120,30 +133,15 @@ const initSwiper = () => {
 // Når komponenten er indsat kaldes on denne onmounted.
 // async bruges for at der kan bruges await indeni
 onMounted(async () => {
-  // Her fetches data fra api'et. her ventes på at svaret bliver hentet
   const response = await fetch(
     `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?categories=3&produkt-sortering=${props.produktSorteringId}&per_page=10`
   );
-  // her konverteres response til json
   const data = await response.json();
-  beers.value = data;
 
-  // Funktion der skalerer billedet op når der hoveres over knappen
-  const growImage = (e) => {
-    const slide = e.target.closest(".swiper-slide");
-    if (!slide) return;
-    const img = slide.querySelector("img");
-    if (!img) return;
-    img.classList.add("scale-105");
-  };
-
-  const shrinkImage = (e) => {
-    const slide = e.target.closest(".swiper-slide");
-    if (!slide) return;
-    const img = slide.querySelector("img");
-    if (!img) return;
-    img.classList.remove("scale-105");
-  };
+  // Filtrér kun dem hvor størrelse indeholder term_id 7 (50cl)
+  beers.value = data.filter((beer) =>
+    beer.acf?.storrelse?.some((s) => s.term_id === 7)
+  );
 
   // nexttick er en funktion i vue, der venter på at dom'en opdaterer. det gøres for at swiper karusellen virker korrekt og at alt data er hentet
   await nextTick();

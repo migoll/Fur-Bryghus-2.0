@@ -4,10 +4,7 @@
       v-if="to"
       :to="to"
       :target="openInNewTab ? '_blank' : '_self'"
-      :class="[
-        'inline-flex items-center justify-center gap-2 font-sans font-medium text-neutral-6 px-7 py-3 bg-fur-blue hover:bg-fur-accent-blue active:bg-[#1f3a52] focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] scroll-fade',
-        $attrs.class,
-      ]"
+      :class="[baseClasses, $attrs.class]"
       v-bind="filteredAttrs"
     >
       <span class="text-lg">{{ label }}</span>
@@ -24,14 +21,7 @@
       </span>
     </NuxtLink>
 
-    <button
-      v-else
-      :class="[
-        'inline-flex items-center justify-center gap-2 font-sans font-medium text-neutral-6 px-7 py-3 bg-fur-blue hover:bg-fur-accent-blue active:bg-[#1f3a52] focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] scroll-fade',
-        $attrs.class,
-      ]"
-      v-bind="filteredAttrs"
-    >
+    <button v-else :class="[baseClasses, $attrs.class]" v-bind="filteredAttrs">
       <span class="text-lg">{{ label }}</span>
 
       <img
@@ -45,11 +35,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   label: string;
   to?: string;
   openInNewTab?: boolean;
   isPdf?: boolean;
+  isNeutral?: boolean;
 }>();
 
 import { useAttrs, computed } from "vue";
@@ -57,11 +48,19 @@ import arrow from "@/assets/icons/buttonArrow.svg";
 
 const attrs = useAttrs();
 
-// Fjerner 'class' fra $attrs når vi allerede har håndteret den manuelt
 const filteredAttrs = computed(() => {
   const { class: _ignored, ...rest } = attrs;
   return rest;
 });
+
+const baseClasses = computed(() =>
+  [
+    "inline-flex items-center justify-center gap-2 font-sans font-medium px-7 py-3 focus-visible:outline outline-1 outline-black outline-offset-2 transition duration-200 shadow-none scroll-fade",
+    props.isNeutral
+      ? "bg-neutral-6 text-neutral-1 hover:bg-neutral-5 active:bg-neutral-5 hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]"
+      : "bg-fur-blue text-neutral-6 hover:bg-fur-accent-blue active:bg-[#1f3a52] hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)] active:hover:shadow-[-6px_6px_0_0_rgba(200,151,104,1)]",
+  ].join(" ")
+);
 </script>
 
 <style>

@@ -104,6 +104,13 @@
           class="scroll-fade"
         />
       </div>
+      <div class="md:w-1/2 md:h-full">
+        <img
+          src="../assets/images/mobile/Forside_Intro_Mobile.png"
+          alt="Billede af knudeklinten på Fur"
+          class="w-full md:h-full object-cover h-[300px]"
+        />
+      </div>
     </div>
   </section>
 
@@ -125,13 +132,6 @@
       </div>
       <div class="md:p-[4rem] md:w-1/2">
         <Abningstider headingColor="text-white" liColor="text-white" />
-      </div>
-      <div class="md:w-1/2 md:h-full">
-        <img
-          src="../assets/images/mobile/Forside_Intro_Mobile.png"
-          alt="Billede af knudeklinten på Fur"
-          class="w-full md:h-full object-cover h-[300px]"
-        />
       </div>
     </div>
   </section>

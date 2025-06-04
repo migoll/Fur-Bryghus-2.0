@@ -7,16 +7,22 @@
   />
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4 pt-8">
-
-        <p class="text-center pb-4 text-xl mx-auto">*Kan bookes fra 1. marts 2025</p>
-      <h2 class="text-center pb-2">Duft, lyt og smag
-</h2>
+      <p class="text-center pb-4 text-xl mx-auto">
+        *Kan bookes fra 1. marts 2025
+      </p>
+      <h2 class="text-center pb-2">Duft, lyt og smag</h2>
       <p class="mt-4 pb-4 mx-auto">
-       Oplev den kraftige duft af malt og humle. Lyt til den boblende summen af gærende bryg. Smag på den friske øl med sanserne helt åbne. En ølsmagning og rundvisning på Fur Bryghus tager dig igennem mange af øllets facetter, samtidig med du får et indblik i bryghusets 20-årige historie og en dybere indsigt i øllets verden. 
+        Oplev den kraftige duft af malt og humle. Lyt til den boblende summen af
+        gærende bryg. Smag på den friske øl med sanserne helt åbne. En
+        ølsmagning og rundvisning på Fur Bryghus tager dig igennem mange af
+        øllets facetter, samtidig med du får et indblik i bryghusets 20-årige
+        historie og en dybere indsigt i øllets verden.
       </p>
       <p class="mt-4 mx-auto">
-       En ølsmagning på Fur Bryghus er en oplagt ide for vennerne, logen, polterabend, firmaevent, ølentusiasterne - eller bare jer, der kan lidt et rigtig godt glas øl, frisk fra hanerne. I kan vælge "Rundvisning med smagsprøver", "Lille ølsmagning" eller "Stor ølsmagning".
-
+        En ølsmagning på Fur Bryghus er en oplagt ide for vennerne, logen,
+        polterabend, firmaevent, ølentusiasterne - eller bare jer, der kan lidt
+        et rigtig godt glas øl, frisk fra hanerne. I kan vælge "Rundvisning med
+        smagsprøver", "Lille ølsmagning" eller "Stor ølsmagning".
       </p>
       <img
         src="@/assets/icons/olTonde.svg"
@@ -29,9 +35,7 @@
     <SceneAnimation2 :scenes="myScenesArray" />
   </div>
   <div class="bg-[#E2D4BB] w-full h-auto mb-4 pt-8">
-    <h2 class="text-center pb-2 text-h2 md:text-h2-md font-anton">
-      Bestil Ølsmagning
-    </h2>
+    <h2 class="text-center pb-2">Bestil Ølsmagning</h2>
     <p class="mx-auto max-w-[50%]">
       Er i en gruppe der ønsker at bestille en ølsmagning eller rundvisning på
       vores dejlige bryghus, så tøv ikke med at send os en mail. Sørg for at

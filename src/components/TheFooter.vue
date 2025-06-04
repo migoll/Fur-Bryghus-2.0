@@ -44,7 +44,7 @@
             backgroundRepeat: 'no-repeat',
           }"
         >
-          <h3 class="mb-2 text-h3 md:text-h3-md font-anton">Kontakt os</h3>
+          <h3 class="mb-2">Kontakt os</h3>
           <div class="space-y-1">
             <p>Fur Bryghus A/S</p>
             <p>Knudenvej 3</p>
@@ -71,9 +71,7 @@
         <div
           class="flex flex-col items-center md:w-[30vw] md:p-[3rem] md:items-start"
         >
-          <h3 class="mb-2 text-h3 md:text-h3-md font-anton">
-            Følg os på sociale medier
-          </h3>
+          <h3 class="mb-2">Følg os på sociale medier</h3>
           <div class="flex gap-4 mb-4 pt-2">
             <NuxtLink
               to="https://instagram.com/furbryghus"

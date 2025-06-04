@@ -16,6 +16,9 @@
   </section>
 
   <NyhedsGrid :limit="100" @update:isLoading="isLoading = $event" />
+  <section class="bg-fur-accent-blue">
+    <FocusedEntryPoints :entries="['Arrangementer', 'Kontakt', 'Gardbutik']" />
+  </section>
 </template>
 
 <script setup>

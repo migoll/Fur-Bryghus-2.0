@@ -10,7 +10,6 @@
     @apply font-sans bg-fur-accent-bone;
   }
 
-
   h1 {
     @apply text-h1 md:text-h1-md font-anton;
   }
@@ -22,7 +21,11 @@
   h3 {
     @apply text-h3 md:text-h3-md font-anton;
   }
-
+  p {
+    max-width: 70ch;
+  }
+}
+@layer components {
   .p-small {
     @apply text-p-small;
   }

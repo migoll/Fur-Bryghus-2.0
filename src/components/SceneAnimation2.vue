@@ -51,7 +51,7 @@
           :ref="(el) => (textRefs[i] = el)"
           style="transform: translateY(-50%); opacity: 0"
         >
-          <h2 class="mb-4 text-h2 md:text-h2-md font-anton">
+          <h2 class="mb-4">
             {{ scene.title }}
           </h2>
           <p v-for="(p, j) in scene.text" :key="j" class="mb-2">{{ p }}</p>

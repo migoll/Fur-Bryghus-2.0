@@ -10,13 +10,15 @@
       class="lg:w-56 lg:min-w-[16rem] bg-fur-blue text-fur-accent-bone px-4 py-2 sm:p-0 lg:sticky lg:top-0 lg:h-screen"
     >
       <div
-        class="flex lg:flex-col gap-6 overflow-x-auto p-0 lg:p-4 h-14 lg:h-auto whitespace-nowrap lg:whitespace-normal border-b lg:border-b-0"
+        class="flex lg:flex-col gap-6 overflow-x-auto p-0 lg:p-4 lg:h-auto whitespace-nowrap lg:whitespace-normal border-b lg:border-b-0"
       >
         <button
           @click="valgtSortering = null"
           :class="[
-            'p-medium text-left lg:text-left transition-colors lg:p-big',
-            valgtSortering === null ? 'font-bold' : 'font-normal',
+            'font-anton text-[30px] text-center p-4 flex-shrink-0 transition-colors',
+            valgtSortering === null
+              ? 'bg-fur-accent-blue text-neutral-6'
+              : 'hover:bg-fur-brown text-neutral-6',
           ]"
         >
           Alle produkter
@@ -27,8 +29,10 @@
           :key="s.id"
           @click="valgtSortering = s.id"
           :class="[
-            'p-medium text-left lg:text-left transition-colors lg:p-big',
-            valgtSortering === s.id ? 'font-bold' : 'font-normal',
+            'font-anton text-[30px] text-center p-4 flex-shrink-0 transition-colors',
+            valgtSortering === s.id
+              ? 'bg-fur-accent-blue text-neutral-6'
+              : 'hover:bg-fur-brown text-neutral-6',
           ]"
         >
           {{ s.name }}
@@ -70,7 +74,7 @@
           </div>
 
           <div class="flex flex-col relative z-10">
-            <h2 class="text-h2 md:text-h2-md font-anton font-semibold">
+            <h2 class="text-4xl">
               {{ product.title.rendered }}
             </h2>
             <p class="p-small text-gray-700 mb-2">
@@ -90,6 +94,9 @@
       />
     </div>
   </div>
+  <FocusedEntryPoints
+    :entries="['Vores historie', 'Bryggeprocessen', 'Gardbutik']"
+  />
 </template>
 
 <script setup lang="ts">

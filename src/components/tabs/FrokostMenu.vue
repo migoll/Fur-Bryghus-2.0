@@ -7,7 +7,7 @@
     />
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
-    <h2 class="text-center text-h2 md:text-h2-md font-anton">Frokostmenu</h2>
+    <h2 class="text-center">Frokostmenu</h2>
     <p class="p-medium text-center">Nyd en udsøgt frokost på Fur Bryghus</p>
     <p class="text-center">Alle retter serveres med hjemmebagt brød og smør.</p>
   </div>

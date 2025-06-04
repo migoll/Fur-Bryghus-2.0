@@ -7,7 +7,7 @@
     />
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
-    <h2 class="text-center text-h2 md:text-h2-md font-anton">Udflugtsmenu</h2>
+    <h2 class="text-center">Udflugtsmenu</h2>
     <p>Mandag til torsdag ved minimum 25 -300 personer.</p>
   </div>
 

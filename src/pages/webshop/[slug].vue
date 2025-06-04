@@ -14,7 +14,7 @@
           class="max-w-full max-h-[300px] lg:max-h-[600px] object-contain mb-4"
         />
         <div class="md:hidden text-fur-accent-bone">
-          <h1 class="mb-2 text-center text-h1 md:text-h1-md font-anton">
+          <h1 class="mb-2 text-center">
             {{ produktData.title.rendered }}
           </h1>
           <ProductTags
@@ -29,7 +29,7 @@
         <div class="flex flex-col md:flex-row lg:flex-col gap-8">
           <div class="flex-1 flex flex-col">
             <div class="hidden md:block">
-              <h1 class="font-bold mb-2 text-h1 md:text-h1-md font-anton">
+              <h1 class="font-bold mb-2">
                 {{ produktData.title.rendered }}
               </h1>
               <ProductTags
@@ -47,19 +47,21 @@
           </div>
           <div class="flex flex-col md:w-72 lg:w-full">
             <div class="flex gap-4 mb-6">
-              <Button
-                :label="'6 STK'"
+              <div
                 @click="selectedQuantity = 6"
-                :class="selectedQuantity === 6 ? 'bg-neutral-1 text-white' : ''"
-              />
-              <Button
-                :label="'12 STK'"
+                :class="selectedQuantity !== 6 ? 'opacity-30' : ''"
+              >
+                <Button label="6 STK" />
+              </div>
+
+              <div
                 @click="selectedQuantity = 12"
-                :class="
-                  selectedQuantity === 12 ? 'bg-neutral-1 text-white' : ''
-                "
-              />
+                :class="selectedQuantity !== 12 ? 'opacity-30' : ''"
+              >
+                <Button label="12 STK" />
+              </div>
             </div>
+
             <div class="mb-6">
               <div
                 v-if="
@@ -79,7 +81,7 @@
               </div>
             </div>
 
-            <Button label="Tilføj til kurv" class="w-full" />
+            <Button label="Tilføj til kurv" />
           </div>
         </div>
       </div>
@@ -239,6 +241,9 @@
       </div>
     </div>
   </section>
+  <FocusedEntryPoints
+    :entries="['Vores-produkter', 'Bryggeprocessen', 'Gardbutik']"
+  />
 </template>
 
 <script setup lang="ts">

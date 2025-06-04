@@ -9,9 +9,7 @@
   <div class="px-6 py-8 lg:px-16 lg:py-16">
     <div class="flex flex-col lg:flex-row lg:space-x-16 max-w-[1400px] mx-auto">
       <div class="lg:w-1/2">
-        <h2 class="mb-4 text-h2 md:text-h2-md font-anton">
-          Lad os finde din nærmeste Fur forhandler
-        </h2>
+        <h2 class="mb-4">Lad os finde din nærmeste Fur forhandler</h2>
 
         <p class="mb-4">
           Vores øl kan købes i en lang række cafeer, restauranter, kroer,

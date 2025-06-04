@@ -14,9 +14,12 @@
   </section>
 
   <NyhedsGrid :limit="100" :categories="'28,30'" />
+  <section class="bg-fur-accent-blue">
+    <FocusedEntryPoints :entries="['Olsmagninger', 'Kontakt', 'Gardbutik']" />
+  </section>
 </template>
 
 <script setup>
-import mobileImg from "@/assets/images/desktop/Arrangementer-hero.webp";
+import heroImageMobile from "@/assets/images/desktop/Arrangementer-hero.webp";
 import heroImageDesktop from "@/assets/images/desktop/Arrangementer-hero.webp";
 </script>

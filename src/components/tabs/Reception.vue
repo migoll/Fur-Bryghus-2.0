@@ -7,7 +7,7 @@
     />
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
-    <h2 class="text-cente text-h2 md:text-h2-md font-antonr">Reception</h2>
+    <h2 class="text-center">Reception</h2>
     <p class="text-center">
       Følgende forslag er tænkt som stående buffeter samt lette anretninger til
       receptioner samt åbent hus arrangementer. Kontakt os for at sammensætte

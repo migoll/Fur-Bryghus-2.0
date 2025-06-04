@@ -14,9 +14,9 @@
       </div>
       <div class="p-6 flex flex-col justify-between flex-grow">
         <div>
-          <h2 class="text-center text-black mb-2">
+          <h3 class="text-center text-black mb-2">
             {{ entry.title }}
-          </h2>
+          </h3>
           <p class="text-sm text-center text-gray-700">
             {{ entry.description }}
           </p>

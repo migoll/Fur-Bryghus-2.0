@@ -117,9 +117,7 @@
               />
             </div>
             <div class="pt-[2rem]">
-              <h3 text-h3 md:text-h3-md font-anton>
-                Det får du udover et spændene job:
-              </h3>
+              <h3>Det får du udover et spændene job:</h3>
               <ul>
                 <li class="my-[1rem] list-disc ml-[1rem]">
                   Masser af variation. Du oplever både hverdagens puls i

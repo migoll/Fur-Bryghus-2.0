@@ -18,7 +18,7 @@
 
     <h1
       ref="heroTitle"
-      class="absolute top-1/2 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible text-h1 md:text-h1-md font-anton"
+      class="absolute top-1/2 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible"
     >
       Fur Bryghus
     </h1>
@@ -142,9 +142,7 @@
       class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full"
     >
       <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-        <h2
-          class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade text-h2 md:text-h2-md font-anton"
-        >
+        <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">
           Sommerkoncerten
         </h2>
         <p class="mb-[1rem] md:mb-[3rem] scroll-fade">
@@ -174,7 +172,7 @@
     <div
       class="md:py-[4rem] py-[2rem] lg:py-[2rem] flex box-border max-w-[1240px] flex-col gap-[20px] items-center"
     >
-      <h2 class="scroll-fade text-h2 md:text-h2-md font-anton">Nyheder</h2>
+      <h2 class="scroll-fade">Nyheder</h2>
       <NyhedsGrid :limit="3" />
       <Button label="Se alle nyheder" to="/nyheder" class="scroll-fade" />
     </div>

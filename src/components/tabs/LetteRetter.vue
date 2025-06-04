@@ -7,7 +7,7 @@
     />
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
-    <h2 class="text-center text-h2 md:text-h2-md font-anton">Lette retter</h2>
+    <h2 class="text-center">Lette retter</h2>
   </div>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row max-w-[1240px]">

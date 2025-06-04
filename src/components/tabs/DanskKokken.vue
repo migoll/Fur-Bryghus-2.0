@@ -7,7 +7,7 @@
     />
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
-    <h2 class="text-center text-h2 md:text-h2-md font-anton">Dansk køkken</h2>
+    <h2 class="text-center">Dansk køkken</h2>
     <p class="text-center">
       Her er et udvalg af klassiske danske retter, som også serveres på
       Restaurant Bryghuset. Minimum 20 personer.

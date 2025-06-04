@@ -7,7 +7,7 @@
     />
   </div>
   <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
-    <h2 class="text-center text-h2 md:text-h2-md font-anton">Buffet</h2>
+    <h2 class="text-center">Buffet</h2>
     <p>Kontakt os for at sammensætte din egen menu.</p>
   </div>
   <p class="p-medium p-[1rem] font-bold text-center">Klassisk buffet</p>

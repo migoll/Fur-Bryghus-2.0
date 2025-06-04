@@ -69,9 +69,7 @@
   <section
     class="flex items-center justify-center flex-col max-w-[70ch] mx-auto px-4 py-8"
   >
-    <h3 class="py-4 text-h3 md:text-h3-md font-anton">
-      Information om sommerkoncerten
-    </h3>
+    <h3 class="py-4">Information om sommerkoncerten</h3>
     <div class="flex flex-col gap-2">
       <h4 class="text-2xl font-bold">Billettyper</h4>
       <p class="p-small">

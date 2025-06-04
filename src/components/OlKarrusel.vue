@@ -51,7 +51,7 @@
             ></span>
             <div class="text-neutral-6 md:w-auto">
               <p class="opacity-50 text-xl">Smagsnoter</p>
-              <p class="p-medium max-w-96">{{ beer.acf.smagsnoter }}</p>
+              <p class="p-big max-w-96">{{ beer.acf.smagsnoter }}</p>
             </div>
           </div>
 

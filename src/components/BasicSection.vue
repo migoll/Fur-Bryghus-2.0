@@ -3,13 +3,16 @@
   <section
     :class="[
       // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
+      // her under defineres hvordan baggrundsbilledet sættes hvis der findes det
 
       'px-4 py-8 md:py-[4rem] md:px-16 flex items-center justify-center md:min-h-[700px]',
-      bgImage ? '' : bgColor
-    ]
-    // her defineres hvordan baggrundsbilledet sættes hvis der findes det
-    ":style="bgImage ? `background-image: url(${bgImage}); background-size: cover; background-position: center;` : ''"
-
+      bgImage ? '' : bgColor,
+    ]"
+    :style="
+      bgImage
+        ? `background-image: url(${bgImage}); background-size: cover; background-position: center;`
+        : ''
+    "
   >
     <div
       :class="[
@@ -25,9 +28,8 @@
         <p :class="['mb-4 scroll-fade', textColor]">{{ text2 }}</p>
         <!-- Her kan man vælge at indsætte en dynamisk liste -->
         <ul
-        v-if="listItems && listItems.length"
-        :class="['mb-4 list-disc pl-5 scroll-fade', textColor]"
-
+          v-if="listItems && listItems.length"
+          :class="['mb-4 list-disc pl-5 scroll-fade', textColor]"
         >
           <li v-for="(item, index) in listItems" :key="index">{{ item }}</li>
         </ul>

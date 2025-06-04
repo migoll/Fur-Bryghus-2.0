@@ -1,52 +1,76 @@
 <template>
   <!-- hero sektion -->
-  <section
-    class="hero relative h-[50vh] max-w-screen xs:h-[70vh] md:h-[80vh] lg:h-[100vh] overflow-visible"
-  >
-    <img
-      src="../assets/images/mobile/Forside_Hero_Mobile.png"
-      alt="Fur bryghus"
-      class="object-cover w-full h-full"
-      srcset="../assets/images/desktop/Forside-hero.webp 768w"
-    />
 
-    <!-- gradient til herosektion -->
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"
-    ></div>
+ <section class="hero relative h-[50vh] max-w-screen xs:h-[70vh] md:h-[80vh] lg:h-[100vh] overflow-visible">
+  <img
+    src="../assets/images/mobile/Forside_Hero_Mobile.png"
+    alt="Fur bryghus"
+    class="object-cover w-full h-full"
+    srcset="../assets/images/desktop/forside-hero.webp 768w"
+  />
 
-    <h1
-      ref="heroTitle"
-      class="absolute top-1/2 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible text-h1 md:text-h1-md font-anton"
-    >
-      Fur Bryghus
-    </h1>
+  <!-- gradient til herosektion -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#00000077] via-transparent to-transparent z-10"></div>
 
-    <!-- 3 billeder af øl der hentes dynamisk fra WordPress Api'et -->
-    <div
-      class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden"
-    >
-      <router-link :to="`/webshop/fur-paskebryg`">
-        <img
-          :src="billedeUrl1"
-          :alt="alt1"
-          class="h-[20rem] lg:h-[32rem] w-full object-cover"
-        />
-      </router-link>
-      <router-link :to="`webshop/fur-renaessance`">
-        <img
-          :src="billedeUrl2"
-          :alt="alt2"
-          class="h-[20rem] lg:h-[32rem] w-full object-cover"
-        />
-      </router-link>
-      <router-link :to="`webshop/fur-frokost`">
-        <img
-          :src="billedeUrl3"
-          :alt="alt3"
-          class="h-[20rem] lg:h-[32rem] w-full object-cover"
-        />
-      </router-link>
+  <h1 ref="heroTitle" class=" absolute top-1/2 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-neutral-6 z-40 text-center invisible">
+    Fur Bryghus
+  </h1>
+
+  <!-- 3 billeder af øl der hentes dynamisk fra WordPress Api'et -->
+  <div class="beerImg md:flex gap-4 justify-center absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 z-30 hidden">
+  <router-link :to="`/webshop/fur-paskebryg`">
+    <img :src="billedeUrl1" :alt="alt1" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
+  </router-link>
+  <router-link :to="`webshop/fur-renaessance`">
+    <img :src="billedeUrl2" :alt="alt2" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
+  </router-link>
+  <router-link :to="`webshop/fur-frokost`">
+    <img :src="billedeUrl3" :alt="alt3" class="h-[20rem] lg:h-[32rem] w-full object-cover " />
+  </router-link>
+</div>
+</section>
+
+<!-- Sektion til de 4 unique selling points -->
+<section class="uspSection bg-fur-accent-beige -mt-16 z-40 relative">
+  <div class="fypFlex flex flex-col justify-center items-center py-[1.5rem] md:flex-row">
+  <div class="usp opacity-0" >
+    <p class="font-anton mb-[1rem]">
+      Lokale Råvarer
+    </p>
+    <img src="../assets/icons/korn.svg" alt="Ikon af korn">
+  </div>
+ <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
+  <div class="usp opacity-0 ">
+     <p class="font-anton mb-[1rem]">
+      Naturlig proces
+    </p>
+    <img src="../assets/icons/olTonde.svg" alt="Ikon af korn">
+  </div>
+   <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
+  <div class="usp opacity-0">
+    <p class="font-anton mb-[1rem]">
+     Bredt udvalg
+    </p>
+    <img src="../assets/icons/ol.svg" alt="Ikon af korn">
+  </div>
+   <span class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"></span>
+  <div class="usp opacity-0">
+     <p class="font-anton mb-[1rem]">
+     Brygget på vand fra Fur
+    </p>
+    <img src="../assets/icons/olHus.svg" alt="Ikon af korn">
+  </div>
+  </div>
+</section>
+
+<!-- sektion med en lille intro til bryghuset -->
+<section class="intro">
+  <div class=" md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[700px]">
+    <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
+      <h2 class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.</h2>
+      <p class="mb-[1rem] scroll-fade">Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en lækker frokost i restauranten.</p>
+      <Button label="Læs mere om vores historie" to="/bryggeriet/vores-historie" class="scroll-fade"/>
+
     </div>
   </section>
 
@@ -83,57 +107,37 @@
     </div>
   </section>
 
-  <!-- sektion med en lille intro til bryghuset -->
-  <section class="intro">
-    <div
-      class="md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[500px]"
-    >
-      <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-        <h2 class="mb-[1rem] scroll-fade text-h2 md:text-h2-md font-anton">
-          Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.
-        </h2>
-        <p class="mb-[1rem] scroll-fade">
-          Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden. Se det
-          arbejdende bryggeri, besøg gårdbutikken og ølbaren, eller spis en
-          lækker frokost i restauranten.
-        </p>
-        <Button
-          label="Læs mere om vores historie"
-          to="/bryggeriet/vores-historie"
-          class="scroll-fade"
-        />
-      </div>
-      <div class="md:w-1/2 md:h-full">
+<!-- åbningstiderne sektion med tekst til venstre, hvor der bliver hentet et komponent fra Abningstider.vue -->
+<section class="abningstider bg-fur-blue px-[4rem] py-[2rem] flex items-center justify-center">
+<div class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full lg:h-[700px] xl:max-w-[1280px]">
+  <div class=" md:w-1/2">
+    <h2 class="mb-[1rem]  text-neutral-6 scroll-fade" >Restaurantens åbningstider</h2>
+    <p class="mb-[1rem]  text-neutral-6 p-medium scroll-fade">Bryghuset følger  ikke restaurantents åbningstider, og åbner kun op til arrangementer og smagninger.</p>
+  </div>
+  <div class=" md:p-[4rem] md:w-1/2">
+<Abningstider
+    headingColor="text-white"
+  liColor="text-white"
+/>
+  </div>
+        <div class="md:w-1/2 md:h-full">
         <img
           src="../assets/images/mobile/Forside_Intro_Mobile.png"
           alt="Billede af knudeklinten på Fur"
           class="w-full md:h-full object-cover h-[300px]"
         />
       </div>
-    </div>
-  </section>
+</div>
+</section>
 
-  <!-- åbningstiderne sektion med tekst til venstre, hvor der bliver hentet et komponent fra Abningstider.vue -->
-  <section
-    class="abningstider bg-fur-blue px-[4rem] py-[2rem] flex items-center justify-center"
-  >
-    <div
-      class="md:flex md:justify-center md:items-center md:h-[500px] md:w-full xl:max-w-[1280px]"
-    >
-      <div class="md:w-1/2">
-        <h2
-          class="mb-[1rem] text-neutral-6 scroll-fade text-h2 md:text-h2-md font-anton"
-        >
-          Restaurantens åbningstider
-        </h2>
-        <p class="mb-[1rem] text-neutral-6 p-medium scroll-fade">
-          Bryghuset følger ikke restaurantents åbningstider, og åbner kun op til
-          arrangementer og smagninger
-        </p>
-      </div>
-      <div class="md:p-[4rem] md:w-1/2">
-        <Abningstider headingColor="text-white" liColor="text-white" />
-      </div>
+<!-- Sommmerkoncert sektion -->
+<section class="sommerKoncert max-w-screen">
+  <div class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full lg:h-[700px]">
+    <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
+      <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">Sommerkoncerten</h2>
+      <p class="mb-[1rem] md:mb-[3rem] scroll-fade">Fur Bryghus' sommerkoncert 2025 byder på livemusik, god mad og kolde øl i hyggelige, naturskønne rammer.</p>
+      <Button label="Læs mere om sommerkoncerten" to="#" class="scroll-fade" />
+
     </div>
   </section>
 

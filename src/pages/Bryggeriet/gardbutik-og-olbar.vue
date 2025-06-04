@@ -8,20 +8,13 @@
   />
 
   <section class="flex flex-col items-center">
-    <div
-      class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]"
-    >
-      <h2 class="text-center text-h2 md:text-h2-md font-anton">
-        Shopping på den lækre måde
-      </h2>
-      <p>
-        Velkommen til en fuldendt oplevelse hos Fur Bryghus! Besøg den hyggelige
-        gårdbutik og nyd en øl, mens du udforsker udvalget af specialprodukter.
-        Gårdbutikken er åben med selvbetjening alle ugens dage fra 8:00-22:00 -
-        du får nemt adgang med mobilen og betaler dine køb med Mobilepay.
-      </p>
-      <div class="flex flex-col items-center w-full">
-        <img src="@/assets/icons/Gardbutik-ikon.svg" alt="Ikon af øltønde" />
+
+    <div class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]">
+      <h2 class="text-center">Shopping på den lækre måde</h2>
+      <p class="mx-auto">Velkommen til en fuldendt oplevelse hos Fur Bryghus! Besøg den hyggelige gårdbutik og nyd en øl, mens du udforsker udvalget af specialprodukter. Gårdbutikken er åben med selvbetjening alle ugens dage fra 8:00-22:00 - du får nemt adgang med mobilen og betaler dine køb med Mobilepay.</p>
+      <div class="flex flex-col items-center w-full" >
+      <img src="@/assets/icons/Gardbutik-ikon.svg" alt="Ikon af øltønde">
+
       </div>
     </div>
   </section>

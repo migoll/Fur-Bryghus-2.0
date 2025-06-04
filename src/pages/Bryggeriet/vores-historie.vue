@@ -7,25 +7,14 @@
   />
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
-      <h2 class="text-center pb-2 text-h2 md:text-h2-md font-anton">
-        Bryggeriet i dag
-      </h2>
-      <p class="mt-4 pb-4">
-        Fur Bryghus er en unik kombination af mikrobryggeri, restaurant,
-        gårdbutik og event venue på øen Fur, midt i Limfjorden. Bryggeri og
-        restaurant er indrettet i en gammel molerfabrik - en smuk træbygning,
-        arkitekttegnet og bygget i 1926. Bryggeriet udmærker sig ved at
-        fremstille et bredt udvalg af specialøl, brygget med erfaring og passion
-        for den gode øloplevelse.
+
+      <h2 class="text-center pb-2">Bryggeriet i dag</h2>
+      <p class="mt-4 pb-4 mx-auto">
+       Fur Bryghus er en unik kombination af mikrobryggeri, restaurant, gårdbutik og event venue på øen Fur, midt i Limfjorden. Bryggeri og restaurant er indrettet i en gammel molerfabrik - en smuk træbygning, arkitekttegnet og bygget i 1926. Bryggeriet udmærker sig ved at fremstille et bredt udvalg af specialøl, brygget med erfaring og passion for den gode øloplevelse.
       </p>
-      <p class="mt-4">
-        Restauranten er kendt for at sammensætte store smagsoplevelser,
-        fortrinsvis af lokale råvarer og kød fra egne frilandsgrise - og maden
-        nydes med udsigt til det arbejdende bryggeri gennem store
-        panoramavinduer. Bryghuset tilbyder smukke selskabslokaler til din fest
-        og gårdbutikken er fyldt med specialiteter, så dagens favoritter kan
-        komme med hjem. Endelig er Fur Bryghus kendt for festlige live events,
-        sammensat til at give gæsterne en uforglemmelig oplevelse, hver gang.
+      <p class="mt-4 mx-auto">
+        Restauranten er kendt for at sammensætte store smagsoplevelser, fortrinsvis af lokale råvarer og kød fra egne frilandsgrise - og maden nydes med udsigt til det arbejdende bryggeri gennem store panoramavinduer. Bryghuset tilbyder smukke selskabslokaler til din fest og gårdbutikken er fyldt med specialiteter, så dagens favoritter kan komme med hjem. Endelig er Fur Bryghus kendt for festlige live events, sammensat til at give gæsterne en uforglemmelig oplevelse, hver gang.
+
       </p>
       <img
         src="@/assets/icons/olTonde.svg"

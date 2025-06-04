@@ -29,7 +29,9 @@
       <div
         class="flex flex-col content-center items-center justify-center p-[2rem] bg-fur-accent-beige gap-[1rem]"
       >
-        <h3 class="text-h3 md:text-h3-md font-anton">Husk at booke bord</h3>
+
+        <h3>Husk at booke bord</h3>
+
         <p>
           Husk at reservere bord inden jeres besøg - så kan vi garantere dig og
           dit selskab den bedste oplevelse.

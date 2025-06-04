@@ -10,6 +10,7 @@
       <div
         class="flex flex-col items-center gap-[2rem] justify-center p-[2rem] pt-[10rem] md:pt-[18rem]"
       >
+
         <h2
           class="text-neutral-6 text-center pb-[1rem] text-h2 md:text-h2-md font-anton"
         >
@@ -97,6 +98,7 @@
 </template>
 
 <script setup>
+
 import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 
 const showPopup = ref(false);

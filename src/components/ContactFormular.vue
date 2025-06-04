@@ -1,8 +1,8 @@
 <template>
   <div class="bg-[#0F2B39] text-white px-6 py-10 max-w-md mx-auto shadow-lg">
-    <h2 class="text-center mb-8 text-h2 md:text-h2-md font-anton">
-      Kontakt os
-    </h2>
+
+    <h2 class="text-3xl font-bold text-center mb-8">Kontakt os</h2>
+
     <form class="space-y-6">
       <div>
         <label class="block mb-1" for="navn">Navn</label>
@@ -43,12 +43,9 @@
           class="w-full p-3 text-black rounded-sm resize-none outline-none"
         ></textarea>
       </div>
-      <!-- Hvordan skal den sættes op? -->
-      <Button />
+
+      <Button label="Kontakt os" to="#" class="scroll-fade" />
+
     </form>
   </div>
 </template>
-
-<script setup>
-import Button from "./Button.vue";
-</script>

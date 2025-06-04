@@ -96,8 +96,10 @@
 import { computed, ref, watch } from "vue";
 import ProduktPagination from "~/components/ProduktPagination.vue";
 
+
 import heroImageMobile from "@/assets/images/desktop/vores-produkter-hero.webp";
 import heroImageDesktop from "@/assets/images/desktop/vores-produkter-hero.webp";
+
 
 interface Term {
   name: string;

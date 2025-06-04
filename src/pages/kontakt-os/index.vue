@@ -9,9 +9,9 @@
   <div class="px-6 py-8 lg:px-16 lg:py-16">
     <div class="flex flex-col lg:flex-row lg:space-x-16 max-w-[1400px] mx-auto">
       <div class="lg:w-1/2">
-        <h2 class="mb-4 text-h2 md:text-h2-md font-anton">
-          Vi står klar til at hjælpe
-        </h2>
+
+        <h2 class="mb-4">Vi står klar til at hjælpe</h2>
+
 
         <p class="mb-4">
           Har du spørgsmål til vores produkter, restauranten eller

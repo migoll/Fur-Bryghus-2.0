@@ -220,8 +220,8 @@ onMounted(() => {
   gsap.from(split.words, {
     y: 70,
     opacity: 0,
-    rotation: "random(-20, -20)",
-    duration: 0.8,
+    rotation: "random(0.5, 0.5)",
+    duration: 0.5,
     ease: "ease",
     stagger: 0.7,
   });

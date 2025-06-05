@@ -4,13 +4,13 @@ export default defineNuxtConfig({
   srcDir: "src/",
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
-  app: {
+   app: {
     head: {
       link: [
         {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "/favicon.ico",
+          rel: 'icon',
+          type: 'image/png',
+          href: '/fav-icon-logo.png',
         },
       ],
     },

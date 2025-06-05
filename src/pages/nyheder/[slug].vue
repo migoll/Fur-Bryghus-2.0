@@ -85,6 +85,21 @@ function formatDate(dateStr) {
     day: "numeric",
   });
 }
+
+const metaDescription = "læs mere om den specifikke nyhed og hvad der sker på Fur Bryghus"
+watchEffect(() => {
+  if (nyhed.value && nyhed.value.title?.rendered) {
+    useHead({
+      title: nyhed.value.title.rendered,
+      meta: [
+        {
+          name: "description",
+          content: metaDescription,
+        }
+      ],
+    });
+  }
+});
 </script>
 
 <style scoped>

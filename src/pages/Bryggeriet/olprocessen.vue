@@ -8,49 +8,35 @@
   <div class="px-16 py-8">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
 
-      <h2 class="text-center">Smagen af Fur og ren passion</h2>
-      <p class="mt-4 mx-auto">
+      <h2 class="text-center scroll-fade">Smagen af Fur og ren passion</h2>
+      <p class="mt-4 mx-auto scroll-fade">
         God øl kræver gode råvarer. Et veludstyret bryggeri. Og ikke mindst en dygtig og passioneret brygmester. Det har vi på Fur Bryghus. Og mere til. Vi har en unik historie og beliggenhed. Dertil kommer det helt specielle Fur vand, fyldt med naturlige mineraler og salte, der optages gennem den lange rejse gennem øens lag af moler og vulkansk aske.
 
       </p>
-      <img
-        src="@/assets/icons/olTonde.svg"
-        alt="Icon description"
-        class="mt-4 w-32 h-32 mx-auto"
-      />
     </div>
-    <div class="flex flex-col md:flex-row gap-8 mt-8 max-w-[1400px]">
-      <div class="w-full md:w-1/2">
-        <img
-          src="~/assets/images/desktop/olprocessen-gaering.webp"
-          alt="Ølprocessen - Gæring"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div class="w-full md:w-1/2">
-        <h2 class="text-h2 md:text-h2-md font-anton mb-4">
-          Bryggeriet og brygmesteren
-        </h2>
-        <p class="mb-4">
-          Fur Bryghus har indrettet bryggeriet med udvalgt udstyr. Selve
+    <BasicSection
+    heading=" Bryggeriet og brygmesteren"
+    text="Fur Bryghus har indrettet bryggeriet med udvalgt udstyr. Selve
           Brygværket samt gærkarret er fabrikeret i Tjekkiet. De første tanke
           kom fra Slovenien – og er siden suppleret med to danske tanke.
           Tappekolonnen er ligeledes dansk, og pasteuriserings-enheden er
           produceret i Tyskland. Resultatet er et stærkt og professionelt
-          set-up.
-        </p>
-        <p>
-          Vores brygmester Flemming Asmussen er manden bag Fur øl. Flemming er
+          set-up."
+    text2="Vores brygmester Flemming Asmussen er manden bag Fur øl. Flemming er
           uddannet brygmester fra den Skandinaviske Bryggerhøjskole i København
           og kom til Fur Bryghus den 1. januar 2005. Med familien – og 15 års
           erfaring fra Bryggeriet Fuglsang i Haderslev. Med sin store viden og
           erfaring har Flemming skabt stor respekt og anerkendelse omkring Fur
           øl fra forbrugere til bryggeri-verdenen. Og han deler gerne ud af sin
           viden til hobby-bryggere og andre øl-elskere – bare skriv til ham på
-          flas@furbryghus.dk eller giv ham et kald på 9759 3060.
-        </p>
-      </div>
-    </div>
+          flas@furbryghus.dk eller giv ham et kald på 9759 3060."
+    :imageMobile="mobileImg"
+    :imageDesktop="desktopImg"
+    imageAlt="Ølprocessen - Tørring"
+    headingColor="text-neutral-1"
+    textColor="text-neutral-1"
+    reverse
+  />
   </div>
   <div>
     <SceneAnimation2 :scenes="myScenesArray" />
@@ -61,6 +47,21 @@
 </template>
 
 <script setup>
+const title = ref("Ølprocessen");
+const description = ref(
+  "Læs her om vores process i skabningen af specialøllene"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import SceneAnimation2 from "~/components/SceneAnimation2.vue";
 import FocusedEntryPoints from "~/components/FocusedEntryPoints.vue";
 import Hero from "~/components/Hero.vue";
@@ -88,6 +89,9 @@ import imageKogningMobile from "@/assets/images/mobile/Olprocessen_Urtkogning_Mo
 import imageLagringMobile from "@/assets/images/mobile/Olprocessen_Lagring_Mobile.png";
 import imageTapningMobile from "@/assets/images/mobile/Olprocessen_Tapning_Mobile.png";
 import heroMobile from "@/assets/images/mobile/Olprocessen_Hero_Mobile.png";
+
+import mobileImg from "@/assets/images/mobile/Olprocessen_Torring_Mobile.png";
+import desktopImg from "@/assets/images/desktop/olprocessen-torring.webp";
 
 // Array med scener
 const myScenesArray = [
@@ -210,4 +214,29 @@ const myScenesArray = [
     ],
   },
 ];
+
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Her stoppes med at observere så fade animation kun køre en gang
+          observer.unobserve(entry.target);
+        }
+      });
+      // animationen køre først når mindst 10% af elementet er synligt
+    },
+    { threshold: 0.1 }
+  );
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll(".scroll-fade").forEach((el) => {
+    observer.observe(el);
+  });
+});
 </script>

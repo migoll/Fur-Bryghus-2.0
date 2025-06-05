@@ -63,23 +63,29 @@
       <span
         class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
       ></span>
+
       <div class="usp flex flex-col items-center opacity-0">
         <p class="font-anton text-2xl mb-[1rem]">Naturlig proces</p>
         <img src="../assets/icons/olTonde.svg" alt="Ikon af korn" />
+
       </div>
       <span
         class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
       ></span>
+
       <div class="usp flex flex-col items-center opacity-0">
         <p class="font-anton text-2xl mb-[1rem]">Bredt udvalg</p>
         <img src="../assets/icons/ol.svg" alt="Ikon af korn" />
+
       </div>
       <span
         class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
       ></span>
+
       <div class="usp flex flex-col items-center opacity-0">
         <p class="font-anton text-2xl mb-[1rem]">Brygget på vand fra Fur</p>
         <img src="../assets/icons/olHus.svg" alt="Ikon af korn" />
+
       </div>
     </div>
   </section>
@@ -153,7 +159,7 @@
         </p>
         <Button
           label="Læs mere om sommerkoncerten"
-          to="#"
+          to="/arrangementer/sommerkoncert-2025-program-transport-og-overnatning"
           class="scroll-fade"
         />
       </div>

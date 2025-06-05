@@ -100,6 +100,21 @@
 </template>
 
 <script setup lang="ts">
+const title = ref("Vores produkter");
+const description = ref(
+  "Her kan du købe alle vores produkter og læse om deres specielle egenskaber"
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+
 import { computed, ref, watch } from "vue";
 import ProduktPagination from "~/components/ProduktPagination.vue";
 

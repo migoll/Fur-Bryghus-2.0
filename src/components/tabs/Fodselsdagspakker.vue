@@ -11,9 +11,9 @@
     <p>Kontakt os for at sammensætte din egen menu.</p>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">Fødselsdagspakke 1</p>
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">Fødselsdagspakke 1</p>
   <div class="flex content-center align-center justify-center">
-    <div class="flex flex-col w-[70%]">
+    <div class="flex flex-col">
       <div class="flex flex-col">
         <div class="mb-[1rem]">
           <div class="flex content-center items-center justify-center">
@@ -62,9 +62,9 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center">Fødselsdagspakke 2</p>
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">Fødselsdagspakke 2</p>
   <div class="flex content-center align-center justify-center">
-    <div class="flex flex-col w-[70%]">
+    <div class="flex flex-col">
       <div class="flex flex-col">
         <div class="mb-[1rem]">
           <div class="flex content-center items-center justify-center">

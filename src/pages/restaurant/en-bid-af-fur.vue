@@ -4,23 +4,16 @@
     heroHeading="En bid af Fur"
     :heroImageMobile="heroImageMobile"
     :heroImageDesktop="heroImageDesktop"
-    heroImageAlt="Billede restauranten"
+    heroImageAlt="Naturen på Fur"
   />
 
   <section class="flex flex-col items-center">
-    <div
-      class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]"
-    >
-      <h2 class="text-center">Fokus på ingredienserne</h2>
-      <p class="mx-auto">
-        I vores produktion af øl har vi stor fokus på brug af lokale
-        ingredienser. Det samme gælder også i vores udsøgte frokostretter, som
-        er fremstillet af lokale råverer.
-      </p>
-      <p class="mx-auto">
-        Sæsonens friske grøntsager høstes samme dag, som de tilberedes. Retterne
-        kombineres, så smag og udseende tilfredsstiller alle sanser.
-      </p>
+
+    <div class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]">
+      <h2 class="text-center scroll-fade">Fokus på ingredienserne</h2>
+      <p class="mx-auto scroll-fade">I vores produktion af øl har vi stor fokus på brug af lokale ingredienser. Det samme gælder også i vores udsøgte frokostretter, som er fremstillet af lokale råverer.</p>
+      <p class="mx-auto scroll-fade">Sæsonens friske grøntsager høstes samme dag, som de tilberedes. Retterne kombineres, så smag og udseende tilfredsstiller alle sanser.</p>
+
     </div>
   </section>
 
@@ -30,7 +23,9 @@
     text2="Alt vores okse- og grisekød kommer fra Grambogård samt selvfølgelig vores egen produktion af frilandsgrise. Vi bruger kødet fra  Grambogård, da der er vores garanti for, at dyrene har haft en rolig og god opvækst, samt af dyreetiske grunde og respekt for det gode dyreliv. Det er god smag! "
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
+
     imageAlt="Billede af kvalitetskød fra Grambogård med fokus på dyrevelfærd"
+
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     :bgImage="traeBackground"
@@ -50,7 +45,9 @@
     ]"
     :imageMobile="mobileImg1"
     :imageDesktop="desktopImg1"
+
     imageAlt="Billede af Fur Bryghus' produktionsmetoder og frilandsgrise"
+
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     reverse
@@ -61,7 +58,9 @@
     text="Besøg os og få en oplevelse og smagen af Fur. Vi glæder os til at byde dig velkommen. Husk at booke bord på restauranten for at sikre dig en plads. "
     :imageMobile="mobileImg2"
     :imageDesktop="desktopImg2"
+
     imageAlt="Billede af Restaurant Bryghuset på Fur. Book bord her og oplev smagen af Fur"
+
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     buttonLabel="Book bord"
@@ -99,6 +98,31 @@ useHead({
       content: description,
     },
   ],
+});
+
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Her stoppes med at observere så fade animation kun køre en gang
+          observer.unobserve(entry.target);
+        }
+      });
+      // animationen køre først når mindst 10% af elementet er synligt
+    },
+    { threshold: 0.1 }
+  );
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll(".scroll-fade").forEach((el) => {
+    observer.observe(el);
+  });
 });
 </script>
 

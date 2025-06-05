@@ -13,7 +13,7 @@
       Restaurant Bryghuset. Minimum 20 personer.
     </p>
   </div>
-  <p class="p-medium p-[1rem] font-bold text-center">Retter</p>
+  <p class="p-medium p-[1rem] font-bold text-center max-w-full">Retter</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row w-[70%]">
       <div class="md:w-1/2">
@@ -149,7 +149,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center py-[2rem]">Kaffe og kage</p>
+  <p class="p-medium p-[1rem] font-bold text-center py-[2rem] max-w-full">Kaffe og kage</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row w-[70%]">
       <div class="md:w-1/2">
@@ -191,7 +191,7 @@
     </div>
   </div>
 
-  <p class="p-medium p-[1rem] font-bold text-center py-[2rem]">Drikkevarer</p>
+  <p class="p-medium p-[1rem] font-bold text-center py-[2rem] max-w-full">Drikkevarer</p>
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row w-[70%]">
       <div class="md:w-1/2">

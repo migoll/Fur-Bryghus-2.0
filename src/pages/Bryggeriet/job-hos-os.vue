@@ -33,7 +33,7 @@
         class="px-[2rem] py-[1rem] overflow-hidden h-0 opacity-0"
       >
         <div class="flex flex-col md:flex-row gap-[2rem]">
-          <div>
+          <div class="md:w-1/2">
             <div class="pt-[1rem]">
               <p>
                 Aloha, service-stjerner! Vi søger smilende tjenere, der kan
@@ -84,7 +84,7 @@
               </ul>
               <img
                 src="../../assets/images/desktop/job-hos-os-2.webp"
-                alt="Billede af den nye chefbrygger"
+                alt="Billede af mad og øl"
                 class="w-full"
               />
             </div>
@@ -109,7 +109,7 @@
               </ul>
             </div>
           </div>
-          <div>
+          <div class="md:w-1/2">
             <div class="pt-[1rem]">
               <img
                 src="../../assets/images/desktop/job-hos-os-1.webp"

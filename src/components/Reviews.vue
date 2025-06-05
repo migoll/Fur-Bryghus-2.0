@@ -3,14 +3,14 @@
   <section
     class="w-full overflow-hidden py-[2rem] px-[1rem] md:px-[4rem] md:py-[4rem] flex flex-col md:items-center"
   >
-    <h2 class="text-h2 md:text-h2-md font-anton">
+    <h2 class="text-h2 md:text-h2-md font-anton scroll-fade">
       Hvad siger vores kunder om os
     </h2>
     <div
       class="md:py-[4rem] lg:py-[2rem] flex box-border max-w-[1240px] flex-col gap-[20px] lg:flex-row"
     >
       <div
-        class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6"
+        class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6 scroll-fade"
       >
         <div class="flex flex-row gap-20">
           <div class="w-[80%]">
@@ -90,7 +90,7 @@
       </div>
 
       <div
-        class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6"
+        class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6 scroll-fade"
       >
         <div class="flex flex-row gap-20">
           <div class="w-[80%]">
@@ -169,7 +169,7 @@
       </div>
 
       <div
-        class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6"
+        class="!flex flex-col items-stretch justify-start shadow-lg p-[1rem] lg:w-[33%] bg-neutral-6 scroll-fade"
       >
         <div class="flex flex-row gap-20">
           <div class="w-[80%]">
@@ -254,6 +254,31 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Her stoppes med at observere så fade animation kun køre en gang
+          observer.unobserve(entry.target);
+        }
+      });
+      // animationen køre først når mindst 10% af elementet er synligt
+    },
+    { threshold: 0.1 }
+  );
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll(".scroll-fade").forEach((el) => {
+    observer.observe(el);
+  });
+});
+</script>
 
 <style scoped></style>

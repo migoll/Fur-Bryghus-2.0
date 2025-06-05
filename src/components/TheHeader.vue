@@ -160,7 +160,7 @@
         <template v-for="(item, index) in navigation" :key="index">
           <button
             v-if="item.hasDropdown"
-            class="flex w-full text-left py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200"
+            class="flex w-full text-left py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200 font-bold"
             @click="toggleMobileDropdown(index)"
           >
             {{ item.name }}
@@ -187,7 +187,7 @@
           <NuxtLink
             v-else-if="!item.hasDropdown"
             :to="item.href!"
-            class="block py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200"
+            class="block py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200 font-bold"
             @click="isMenuOpen = false"
           >
             {{ item.name }}

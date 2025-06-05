@@ -1,6 +1,5 @@
 <template>
   <div class="bg-[#0F2B39] text-white px-6 py-10 max-w-md mx-auto shadow-lg">
-
     <h2 class="text-3xl font-bold text-center mb-8">Kontakt os</h2>
 
     <form class="space-y-6">
@@ -44,8 +43,7 @@
         ></textarea>
       </div>
 
-      <Button label="Kontakt os" to="#" class="scroll-fade" />
-
+      <Button isNeutral label="Kontakt os" to="#" class="w-full" />
     </form>
   </div>
 </template>

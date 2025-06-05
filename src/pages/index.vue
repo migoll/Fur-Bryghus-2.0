@@ -104,6 +104,13 @@
           class="scroll-fade"
         />
       </div>
+      <div class="md:w-1/2 md:h-full">
+        <img
+          src="../assets/images/mobile/Forside_Intro_Mobile.png"
+          alt="Billede af knudeklinten på Fur"
+          class="w-full md:h-full object-cover h-[300px]"
+        />
+      </div>
     </div>
   </section>
 
@@ -125,13 +132,6 @@
       </div>
       <div class="md:p-[4rem] md:w-1/2">
         <Abningstider headingColor="text-white" liColor="text-white" />
-      </div>
-      <div class="md:w-1/2 md:h-full">
-        <img
-          src="../assets/images/mobile/Forside_Intro_Mobile.png"
-          alt="Billede af knudeklinten på Fur"
-          class="w-full md:h-full object-cover h-[300px]"
-        />
       </div>
     </div>
   </section>
@@ -260,10 +260,6 @@ Promise.all([
     alt1.value = data1.acf.billede1.alt;
     alt2.value = data2.acf.billede1.alt;
     alt3.value = data3.acf.billede1.alt;
-  })
-  // Hvis der sker en fejl i fetchet, bliver der vist en error i konsollen
-  .catch((error) => {
-    console.error("Der er sket en fejl", error);
   });
 
 // Her importeres de billeder som bliver brugt i basicSection komponentet

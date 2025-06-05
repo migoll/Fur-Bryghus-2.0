@@ -1,8 +1,8 @@
 <template>
   <div v-if="produktData" class="w-full mx-auto">
-    <div class="flex flex-col lg:flex-row gap-8 lg:h-[80vh]">
+    <div class="flex flex-col lg:flex-row gap-8 lg:min-h-[80vh]">
       <div
-        class="flex-1 flex flex-col justify-center items-center min-h-[300px] lg:min-h-[600px] p-4"
+        class="flex-1 flex flex-col justify-center items-center min-h-[300px] lg:min-h-[600px] p-4 py-16 lg:py-0"
         :style="{
           backgroundColor: produktData.acf?.baggrundsfarve,
         }"
@@ -25,8 +25,8 @@
         </div>
       </div>
 
-      <div class="flex-1 flex flex-col p-4">
-        <div class="flex flex-col md:flex-row lg:flex-col gap-8">
+      <div class="flex-1 flex flex-col p-4 my-auto">
+        <div class="flex flex-col lg:flex-col gap-8">
           <div class="flex-1 flex flex-col">
             <div class="hidden md:block">
               <h1 class="font-bold mb-2 scroll-fade">
@@ -41,10 +41,16 @@
 
             <div
               v-if="produktData.acf?.beskrivelse"
+
               class="space-y-4 mb-8 md:mb-0 lg:mb-8 scroll-fade"
+
               v-html="produktData.acf.beskrivelse"
             />
+            <NuxtLink to="/bryggeriet/forhandlere">
+              <p class="underline">Se forhandlere</p></NuxtLink
+            >
           </div>
+
           <div class="flex flex-col md:w-72 lg:w-full">
             <div class="flex gap-4 mb-6">
               <div
@@ -88,7 +94,7 @@
     </div>
   </div>
   <section v-if="produktData" class="bg-wood-texture">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 py-12">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 py-12">
       <div>
         <h2 class="text-h2 md:text-h2-md font-anton text-white mb-8">
           Specifikationer
@@ -307,35 +313,14 @@ interface Produkt {
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: produkt, error } = await useFetch<Produkt[]>(
+const { data: produkt } = await useFetch<Produkt[]>(
   `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?slug=${slug}`,
-  {
-    onResponse({ response }) {
-      console.log("API Response:", response._data);
-    },
-    onResponseError({ response }) {
-      console.error("API Error:", response._data);
-    },
-  }
+  {}
 );
 
 const produktData = computed(() => {
   const data = produkt.value?.[0];
-  console.log("Current product data:", data);
-  if (!data) {
-    console.error("No product data found for slug:", slug);
-  } else {
-    console.log("Product specs:", {
-      stilart: data.acf?.stilart?.[0]?.name,
-      alkoholprocent: data.acf?.alkoholprocent,
-      ingredienser: data.acf?.ingredienser,
-      udseende: data.acf?.udseende,
-      smagsnoter: data.acf?.smagsnoter,
-      humle_type: data.acf?.humle_type,
-      gaer_type: data.acf?.gaer_type,
-      storrelse: data.acf?.storrelse?.[0]?.name,
-    });
-  }
+
   return data;
 });
 

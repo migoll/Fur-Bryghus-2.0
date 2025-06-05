@@ -55,18 +55,19 @@
     <!-- Hero Image -->
     <div
       v-if="arrangement?.acf?.billede?.url"
-      class="w-full flex justify-center md:flex-1 bg-fur-blue items-center"
+      class="w-full flex justify-center md:flex-1 bg-fur-blue items-center max-h-[1040px]"
     >
       <img
         :src="arrangement.acf.billede.url"
         :alt="arrangement.acf.billede.alt || arrangement.title.rendered"
-        class="p-16"
+        class="p-16 md:max-w-[800px] md:max-h-[1024px]"
       />
     </div>
   </section>
   <div v-else-if="pending" class="text-center py-12">Indlæser…</div>
   <div v-else class="text-center py-12">Arrangementet blev ikke fundet.</div>
   <section
+    v-if="isSommerkoncert"
     class="flex items-center justify-center flex-col max-w-[70ch] mx-auto px-4 py-8"
   >
     <h3 class="py-4">Information om sommerkoncerten</h3>
@@ -195,6 +196,12 @@ watchEffect(() => {
     });
   }
 });
+
+const isSommerkoncert = computed(() =>
+  arrangement.value?.acf?.eventtype?.some(
+    (e) => e.name.toLowerCase() === "sommerkoncert"
+  )
+);
 
 function formatDate(dateStr) {
   if (!dateStr) return "";

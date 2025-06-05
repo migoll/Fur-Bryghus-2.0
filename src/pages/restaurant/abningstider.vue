@@ -30,7 +30,7 @@
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
     imageAlt="Billede af tatar"
-    bgColor="bg-fur-accent-beer"
+    bgColor="bg-fur-accent-beige"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     buttonLabel="Book bord"

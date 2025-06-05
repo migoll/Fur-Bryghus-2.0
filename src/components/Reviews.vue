@@ -250,6 +250,7 @@
       label="Se flere anmeldelser"
       openInNewTab
       to="https://www.google.com/search?sca_esv=3035b77ba2076880&rlz=1C1YTUH_daDK1038DK1038&sxsrf=AHTn8zqCTQazBeYtDakCvABfTiYMAYBjRA:1747899706653&uds=ABqPDvztZD_Nu18FR6tNPw2cK_RRaSxpVDIrzG-nNIpQ5vDvpbZnsQ3IX2ftLlHNZexsaHzeh5G3vCpY95r4t9EwWWTVpolnJneU0BfyM71dW3S9Cso44LQTP_DPoDb0_HEsgefg6fBnGi-DzEbHKp1unGrZtXgI7w&si=APYL9btvhO6SAb8jF9HqTZMMa7vs_teLnZaEVrJZwRKFIIKjoaa-RdyxeHv1RSRNldJIoC1F63s4qoyUeobiGKysYSA1W4VrQtckm4DLka2CwXGUaprpFr8%3D&q=Fur+Bryghus+Anmeldelser&sa=X&sqi=2&ved=2ahUKEwjO0_joybaNAxUs0wIHHWnMCVIQ3PALegQIPhAF&biw=1410&bih=739&dpr=1.6"
+      class="mt-1"
     />
   </section>
 </template>

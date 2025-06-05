@@ -22,7 +22,7 @@
       </div>
 
       <div class="lg:w-1/2 mt-10 lg:mt-0">
-        <GoogleMap />
+        <GoogleMap :iframe="map" />
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@
 </template>
 
 <script setup>
+const map = "https://www.google.com/maps/d/u/0/embed?mid=1do7YHD5GkTZCz3q7J0DEmsTys_Z9JqE&ehbc=2E312F&noprof=1";
 const title = ref("Forhandlere");
 const description = ref(
   "Find din nærmeste forhandler af Furs produkter lige her"

@@ -8,9 +8,9 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
-          rel: 'icon',
-          type: 'image/png',
-          href: '/fav-icon-logo.png',
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
         },
       ],
     },

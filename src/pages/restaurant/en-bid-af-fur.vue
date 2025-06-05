@@ -13,11 +13,6 @@
       <h2 class="text-center scroll-fade">Fokus på ingredienserne</h2>
       <p class="mx-auto scroll-fade">I vores produktion af øl har vi stor fokus på brug af lokale ingredienser. Det samme gælder også i vores udsøgte frokostretter, som er fremstillet af lokale råverer.</p>
       <p class="mx-auto scroll-fade">Sæsonens friske grøntsager høstes samme dag, som de tilberedes. Retterne kombineres, så smag og udseende tilfredsstiller alle sanser.</p>
-       <img
-        src="@/assets/icons/enBidaFur-ikon.svg"
-        alt="Humle ikon"
-        class="mt-4 w-32 h-32 mx-auto scroll-fade"
-      />
     </div>
   </section>
 

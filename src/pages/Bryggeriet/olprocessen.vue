@@ -13,11 +13,6 @@
         God øl kræver gode råvarer. Et veludstyret bryggeri. Og ikke mindst en dygtig og passioneret brygmester. Det har vi på Fur Bryghus. Og mere til. Vi har en unik historie og beliggenhed. Dertil kommer det helt specielle Fur vand, fyldt med naturlige mineraler og salte, der optages gennem den lange rejse gennem øens lag af moler og vulkansk aske.
 
       </p>
-      <img
-        src="@/assets/icons/enBidaFur-ikon.svg"
-        alt="Humle ikon"
-        class="mt-4 w-32 h-32 mx-auto scroll-fade"
-      />
     </div>
     <BasicSection
     heading=" Bryggeriet og brygmesteren"

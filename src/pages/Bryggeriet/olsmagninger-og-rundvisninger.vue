@@ -34,14 +34,18 @@
   <div>
     <SceneAnimation2 :scenes="myScenesArray" />
   </div>
-  <div class="bg-[#E2D4BB] w-full h-auto mb-4 pt-8">
+  <div class="bg-[#E2D4BB] w-full h-auto mb-4 py-8 flex flex-col items-center">
     <h2 class="text-center pb-2">Bestil Ølsmagning</h2>
-    <p class="mx-auto max-w-[50%]">
+    <p class="mx-auto max-w-[50%] md:text-center">
       Er i en gruppe der ønsker at bestille en ølsmagning eller rundvisning på
       vores dejlige bryghus, så tøv ikke med at send os en mail. Sørg for at
       have de fleste detaljer på plads, så finder vi sammen den bedste løsning.
     </p>
-    <Button />
+    <Button
+          label="Bestil ølsmagning"
+          to="/kontakt-os"
+          class="mt-2"
+        />
   </div>
   <FocusedEntryPoints
     :entries="['Vores-produkter', 'Bryggeprocessen', 'Gardbutik']"

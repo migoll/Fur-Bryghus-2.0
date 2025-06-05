@@ -2,7 +2,7 @@
   <div class="google-map-container">
     <iframe
       class="google-map"
-      src="https://www.google.com/maps/d/u/0/embed?mid=1do7YHD5GkTZCz3q7J0DEmsTys_Z9JqE&ehbc=2E312F&noprof=1" 
+      :src="iframe"
       allowfullscreen
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
@@ -11,6 +11,13 @@
 </template>
 
 <script setup>
+defineProps({
+  iframe: {
+    type: String,
+    required: true
+  }
+})
+
 </script>
 
 <style scoped>

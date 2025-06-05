@@ -10,7 +10,7 @@
       class="lg:w-56 lg:min-w-[16rem] bg-fur-blue text-fur-accent-bone px-4 py-2 sm:p-0 lg:sticky lg:top-0 lg:h-screen"
     >
       <div
-        class="flex lg:flex-col gap-6 overflow-x-auto p-0 lg:p-4 lg:h-auto whitespace-nowrap lg:whitespace-normal border-b lg:border-b-0"
+        class="flex lg:flex-col overflow-x-auto p-0  lg:h-auto whitespace-nowrap lg:whitespace-normal border-b lg:border-b-0"
       >
         <button
           @click="valgtSortering = null"

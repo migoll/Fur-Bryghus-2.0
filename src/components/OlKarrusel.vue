@@ -15,7 +15,7 @@
         Se alle øl
       </NuxtLink>
     </div>
-    <div class="flex gap-6 overflow-x-auto text-xl lg:p-sm px-6 py-4">
+    <div class="flex gap-6 scrollbar-custom overflow-x-auto text-xl lg:p-sm px-6 py-4">
       <button
         v-for="(beer, idx) in beers"
         :key="beer.id"
@@ -204,5 +204,18 @@ onMounted(async () => {
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   color: #c89768;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #e2d4bb;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #c89768;
 }
 </style>

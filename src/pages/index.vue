@@ -30,21 +30,21 @@
       <router-link :to="`/webshop/fur-paskebryg`">
         <img
           :src="billedeUrl1"
-          :alt="alt1"
+          :alt="alt1 || 'Fur Påskebryg øl fra Fur Bryghus'"
           class="h-[20rem] lg:h-[32rem] w-full object-cover"
         />
       </router-link>
       <router-link :to="`webshop/fur-renaessance`">
         <img
           :src="billedeUrl2"
-          :alt="alt2"
+          :alt="alt2 || 'Fur Renæssance øl fra Fur Bryghus'"
           class="h-[20rem] lg:h-[32rem] w-full object-cover"
         />
       </router-link>
       <router-link :to="`webshop/fur-frokost`">
         <img
           :src="billedeUrl3"
-          :alt="alt3"
+          :alt="alt3 || 'Fur Frokost øl fra Fur Bryghus'"
           class="h-[20rem] lg:h-[32rem] w-full object-cover"
         />
       </router-link>
@@ -54,32 +54,38 @@
   <!-- Sektion til de 4 unique selling points -->
   <section class="uspSection bg-fur-accent-beige -mt-16 z-40 relative">
     <div
-      class="fypFlex flex flex-col justify-center items-center py-[1.5rem] md:flex-row"
+      class="fypFlex flex flex-col justify-center items-center py-8 md:flex-row"
     >
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Lokale Råvarer</p>
+      <div class="usp flex flex-col items-center opacity-0">
+        <p class="font-anton text-2xl mb-[1rem]">Lokale Råvarer</p>
         <img src="../assets/icons/korn.svg" alt="Ikon af korn" />
       </div>
       <span
         class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
       ></span>
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Naturlig proces</p>
-        <img src="../assets/icons/olTonde.svg" alt="Ikon af tønde" />
+
+      <div class="usp flex flex-col items-center opacity-0">
+        <p class="font-anton text-2xl mb-[1rem]">Naturlig proces</p>
+        <img src="../assets/icons/olTonde.svg" alt="Ikon af korn" />
+
       </div>
       <span
         class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
       ></span>
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Bredt udvalg</p>
-        <img src="../assets/icons/ol.svg" alt="Ikon af øl" />
+
+      <div class="usp flex flex-col items-center opacity-0">
+        <p class="font-anton text-2xl mb-[1rem]">Bredt udvalg</p>
+        <img src="../assets/icons/ol.svg" alt="Ikon af korn" />
+
       </div>
       <span
         class="w-1/2 h-px bg-fur-accent-beer my-4 md:rotate-90 md:w-[8rem] block"
       ></span>
-      <div class="usp opacity-0">
-        <p class="font-anton mb-[1rem]">Brygget på vand fra Fur</p>
-        <img src="../assets/icons/olHus.svg" alt="Ikon af hus" />
+
+      <div class="usp flex flex-col items-center opacity-0">
+        <p class="font-anton text-2xl mb-[1rem]">Brygget på vand fra Fur</p>
+        <img src="../assets/icons/olHus.svg" alt="Ikon af korn" />
+
       </div>
     </div>
   </section>
@@ -90,7 +96,7 @@
       class="md:flex md:justify-center md:items-center md:h-[700px] md:w-full lg:h-[700px]"
     >
       <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-        <h2 class="mb-[1rem] scroll-fade">
+        <h2 class="mb-[1rem] scroll-fade md:text-5xl">
           Besøg et ægte mikrobryggeri på øen Fur midt i Limfjorden.
         </h2>
         <p class="mb-[1rem] scroll-fade">
@@ -142,7 +148,9 @@
       class="md:flex md:justify-center md:items-center md:flex-row-reverse md:h-[500px] md:w-full"
     >
       <div class="mx-[2rem] my-[2rem] md:p-[4rem] md:w-1/2">
-        <h2 class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade">
+        <h2
+          class="mb-[1rem] md:mb-[3rem] md:break-all scroll-fade text-3xl lg:text-5xl"
+        >
           Sommerkoncerten
         </h2>
         <p class="mb-[1rem] md:mb-[3rem] scroll-fade">

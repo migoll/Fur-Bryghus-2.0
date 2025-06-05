@@ -3,13 +3,14 @@
     <div
       v-for="entry in resolvedEntries"
       :key="entry.title"
-      class="group bg-white shadow-md relative flex flex-col h-full overflow-hidden"
+      class="card bg-white shadow-md relative flex flex-col h-full overflow-hidden"
     >
       <div class="overflow-hidden cursor-pointer">
         <img
           :src="entry.image"
           :alt="entry.title"
-          class="w-full h-64 object-cover group-hover:scale-[110%] ease-in-out duration-500"
+          class="w-full h-64 object-cover ease-in-out duration-500"
+          :style="{ transform: 'scale(var(--scale, 1))' }"
         />
       </div>
       <div class="p-6 flex flex-col justify-between flex-grow">
@@ -22,7 +23,13 @@
           </p>
         </div>
         <div class="mt-6 text-center">
-          <Button :label="entry.buttonText" :to="entry.href" />
+          <Button 
+            :label="entry.buttonText" 
+            :to="entry.href" 
+            class="hover-button"
+            @mouseenter="$event.target.closest('.card').style.setProperty('--scale', '1.1')"
+            @mouseleave="$event.target.closest('.card').style.setProperty('--scale', '1')"
+          />
         </div>
       </div>
     </div>
@@ -223,3 +230,13 @@ onMounted(() => {
   });
 });
 </script>
+
+<style scoped>
+.card {
+  position: relative;
+}
+
+.hover-button:hover ~ .overflow-hidden img {
+  transform: scale(1.1);
+}
+</style>

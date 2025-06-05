@@ -3,7 +3,7 @@
     <!--  Karousel som er skjult på små skærme -->
     <div
       ref="container"
-      class="carousel-wrapper hidden md:flex h-screen w-full overflow-hidden relative"
+      class="carousel-wrapper hidden lg:flex h-screen w-full overflow-hidden relative"
     >
       <!-- Venstre halvdel: billeder + sideTitel -->
       <div
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Mobilversion  -->
-    <div class="md:hidden">
+    <div class="lg:hidden">
       <div v-for="(scene, i) in scenes" :key="'mobile-' + i" class="mb-16 px-4">
         <div class="relative">
           <img
@@ -107,7 +107,7 @@ const sideTitleRefs = [];
 
 onMounted(() => {
   // Kun initialiser ScrollTrigger hvis skærmbredde er desktop
-  if (window.innerWidth < 768) return;
+  if (window.innerWidth < 1024) return;
 
   const totalSlides = props.scenes.length;
   const scrollHeight = window.innerHeight * (totalSlides - 1);

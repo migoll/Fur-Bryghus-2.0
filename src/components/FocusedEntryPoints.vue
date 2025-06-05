@@ -243,5 +243,4 @@ onMounted(() => {
 .card {
   position: relative;
 }
-
 </style>

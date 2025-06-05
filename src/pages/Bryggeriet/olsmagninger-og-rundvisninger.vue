@@ -5,7 +5,7 @@
     :heroImageDesktop="heroDesktop"
     heroImageAlt="Billede af 6 øl"
   />
-  <div class="px-16 py-8">
+  <div class="p-8 md:px-16">
     <div class="max-w-[1024px] justify-center mx-auto pb-4 pt-8">
       <p class="text-center pb-4 text-xl mx-auto scroll-fade">
         *Kan bookes fra 1. marts 2025

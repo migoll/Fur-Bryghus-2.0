@@ -5,7 +5,7 @@
     :heroImageDesktop="heroDesktop"
     heroImageAlt="Billede af øl på samlebånd i bryggeriet"
   />
-  <div class="px-16 py-8">
+  <div class="p-8 md:px-16">
     <div class="max-w-[1024px] justify-center mx-auto pb-4">
 
       <h2 class="text-center scroll-fade">Smagen af Fur og ren passion</h2>

@@ -5,7 +5,7 @@
       // Hvis der er et baggrundsbillede tilføjes ingen klasse fordi billedet bruges nede i style. hvis der er en faarve istedet bruges baggrundsfarve som klasse, så vi kan sætte den med tailwind css
       // her under defineres hvordan baggrundsbilledet sættes hvis der findes det
 
-      'px-4 py-8 md:py-[4rem] md:px-16 flex items-center justify-center md:min-h-[700px]',
+      'px-4 py-8 md:py-[4rem] lg:px-16 flex items-center justify-center md:min-h-[700px]',
       bgImage ? '' : bgColor,
     ]"
     :style="
@@ -16,7 +16,7 @@
   >
     <div
       :class="[
-        'md:flex md:justify-center md:items-center md:h-full md:w-full xl:max-w-[1280px] md:gap-[5rem]',
+        'lg:flex lg:justify-center lg:items-center lg:h-full lg:w-full xl:max-w-[1280px] md:gap-[5rem]',
         reverse ? 'md:flex-row-reverse' : '',
       ]"
     >

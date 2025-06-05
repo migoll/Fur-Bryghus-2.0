@@ -247,6 +247,9 @@
       </div>
     </div>
   </section>
+    <!-- Ølkarrusel komponent -->
+  <OlKarrusel :produktSorteringId="45" />
+
   <FocusedEntryPoints
     :entries="['Vores-produkter', 'Bryggeprocessen', 'Gardbutik']"
   />
@@ -311,7 +314,9 @@ interface Produkt {
 }
 
 const route = useRoute();
+// Bruger slug fra URL til at fetche produktdata
 const slug = route.params.slug as string;
+
 
 const { data: produkt } = await useFetch<Produkt[]>(
   `https://ap-headless.amalieandreasen.dk/wp-json/wp/v2/posts?slug=${slug}`,

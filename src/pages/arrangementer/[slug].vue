@@ -161,11 +161,13 @@
 import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
 
+// Slug hentes fra route params (dynamisk side)
 const route = useRoute();
 const slug = route.params.slug;
 const arrangement = ref(null);
 const pending = ref(true);
 
+/* Henter arrangementet ud fra slug og kategori (28 = events, 30 = events) */
 const fetchArrangement = async () => {
   try {
     const res = await fetch(
@@ -182,6 +184,7 @@ const fetchArrangement = async () => {
 
 onMounted(fetchArrangement);
 
+/* Opdaterer SEO meta-tags og titel dynamisk efter data er hentet */
 const metaDescription = "læs mere om det specifikke arrangement og køb billet"
 watchEffect(() => {
   if (arrangement.value && arrangement.value.title?.rendered) {

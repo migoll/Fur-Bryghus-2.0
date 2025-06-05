@@ -39,8 +39,10 @@ gsap.registerPlugin(SplitText, TextPlugin);
 const heroTitle = ref(null);
 
 onMounted(() => {
+    // Gør teksten synlig efter DOM er klar
   gsap.set(heroTitle.value, { visibility: "visible" });
 
+    // Splitter tekst i ord og animerer dem med GSAP
   const split = new SplitText(heroTitle.value, { type: "words" });
   gsap.from(split.words, {
     y: 70,
@@ -49,8 +51,8 @@ onMounted(() => {
     duration: 0.5,
     ease: "ease",
     stagger: 0.7,
+
   });
 });
 </script>
 
-<style scoped></style>

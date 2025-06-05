@@ -1,11 +1,13 @@
 <template>
   <section class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto py-12">
+    <!-- loop over entries, der kun viser 3 pga vores entry point -->
     <div
       v-for="entry in resolvedEntries"
       :key="entry.title"
       class="card bg-white shadow-md relative flex flex-col h-full overflow-hidden"
     >
       <div class="overflow-hidden">
+        <!-- dynamisk billede til hvert entry, der bliver scaleret med css på hover -->
         <img
           :src="entry.image"
           :alt="entry.title"
@@ -22,6 +24,7 @@
             {{ entry.description }}
           </p>
         </div>
+        <!-- Knap der on hover skalerer billedet  -->
         <div class="mt-6 text-center">
           <Button 
             :label="entry.buttonText" 
@@ -53,6 +56,7 @@ import entryPointBookselskabImage from "~/assets/images/desktop/FEP-book-dit-sel
 import entryPointSelskabmenuImage from "~/assets/images/desktop/FEP-selskabsmenuer.webp";
 import entryPointKontaktImage from "~/assets/images/desktop/FEP-kontakt-os.webp";
 
+// Typer for de entries der er tilladt
 type EntryKey =
   | "Vores-produkter"
   | "Bryggeprocessen"
@@ -69,6 +73,8 @@ type EntryKey =
   | "Selskabsmenuer"
   | "Kontakt";
 
+
+// definerer de tre entries der skal vises i komponenten
 const props = defineProps<{
   entries: [EntryKey, EntryKey, EntryKey];
 }>();
@@ -78,6 +84,7 @@ if (new Set(props.entries).size !== props.entries.length) {
   throw new Error("Each entry in 'entries' must be unique.");
 }
 
+// objekt til at holde data for hver entry
 const entryData: Record<
   EntryKey,
   {
@@ -201,6 +208,7 @@ const entryData: Record<
   },
 };
 
+// Udregn de entries der skal vises baseret på de tre props
 const resolvedEntries = computed(() => {
   return props.entries.map((key) => entryData[key]);
 });
@@ -236,7 +244,4 @@ onMounted(() => {
   position: relative;
 }
 
-.hover-button:hover ~ .overflow-hidden img {
-  transform: scale(1.1);
-}
 </style>

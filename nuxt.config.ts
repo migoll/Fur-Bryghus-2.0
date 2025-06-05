@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
    app: {
     head: {
+      htmlAttrs: {
+          lang: 'da' // or 'en', depending on your project language
+      },
       link: [
         {
           rel: "icon",

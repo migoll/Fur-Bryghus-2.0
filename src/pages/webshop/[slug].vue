@@ -29,19 +29,21 @@
         <div class="flex flex-col lg:flex-col gap-8">
           <div class="flex-1 flex flex-col">
             <div class="hidden md:block">
-              <h1 class="font-bold mb-2">
+              <h1 class="font-bold mb-2 scroll-fade">
                 {{ produktData.title.rendered }}
               </h1>
               <ProductTags
                 :product="produktData"
                 :showAlcoholPercentage="true"
-                class="mb-6"
+                class="mb-6 scroll-fade"
               />
             </div>
 
             <div
               v-if="produktData.acf?.beskrivelse"
-              class="space-y-4 mb-8 md:mb-0 lg:mb-4"
+
+              class="space-y-4 mb-8 md:mb-0 lg:mb-8 scroll-fade"
+
               v-html="produktData.acf.beskrivelse"
             />
             <NuxtLink to="/bryggeriet/forhandlere">
@@ -251,6 +253,7 @@
 </template>
 
 <script setup lang="ts">
+
 interface Term {
   term_id: number;
   name: string;
@@ -333,4 +336,45 @@ const splitDescription = computed(() => {
 function imageUrl(product: Produkt) {
   return product.acf?.billede1?.url || product.acf?.billede2?.url || "";
 }
+
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Her stoppes med at observere så fade animation kun køre en gang
+          observer.unobserve(entry.target);
+        }
+      });
+      // animationen køre først når mindst 10% af elementet er synligt
+    },
+    { threshold: 0.1 }
+  );
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll(".scroll-fade").forEach((el) => {
+    observer.observe(el);
+  });
+});
+
+const metaDescription = "læs mere om den specifikke øl og køb med levering direkte til døren"
+
+watchEffect(() => {
+  if (produktData.value && produktData.value.title?.rendered) {
+    useHead({
+      title: produktData.value.title.rendered,
+      meta: [
+        {
+          name: "description",
+          content: metaDescription,
+        }
+      ],
+    });
+  }
+});
 </script>

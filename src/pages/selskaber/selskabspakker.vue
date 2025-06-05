@@ -10,12 +10,12 @@
   <section class="flex flex-col items-center">
 
     <div class="md:flex flex-col md:justify-center md:h-[700px] md:w-full lg:h-[500px] px-[1rem] md:px-[3rem] py-[3rem] gap-3 xl:max-w-[1240px] md:max-w-[60%]">
-      <h2 class="text-center">Hold din fest hos os</h2>
-      <p class="mx-auto">På Fur Bryghus sætter vi en stor ære i at skabe de helt perfekte rammer for netop Jeres fest. Uanset om I skal holde rund fødselsdag, bryllup, jubilæum eller kon rmation, kan I være sikre på, at vi står til rådighed og sørger for, at I og jeres gæster vil få en dag, I vil huske lang tid fremover.</p>
-      <p class="mx-auto">Vi sætter personlig rådgivning i højsædet, og vi er først tilfredse, når I er tilfredse. Vi står til disposition igennem hele forløbet fra planlæg- ning til afholdelse af Jeres selskab. Alle forslagene er inkl. borddækning, dekorationer, moms samt venlig og smilende betjening.</p>
-      <p class="mx-auto">Lad os holde et uforpligtende møde, så vi sammen kan skabe netop de rammer, som I ønsker til Jeres fest. Vi ser frem til at gøre jeres dag unik!</p>
-      <div class="flex flex-col items-center w-full" >
-      <img src="@/assets/icons/selskabspakker-ikon.svg" alt=""/>
+      <h2 class="text-center scroll-fade">Hold din fest hos os</h2>
+      <p class="mx-auto scroll-fade">På Fur Bryghus sætter vi en stor ære i at skabe de helt perfekte rammer for netop Jeres fest. Uanset om I skal holde rund fødselsdag, bryllup, jubilæum eller kon rmation, kan I være sikre på, at vi står til rådighed og sørger for, at I og jeres gæster vil få en dag, I vil huske lang tid fremover.</p>
+      <p class="mx-auto scroll-fade">Vi sætter personlig rådgivning i højsædet, og vi er først tilfredse, når I er tilfredse. Vi står til disposition igennem hele forløbet fra planlæg- ning til afholdelse af Jeres selskab. Alle forslagene er inkl. borddækning, dekorationer, moms samt venlig og smilende betjening.</p>
+      <p class="mx-auto scroll-fade">Lad os holde et uforpligtende møde, så vi sammen kan skabe netop de rammer, som I ønsker til Jeres fest. Vi ser frem til at gøre jeres dag unik!</p>
+      <div class="flex flex-col items-center w-full scroll-fade" >
+      <img src="@/assets/icons/selskabspakker-ikon.svg" alt="Ikon af øl"/>
 
       </div>
     </div>
@@ -26,7 +26,7 @@
     text="Når I skal holde bryllup på Fur Bryghus, har vi lavet to forslag til, hvordan dagen kan se ud for Jer. På de efterfølgende sider kan I se mere om mulighederne. Alt afhængigt af Jeres ønsker kan vi tilbyde jer alt fra en lækker 3-retters bryllupsmenu med husets vine til vor luksus- pakke med bryllupskage, 4-retters menu samt udvalgte vine. Uanset hvilken pakke I vælger, vil vi råde og vejlede Jer hele vejen igennem."
     :imageMobile="mobileImg"
     :imageDesktop="desktopImg"
-    imageAlt="Restaurant billede"
+    imageAlt="Selskabslokale"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     buttonLabel="Læs alt om bryllupspakken"
@@ -41,7 +41,7 @@
     text="Hvis i vælger at fejre konfirmation på Fur har vi samlet 2 menuer til jeres i vores selskabspdf. Her er der også mulighed for at tilkøbe natmad til hvis i vil have festen skal strække sig lidt længere. Vi har de perfekte omgivelser til en festilig konfirmation. Vores smukke natur og bygninger byder til flotte billeder af konfirmanden og plads til alle. "
     :imageMobile="mobileImg1"
     :imageDesktop="desktopImg1"
-    imageAlt="Restaurant billede"
+    imageAlt="Restauranten"
     headingColor="text-neutral-1"
     textColor="text-neutral-1"
     buttonLabel="Læs alt om konfirmationspakken"
@@ -58,7 +58,7 @@ heading="Fødselsdagspakke"
 
     :imageMobile="mobileImg2"
     :imageDesktop="desktopImg2"
-    imageAlt="Restaurant billede"
+    imageAlt="Fur Bryghus"
     headingColor="text-neutral-6"
     textColor="text-neutral-6"
     buttonLabel="Læs alt om fødselsdagspakken"
@@ -99,6 +99,31 @@ useHead({
       content: description,
     },
   ],
+});
+
+// denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade
+// onMounted er en composition Api lifecycle hook, som betyder at koden først køres når html findes i dom'en
+onMounted(() => {
+  // her oprettes observeren som holder øje med elementerne
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Her laves en foreach fordi der er flere elementer og for hvert entry bliver der tjekket om det er synligt i viewporten
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Her stoppes med at observere så fade animation kun køre en gang
+          observer.unobserve(entry.target);
+        }
+      });
+      // animationen køre først når mindst 10% af elementet er synligt
+    },
+    { threshold: 0.1 }
+  );
+
+  // Her findes alle elementerne med klassen scroll-fade og de bliver observeret
+  document.querySelectorAll(".scroll-fade").forEach((el) => {
+    observer.observe(el);
+  });
 });
 </script>
 

@@ -3,14 +3,15 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   srcDir: "src/",
   devtools: { enabled: true },
+  css: ["@/assets/css/main.css"],
   modules: ["@nuxtjs/tailwindcss"],
-  app: {
+   app: {
     head: {
       link: [
         {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "/favicon.ico",
+          rel: 'icon',
+          type: 'image/png',
+          href: '/fav-icon-logo.png',
         },
       ],
     },

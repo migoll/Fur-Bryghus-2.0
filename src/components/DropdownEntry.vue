@@ -1,3 +1,4 @@
+<!-- mini entry point i dropdown menu i headeren -->
 <template>
   <NuxtLink
     :to="href"

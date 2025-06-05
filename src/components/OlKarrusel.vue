@@ -110,7 +110,6 @@
 
 <script setup>
 import { ref, onMounted, nextTick } from "vue";
-import { useRouter } from "vue-router";
 
 // Her defineres en prop hvor man selv skal vælge id'et som man gerne vil sortere på oppe i url'et
 const props = defineProps({

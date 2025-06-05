@@ -42,9 +42,10 @@ const props = defineProps({
   post: Object,
 });
 
+// definerer at dato er post dato, og ikke den forkerte dato altså oprettelsesdatoen af post i wordpress
 const dato = props.post?.acf?.dato ?? props.post?.acf?.Dato ?? "Ingen dato";
 
-// Categories: 29 = nyheder, 28/30 = arrangementer
+// Finder korrekt link baseret på kategori-id'er. Categories: 29 = nyheder, 28/30 = arrangementer
 const getLink = () => {
   if (props.post.categories?.includes(29)) {
     return `/nyheder/${props.post.slug}`;
@@ -59,5 +60,3 @@ const getLink = () => {
   return `/nyheder/${props.post.slug}`;
 };
 </script>
-
-<style scoped></style>

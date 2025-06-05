@@ -55,14 +55,14 @@
             <div class="flex gap-4 mb-6">
               <div
                 @click="selectedQuantity = 6"
-                :class="selectedQuantity !== 6 ? 'opacity-30' : ''"
+                :class="selectedQuantity !== 6 ? 'opacity-70' : ''"
               >
                 <Button label="6 STK" />
               </div>
 
               <div
                 @click="selectedQuantity = 12"
-                :class="selectedQuantity !== 12 ? 'opacity-30' : ''"
+                :class="selectedQuantity !== 12 ? 'opacity-70' : ''"
               >
                 <Button label="12 STK" />
               </div>

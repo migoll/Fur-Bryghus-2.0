@@ -9,7 +9,7 @@
         <img
           :src="entry.image"
           :alt="entry.title"
-          class="w-full h-64 object-cover hover:scale-[110%] ease-in-out duration-500"
+          class="w-full h-64 object-cover group-hover:scale-[110%] ease-in-out duration-500"
         />
       </div>
       <div class="p-6 flex flex-col justify-between flex-grow">

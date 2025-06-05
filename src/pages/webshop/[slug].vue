@@ -52,7 +52,8 @@
           </div>
 
           <div class="flex flex-col md:w-72 lg:w-full">
-            <div class="flex gap-4 mb-6">
+            <!-- Vis kun quantity picker for øl (kategori 3) -->
+            <div v-if="produktData.categories?.includes(3)" class="flex gap-4 mb-6">
               <div
                 @click="selectedQuantity = 6"
                 :class="selectedQuantity !== 6 ? 'opacity-70' : ''"
@@ -69,21 +70,18 @@
             </div>
 
             <div class="mb-6">
-              <div
-                v-if="
-                  selectedQuantity === 6 && produktData.acf?.pris?.pris_6_stk
-                "
-                class="text-2xl font-medium"
-              >
-                kr. {{ produktData.acf.pris.pris_6_stk }},00
+              <!-- Vis pris baseret på produkttype. Kategori 3 vis pris for 6sk og 12sk, men andre kun vis enkeltpris -->
+              <div v-if="produktData.categories?.includes(3)" class="text-2xl font-medium">
+                <div v-if="selectedQuantity === 6 && produktData.acf?.pris?.pris_6_stk">
+                  kr. {{ produktData.acf.pris.pris_6_stk }},00
+                </div>
+                <div v-if="selectedQuantity === 12 && produktData.acf?.pris?.pris_12_stk">
+                  kr. {{ produktData.acf.pris.pris_12_stk }},00
+                </div>
               </div>
-              <div
-                v-if="
-                  selectedQuantity === 12 && produktData.acf?.pris?.pris_12_stk
-                "
-                class="text-2xl font-medium"
-              >
-                kr. {{ produktData.acf.pris.pris_12_stk }},00
+              <!-- Vis enkelt pris for andre produkttyper -->
+              <div v-else class="text-2xl font-medium">
+                {{ produktData.acf?.pris }} kr.
               </div>
             </div>
 

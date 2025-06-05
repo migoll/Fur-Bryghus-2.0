@@ -65,6 +65,7 @@
     buttonLink="https://drive.google.com/file/d/1Qhqg9xXWR6Gopufy9k_wZsM-W4fx5y24/view?usp=sharing"
     isPdf="true"
     :bgImage="traeBackground"
+    reverse
     openInNewTab="true"
   />
 
@@ -74,12 +75,12 @@
     :imageMobile="mobileImg2"
     :imageDesktop="desktopImg2"
     imageAlt="Fur Bryghus"
-    headingColor="text-neutral-6"
-    textColor="text-neutral-6"
+    headingColor="text-neutral-1"
+    textColor="text-neutral-1"
     buttonLabel="Læs alt om fødselsdagspakken"
     buttonLink="https://drive.google.com/file/d/1Qhqg9xXWR6Gopufy9k_wZsM-W4fx5y24/view?usp=sharing"
     isPdf="true"
-    :bgImage="traeBackground"
+    bgColor="bg-fur-accent-beige"
     openInNewTab="true"
   />
 

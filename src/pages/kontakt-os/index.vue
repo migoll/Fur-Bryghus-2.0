@@ -63,11 +63,12 @@
       </div>
     </div>
   </div>
-  <GoogleMap />
+  <GoogleMap :iframe="map" />
   <FocusedEntryPoints :entries="['Abning', 'Arrangementer', 'Olsmagninger']" />
 </template>
 
 <script setup>
+const map = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2100.412909189607!2d8.960754476648974!3d56.83157240838978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4649712cb46359bd%3A0xb7c27d6c1e362ea!2sFur%20Bryghus!5e1!3m2!1sda!2sdk!4v1749129549439!5m2!1sda!2sdk"
 const title = ref("Kontakt os");
 const description = ref(
   "Hvis du har spørgsmål kan du kontakte os her, vi svarer hurtigst muligt"

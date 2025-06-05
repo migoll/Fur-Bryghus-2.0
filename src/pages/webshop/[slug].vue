@@ -276,6 +276,9 @@ interface Produkt {
     navn?: string;
     intro_titel?: string;
     beskrivelse?: string;
+    billede?: {
+      url: string;
+    };
     billede1?: {
       url: string;
     };
@@ -334,7 +337,7 @@ const splitDescription = computed(() => {
 });
 
 function imageUrl(product: Produkt) {
-  return product.acf?.billede1?.url || product.acf?.billede2?.url || "";
+  return product.acf?.billede1?.url || product.acf?.billede2?.url || product.acf?.billede?.url || "";
 }
 
 // denne kode viser en intersectionObserver der bruges til at holde øje med hvornår en bruger scroller ned til elementet og så starter effekten .scroll-fade

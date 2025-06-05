@@ -6,7 +6,7 @@
       class="h-[15rem] w-full object-cover"
     />
   </div>
-  <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
+  <div class="flex flex-col items-center content-center gap-4 p-8">
     <h2 class="text-center">Lette retter</h2>
   </div>
   <div class="flex content-center align-center justify-center">

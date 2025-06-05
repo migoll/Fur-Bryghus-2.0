@@ -17,7 +17,7 @@
         />
       </NuxtLink>
 
-      <nav class="flex items-center space-x-8">
+      <nav class="flex items-center space-x-8 ">
         <div
           v-for="(item, index) in navigation"
           :key="index"
@@ -25,7 +25,7 @@
         >
           <div
             v-if="item.hasDropdown"
-            class="text-fur-blue hover:text-fur-accent-blue transition-colors duration-200 flex items-center cursor-pointer"
+            class="text-fur-blue transition-colors duration-200 flex items-center cursor-pointer hover:text-opacity-50"
           >
             {{ item.name }}
             <img
@@ -37,7 +37,7 @@
           <NuxtLink
             v-else
             :to="item.href!"
-            class="text-fur-blue hover:text-fur-accent-blue transition-colors duration-200"
+            class="text-fur-blue hover:text-opacity-50 transition-colors duration-200"
           >
             {{ item.name }}
           </NuxtLink>
@@ -160,7 +160,7 @@
         <template v-for="(item, index) in navigation" :key="index">
           <button
             v-if="item.hasDropdown"
-            class="flex w-full text-left py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200 font-bold"
+            class="flex w-full text-left py-2 text-fur-blue hover:text-fur-accent-blue transition-colors duration-200 font-bold items-center"
             @click="toggleMobileDropdown(index)"
           >
             {{ item.name }}

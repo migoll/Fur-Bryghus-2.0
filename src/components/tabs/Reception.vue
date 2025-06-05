@@ -6,7 +6,7 @@
       class="h-[15rem] w-full object-cover"
     />
   </div>
-  <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
+  <div class="flex flex-col items-center content-center gap-4 p-8">
     <h2 class="text-center">Reception</h2>
     <p class="text-center">
       Følgende forslag er tænkt som stående buffeter samt lette anretninger til
@@ -20,8 +20,8 @@
   <div class="flex content-center align-center justify-center">
     <div class="flex flex-col md:flex-row">
       <div>
-        <div class="mb-[1rem] flex justify-center flex-col items-center">
-          <p class="text-center">Stegte tigerrejer med hvidløgsaioli</p>
+        <div class="mb-[1rem] flex justify-center flex-col items-center text-center">
+          <p>Stegte tigerrejer med hvidløgsaioli</p>
           <p>Canapeer med røget laks</p>
           <p>Profiterolls med rejemousse og krydderurter</p>
           <p>24 mdr krogmodnet bryghusskinke med tomatpesto og melon</p>

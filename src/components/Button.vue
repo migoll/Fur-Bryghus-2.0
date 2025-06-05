@@ -69,7 +69,7 @@ const baseClasses = computed(() =>
 );
 </script>
 
-<style>
+<style scoped>
 /* animerer arrow på knappen */
 .group .arrow {
   transition: 0.3s ease-in-out;

@@ -6,7 +6,7 @@
       class="h-[15rem] w-full object-cover"
     />
   </div>
-  <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
+  <div class="flex flex-col items-center content-center gap-4 p-8">
     <h2 class="text-center">Fødselsdagspakker</h2>
     <p>Kontakt os for at sammensætte din egen menu.</p>
   </div>

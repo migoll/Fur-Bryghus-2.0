@@ -5,6 +5,7 @@
     class="hero relative h-[50vh] max-w-screen xs:h-[70vh] md:h-[80vh] lg:h-[100vh] overflow-visible"
   >
     <img
+     loading="eager" fetchpriority="high"
       src="../assets/images/mobile/Forside_Hero_Mobile.png"
       alt="Fur bryghus"
       class="object-cover w-full h-full"

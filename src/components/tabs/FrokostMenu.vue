@@ -6,7 +6,7 @@
       class="h-[15rem] w-full object-cover"
     />
   </div>
-  <div class="flex flex-col items-center content-center gap-4 py-[2rem]">
+  <div class="flex flex-col items-center content-center gap-4 p-8">
     <h2 class="text-center">Frokostmenu</h2>
     <p class="p-medium text-center">Nyd en udsøgt frokost på Fur Bryghus</p>
     <p class="text-center">Alle retter serveres med hjemmebagt brød og smør.</p>

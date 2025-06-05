@@ -5,7 +5,7 @@
       :key="entry.title"
       class="card bg-white shadow-md relative flex flex-col h-full overflow-hidden"
     >
-      <div class="overflow-hidden cursor-pointer">
+      <div class="overflow-hidden">
         <img
           :src="entry.image"
           :alt="entry.title"

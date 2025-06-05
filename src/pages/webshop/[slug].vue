@@ -91,7 +91,8 @@
       </div>
     </div>
   </div>
-  <section v-if="produktData" class="bg-wood-texture">
+  <!-- Vis kun specifikationssektionen for øl (kategori 3) -->
+  <section v-if="produktData && produktData.categories?.includes(3)" class="bg-wood-texture">
     <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 py-12">
       <div>
         <h2 class="text-h2 md:text-h2-md font-anton text-white mb-8">

@@ -90,8 +90,8 @@ import imageLagringMobile from "@/assets/images/mobile/Olprocessen_Lagring_Mobil
 import imageTapningMobile from "@/assets/images/mobile/Olprocessen_Tapning_Mobile.png";
 import heroMobile from "@/assets/images/mobile/Olprocessen_Hero_Mobile.png";
 
-import mobileImg from "@/assets/images/mobile/Olprocessen_Torring_Mobile.png";
-import desktopImg from "@/assets/images/desktop/olprocessen-torring.webp";
+import mobileImg from "@/assets/images/mobile/olprocessen_brygmesteren.jpg";
+import desktopImg from "@/assets/images/desktop/olprocessen_brygmesteren.jpg";
 
 // Array med scener
 const myScenesArray = [
